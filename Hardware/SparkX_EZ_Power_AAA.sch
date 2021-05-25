@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.05" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -8921,7 +8921,7 @@ IC-10035</description>
 <part name="R2" library="New-Parts_SparkFun-Resistors" deviceset="180KOHM" device="-0402T-1/16W-1%" value="180k"/>
 <part name="GND2" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="C1" library="SparkFun-Capacitors" deviceset="10UF" device="-0402T-6.3V-20%" value="10uF"/>
-<part name="L2" library="SparkFun-Coils" deviceset="4.7μH_SHIELDED_INDUCTOR" device="" value="4.7uH, 1.2A"/>
+<part name="L2" library="SparkFun-Coils" deviceset="4.7μH_SHIELDED_INDUCTOR" device="NPIS_LS" value="4.7μH"/>
 <part name="SUPPLY1" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
 <part name="GND3" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="GND4" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
@@ -9664,15 +9664,10 @@ There is no reverse-polarity protection on this board</text>
 </sheet>
 </sheets>
 <errors>
-<approved hash="102,1,276.86,147.32,PAD,GND,,,,"/>
-<approved hash="102,1,276.86,144.78,PAD,GND,,,,"/>
-<approved hash="102,1,276.86,142.24,PAD,GND,,,,"/>
-<approved hash="102,1,312.42,144.78,PAD,GND,,,,"/>
-<approved hash="102,1,312.42,147.32,PAD,GND,,,,"/>
-<approved hash="102,1,312.42,149.86,PGND,GND,,,,"/>
 <approved hash="104,1,55.88,91.44,U1,VCC,AT_VCC,,,"/>
 <approved hash="104,1,91.44,88.9,U1,LSW,N$2,,,"/>
 <approved hash="104,1,91.44,91.44,U1,VBAT,VIN,,,"/>
+<approved hash="104,1,302.26,157.48,U2,VOUT,3.3V,,,"/>
 <approved hash="113,1,224.866,168.189,J1,,,,,"/>
 </errors>
 </schematic>
