@@ -7788,130 +7788,6 @@ Diode with low voltage drop</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="New-Parts_SparkFun-IC-Microcontroller">
-<packages>
-<package name="QFN20_20M1">
-<wire x1="-2" y1="2" x2="2" y2="2" width="0.1524" layer="51"/>
-<wire x1="2" y1="2" x2="2" y2="-2" width="0.1524" layer="51"/>
-<wire x1="2" y1="-2" x2="-2" y2="-2" width="0.1524" layer="51"/>
-<wire x1="-2" y1="-2" x2="-2" y2="2" width="0.1524" layer="51"/>
-<smd name="PAD" x="0" y="0" dx="2.5" dy="2.5" layer="1" cream="no"/>
-<circle x="-2.3" y="2.3" radius="0.125" width="0.25" layer="21"/>
-<smd name="3" x="-1.9" y="0" dx="0.6" dy="0.25" layer="1"/>
-<smd name="2" x="-1.9" y="0.5" dx="0.6" dy="0.25" layer="1"/>
-<smd name="1" x="-1.9" y="1" dx="0.6" dy="0.25" layer="1"/>
-<smd name="4" x="-1.9" y="-0.5" dx="0.6" dy="0.25" layer="1"/>
-<smd name="5" x="-1.9" y="-1" dx="0.6" dy="0.25" layer="1"/>
-<smd name="6" x="-1" y="-1.9" dx="0.6" dy="0.25" layer="1" rot="R90"/>
-<wire x1="-2" y1="-2" x2="-2" y2="-1.4" width="0.1524" layer="21"/>
-<wire x1="-2" y1="1.4" x2="-2" y2="2" width="0.1524" layer="21"/>
-<wire x1="2" y1="1.4" x2="2" y2="2" width="0.1524" layer="21"/>
-<wire x1="2" y1="-2" x2="2" y2="-1.4" width="0.1524" layer="21"/>
-<wire x1="2" y1="-2" x2="1.4" y2="-2" width="0.1524" layer="21"/>
-<wire x1="-1.4" y1="-2" x2="-2" y2="-2" width="0.1524" layer="21"/>
-<wire x1="-1.4" y1="2" x2="-2" y2="2" width="0.1524" layer="21"/>
-<wire x1="2" y1="2" x2="1.4" y2="2" width="0.1524" layer="21"/>
-<smd name="7" x="-0.5" y="-1.9" dx="0.6" dy="0.25" layer="1" rot="R90"/>
-<smd name="8" x="0" y="-1.9" dx="0.6" dy="0.25" layer="1" rot="R90"/>
-<smd name="9" x="0.5" y="-1.9" dx="0.6" dy="0.25" layer="1" rot="R90"/>
-<smd name="10" x="1" y="-1.9" dx="0.6" dy="0.25" layer="1" rot="R90"/>
-<smd name="11" x="1.9" y="-1" dx="0.6" dy="0.25" layer="1" rot="R180"/>
-<smd name="12" x="1.9" y="-0.5" dx="0.6" dy="0.25" layer="1" rot="R180"/>
-<smd name="13" x="1.9" y="0" dx="0.6" dy="0.25" layer="1" rot="R180"/>
-<smd name="14" x="1.9" y="0.5" dx="0.6" dy="0.25" layer="1" rot="R180"/>
-<smd name="15" x="1.9" y="1" dx="0.6" dy="0.25" layer="1" rot="R180"/>
-<smd name="16" x="1" y="1.9" dx="0.6" dy="0.25" layer="1" rot="R270"/>
-<smd name="17" x="0.5" y="1.9" dx="0.6" dy="0.25" layer="1" rot="R270"/>
-<smd name="18" x="0" y="1.9" dx="0.6" dy="0.25" layer="1" rot="R270"/>
-<smd name="19" x="-0.5" y="1.9" dx="0.6" dy="0.25" layer="1" rot="R270"/>
-<smd name="20" x="-1" y="1.9" dx="0.6" dy="0.25" layer="1" rot="R270"/>
-<text x="-1.365" y="2.492" size="0.6096" layer="25" ratio="20">&gt;NAME</text>
-<text x="-1.365" y="-3.096" size="0.6096" layer="27" ratio="20">&gt;VALUE</text>
-<rectangle x1="-1.143" y1="0.254" x2="-0.254" y2="1.143" layer="31"/>
-<rectangle x1="-1.143" y1="-1.143" x2="-0.254" y2="-0.254" layer="31"/>
-<rectangle x1="0.254" y1="0.254" x2="1.143" y2="1.143" layer="31"/>
-<rectangle x1="0.254" y1="-1.143" x2="1.143" y2="-0.254" layer="31"/>
-</package>
-</packages>
-<symbols>
-<symbol name="ATTINY43">
-<description>&lt;b&gt;ATtiny43&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-Pin 4 is COPI and Pin 5 is CIPO when the chip is in peripheral mode or is being programmed&lt;br&gt;
-Pin 4 is CIPO and Pin 5 is COPI when the chip is operating in controller mode&lt;br&gt;
-The #defines in the ATTinyCore assume controller mode</description>
-<pin name="VCC" x="-17.78" y="-10.16" visible="pin" length="short" direction="pwr"/>
-<pin name="D0" x="-17.78" y="10.16" visible="pin" length="short"/>
-<pin name="D1" x="-17.78" y="7.62" visible="pin" length="short"/>
-<pin name="D2" x="-17.78" y="5.08" visible="pin" length="short"/>
-<pin name="D3" x="-17.78" y="2.54" visible="pin" length="short"/>
-<pin name="D4/DI/COPI/SDA" x="-17.78" y="0" visible="pin" length="short"/>
-<pin name="D5/DO/CIPO" x="-17.78" y="-2.54" visible="pin" length="short"/>
-<pin name="D6/SCK/SCL" x="-17.78" y="-5.08" visible="pin" length="short"/>
-<pin name="D7/SS/INT0" x="-17.78" y="-7.62" visible="pin" length="short"/>
-<pin name="GND" x="-17.78" y="-12.7" visible="pin" length="short" direction="pwr"/>
-<pin name="LSW" x="17.78" y="-12.7" visible="pin" length="short" direction="pwr" rot="R180"/>
-<pin name="VBAT" x="17.78" y="-10.16" visible="pin" length="short" direction="pwr" rot="R180"/>
-<pin name="A0/D8" x="17.78" y="-7.62" visible="pin" length="short" rot="R180"/>
-<pin name="A1/D9" x="17.78" y="-5.08" visible="pin" length="short" rot="R180"/>
-<pin name="A2/D10" x="17.78" y="-2.54" visible="pin" length="short" rot="R180"/>
-<pin name="A3/D11" x="17.78" y="0" visible="pin" length="short" rot="R180"/>
-<pin name="TXD/D12" x="17.78" y="2.54" visible="pin" length="short" rot="R180"/>
-<pin name="RXD/D13" x="17.78" y="5.08" visible="pin" length="short" rot="R180"/>
-<pin name="D14" x="17.78" y="7.62" visible="pin" length="short" rot="R180"/>
-<pin name="!RESET!/D15" x="17.78" y="10.16" visible="pin" length="short" rot="R180"/>
-<wire x1="-15.24" y1="12.7" x2="-15.24" y2="-15.24" width="0.254" layer="94"/>
-<wire x1="-15.24" y1="-15.24" x2="15.24" y2="-15.24" width="0.254" layer="94"/>
-<wire x1="15.24" y1="-15.24" x2="15.24" y2="12.7" width="0.254" layer="94"/>
-<wire x1="15.24" y1="12.7" x2="-15.24" y2="12.7" width="0.254" layer="94"/>
-<text x="-15.24" y="12.7" size="1.778" layer="95">&gt;NAME</text>
-<text x="-15.24" y="-17.78" size="1.778" layer="96">&gt;VALUE</text>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="ATTINY43">
-<description>&lt;b&gt;ATtiny43&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-Pin 4 is COPI and Pin 5 is CIPO when the chip is in peripheral mode or is being programmed&lt;br&gt;
-Pin 4 is CIPO and Pin 5 is COPI when the chip is operating in controller mode&lt;br&gt;
-The #defines in the ATTinyCore assume controller mode</description>
-<gates>
-<gate name="G$1" symbol="ATTINY43" x="0" y="0"/>
-</gates>
-<devices>
-<device name="_QFN20" package="QFN20_20M1">
-<connects>
-<connect gate="G$1" pin="!RESET!/D15" pad="18"/>
-<connect gate="G$1" pin="A0/D8" pad="11"/>
-<connect gate="G$1" pin="A1/D9" pad="12"/>
-<connect gate="G$1" pin="A2/D10" pad="13"/>
-<connect gate="G$1" pin="A3/D11" pad="14"/>
-<connect gate="G$1" pin="D0" pad="19"/>
-<connect gate="G$1" pin="D1" pad="20"/>
-<connect gate="G$1" pin="D14" pad="17"/>
-<connect gate="G$1" pin="D2" pad="1"/>
-<connect gate="G$1" pin="D3" pad="2"/>
-<connect gate="G$1" pin="D4/DI/COPI/SDA" pad="3"/>
-<connect gate="G$1" pin="D5/DO/CIPO" pad="4"/>
-<connect gate="G$1" pin="D6/SCK/SCL" pad="5"/>
-<connect gate="G$1" pin="D7/SS/INT0" pad="6"/>
-<connect gate="G$1" pin="GND" pad="8 PAD"/>
-<connect gate="G$1" pin="LSW" pad="9"/>
-<connect gate="G$1" pin="RXD/D13" pad="16"/>
-<connect gate="G$1" pin="TXD/D12" pad="15"/>
-<connect gate="G$1" pin="VBAT" pad="10"/>
-<connect gate="G$1" pin="VCC" pad="7"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="DIGIKEY_PART" value="ATTINY43U-MU-ND" constant="no"/>
-<attribute name="MANU_PART" value="ATtiny43U-MU" constant="no"/>
-<attribute name="PROD_ID" value="" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="SparkFun-Coils">
 <description>&lt;h3&gt;SparkFun Coils&lt;/h3&gt;
 In this library you'll find magnetics.
@@ -8863,6 +8739,143 @@ IC-10035</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="SparkFun-IC-Microcontroller">
+<description>&lt;h3&gt;SparkFun Microcontrollers&lt;/h3&gt;
+This library contains microcontrollers.
+&lt;br&gt;
+&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
+&lt;br&gt;
+&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
+&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;
+&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="QFN20_20M1">
+<wire x1="-2" y1="2" x2="2" y2="2" width="0.1524" layer="51"/>
+<wire x1="2" y1="2" x2="2" y2="-2" width="0.1524" layer="51"/>
+<wire x1="2" y1="-2" x2="-2" y2="-2" width="0.1524" layer="51"/>
+<wire x1="-2" y1="-2" x2="-2" y2="2" width="0.1524" layer="51"/>
+<smd name="PAD" x="0" y="0" dx="2.5" dy="2.5" layer="1" cream="no"/>
+<circle x="-2.3" y="2.3" radius="0.125" width="0.25" layer="21"/>
+<smd name="3" x="-1.9" y="0" dx="0.6" dy="0.25" layer="1"/>
+<smd name="2" x="-1.9" y="0.5" dx="0.6" dy="0.25" layer="1"/>
+<smd name="1" x="-1.9" y="1" dx="0.6" dy="0.25" layer="1"/>
+<smd name="4" x="-1.9" y="-0.5" dx="0.6" dy="0.25" layer="1"/>
+<smd name="5" x="-1.9" y="-1" dx="0.6" dy="0.25" layer="1"/>
+<smd name="6" x="-1" y="-1.9" dx="0.6" dy="0.25" layer="1" rot="R90"/>
+<wire x1="-2" y1="-2" x2="-2" y2="-1.4" width="0.1524" layer="21"/>
+<wire x1="-2" y1="1.4" x2="-2" y2="2" width="0.1524" layer="21"/>
+<wire x1="2" y1="1.4" x2="2" y2="2" width="0.1524" layer="21"/>
+<wire x1="2" y1="-2" x2="2" y2="-1.4" width="0.1524" layer="21"/>
+<wire x1="2" y1="-2" x2="1.4" y2="-2" width="0.1524" layer="21"/>
+<wire x1="-1.4" y1="-2" x2="-2" y2="-2" width="0.1524" layer="21"/>
+<wire x1="-1.4" y1="2" x2="-2" y2="2" width="0.1524" layer="21"/>
+<wire x1="2" y1="2" x2="1.4" y2="2" width="0.1524" layer="21"/>
+<smd name="7" x="-0.5" y="-1.9" dx="0.6" dy="0.25" layer="1" rot="R90"/>
+<smd name="8" x="0" y="-1.9" dx="0.6" dy="0.25" layer="1" rot="R90"/>
+<smd name="9" x="0.5" y="-1.9" dx="0.6" dy="0.25" layer="1" rot="R90"/>
+<smd name="10" x="1" y="-1.9" dx="0.6" dy="0.25" layer="1" rot="R90"/>
+<smd name="11" x="1.9" y="-1" dx="0.6" dy="0.25" layer="1" rot="R180"/>
+<smd name="12" x="1.9" y="-0.5" dx="0.6" dy="0.25" layer="1" rot="R180"/>
+<smd name="13" x="1.9" y="0" dx="0.6" dy="0.25" layer="1" rot="R180"/>
+<smd name="14" x="1.9" y="0.5" dx="0.6" dy="0.25" layer="1" rot="R180"/>
+<smd name="15" x="1.9" y="1" dx="0.6" dy="0.25" layer="1" rot="R180"/>
+<smd name="16" x="1" y="1.9" dx="0.6" dy="0.25" layer="1" rot="R270"/>
+<smd name="17" x="0.5" y="1.9" dx="0.6" dy="0.25" layer="1" rot="R270"/>
+<smd name="18" x="0" y="1.9" dx="0.6" dy="0.25" layer="1" rot="R270"/>
+<smd name="19" x="-0.5" y="1.9" dx="0.6" dy="0.25" layer="1" rot="R270"/>
+<smd name="20" x="-1" y="1.9" dx="0.6" dy="0.25" layer="1" rot="R270"/>
+<text x="-1.365" y="2.492" size="0.6096" layer="25" ratio="20">&gt;NAME</text>
+<text x="-1.365" y="-3.096" size="0.6096" layer="27" ratio="20">&gt;VALUE</text>
+<rectangle x1="-1.143" y1="0.254" x2="-0.254" y2="1.143" layer="31"/>
+<rectangle x1="-1.143" y1="-1.143" x2="-0.254" y2="-0.254" layer="31"/>
+<rectangle x1="0.254" y1="0.254" x2="1.143" y2="1.143" layer="31"/>
+<rectangle x1="0.254" y1="-1.143" x2="1.143" y2="-0.254" layer="31"/>
+</package>
+</packages>
+<symbols>
+<symbol name="ATTINY43">
+<description>&lt;b&gt;ATtiny43&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+Pin 4 is COPI and Pin 5 is CIPO when the chip is in peripheral mode or is being programmed&lt;br&gt;
+Pin 4 is CIPO and Pin 5 is COPI when the chip is operating in controller mode&lt;br&gt;
+The #defines in the ATTinyCore assume controller mode</description>
+<pin name="VCC" x="-17.78" y="-10.16" visible="pin" length="short" direction="pwr"/>
+<pin name="D0" x="-17.78" y="10.16" visible="pin" length="short"/>
+<pin name="D1" x="-17.78" y="7.62" visible="pin" length="short"/>
+<pin name="D2" x="-17.78" y="5.08" visible="pin" length="short"/>
+<pin name="D3" x="-17.78" y="2.54" visible="pin" length="short"/>
+<pin name="D4/DI/COPI/SDA" x="-17.78" y="0" visible="pin" length="short"/>
+<pin name="D5/DO/CIPO" x="-17.78" y="-2.54" visible="pin" length="short"/>
+<pin name="D6/SCK/SCL" x="-17.78" y="-5.08" visible="pin" length="short"/>
+<pin name="D7/SS/INT0" x="-17.78" y="-7.62" visible="pin" length="short"/>
+<pin name="GND" x="-17.78" y="-12.7" visible="pin" length="short" direction="pwr"/>
+<pin name="LSW" x="17.78" y="-12.7" visible="pin" length="short" direction="pwr" rot="R180"/>
+<pin name="VBAT" x="17.78" y="-10.16" visible="pin" length="short" direction="pwr" rot="R180"/>
+<pin name="A0/D8" x="17.78" y="-7.62" visible="pin" length="short" rot="R180"/>
+<pin name="A1/D9" x="17.78" y="-5.08" visible="pin" length="short" rot="R180"/>
+<pin name="A2/D10" x="17.78" y="-2.54" visible="pin" length="short" rot="R180"/>
+<pin name="A3/D11" x="17.78" y="0" visible="pin" length="short" rot="R180"/>
+<pin name="TXD/D12" x="17.78" y="2.54" visible="pin" length="short" rot="R180"/>
+<pin name="RXD/D13" x="17.78" y="5.08" visible="pin" length="short" rot="R180"/>
+<pin name="D14" x="17.78" y="7.62" visible="pin" length="short" rot="R180"/>
+<pin name="!RESET!/D15" x="17.78" y="10.16" visible="pin" length="short" rot="R180"/>
+<wire x1="-15.24" y1="12.7" x2="-15.24" y2="-15.24" width="0.254" layer="94"/>
+<wire x1="-15.24" y1="-15.24" x2="15.24" y2="-15.24" width="0.254" layer="94"/>
+<wire x1="15.24" y1="-15.24" x2="15.24" y2="12.7" width="0.254" layer="94"/>
+<wire x1="15.24" y1="12.7" x2="-15.24" y2="12.7" width="0.254" layer="94"/>
+<text x="-15.24" y="12.7" size="1.778" layer="95">&gt;NAME</text>
+<text x="-15.24" y="-17.78" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="ATTINY43">
+<description>&lt;b&gt;ATtiny43&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+Pin 4 is COPI and Pin 5 is CIPO when the chip is in peripheral mode or is being programmed&lt;br&gt;
+Pin 4 is CIPO and Pin 5 is COPI when the chip is operating in controller mode&lt;br&gt;
+The #defines in the ATTinyCore assume controller mode</description>
+<gates>
+<gate name="G$1" symbol="ATTINY43" x="0" y="0"/>
+</gates>
+<devices>
+<device name="_QFN20" package="QFN20_20M1">
+<connects>
+<connect gate="G$1" pin="!RESET!/D15" pad="18"/>
+<connect gate="G$1" pin="A0/D8" pad="11"/>
+<connect gate="G$1" pin="A1/D9" pad="12"/>
+<connect gate="G$1" pin="A2/D10" pad="13"/>
+<connect gate="G$1" pin="A3/D11" pad="14"/>
+<connect gate="G$1" pin="D0" pad="19"/>
+<connect gate="G$1" pin="D1" pad="20"/>
+<connect gate="G$1" pin="D14" pad="17"/>
+<connect gate="G$1" pin="D2" pad="1"/>
+<connect gate="G$1" pin="D3" pad="2"/>
+<connect gate="G$1" pin="D4/DI/COPI/SDA" pad="3"/>
+<connect gate="G$1" pin="D5/DO/CIPO" pad="4"/>
+<connect gate="G$1" pin="D6/SCK/SCL" pad="5"/>
+<connect gate="G$1" pin="D7/SS/INT0" pad="6"/>
+<connect gate="G$1" pin="GND" pad="8 PAD"/>
+<connect gate="G$1" pin="LSW" pad="9"/>
+<connect gate="G$1" pin="RXD/D13" pad="16"/>
+<connect gate="G$1" pin="TXD/D12" pad="15"/>
+<connect gate="G$1" pin="VBAT" pad="10"/>
+<connect gate="G$1" pin="VCC" pad="7"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY_PART" value="ATTINY43U-MU-ND" constant="no"/>
+<attribute name="MANU_PART" value="ATtiny43U-MU" constant="no"/>
+<attribute name="PROD_ID" value="" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -8898,7 +8911,7 @@ IC-10035</description>
 <part name="GND1" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="PROC_PWR_EN" library="SparkFun-Jumpers" deviceset="JUMPER-SMT_2_NC_TRACE" device="_SILK" package3d_urn="urn:adsk.eagle:package:39281/1"/>
 <part name="3V3_EN" library="SparkFun-Connectors" deviceset="TEST-POINT" device="3X4" value="TEST-POINT3X4"/>
-<part name="U1" library="New-Parts_SparkFun-IC-Microcontroller" deviceset="ATTINY43" device="_QFN20"/>
+<part name="U1" library="SparkFun-IC-Microcontroller" deviceset="ATTINY43" device="_QFN20"/>
 <part name="SUPPLY11" library="SparkFun-PowerSymbols" deviceset="VIN" device=""/>
 <part name="GND7" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="C5" library="SparkFun-Capacitors" deviceset="4.7UF" device="-0402_TIGHT-6.3V-20%-X5R" value="4.7uF"/>
@@ -8960,8 +8973,9 @@ The #defines in the ATTinyCore assume controller mode</text>
 <wire x1="154.94" y1="0" x2="154.94" y2="190.5" width="0.2032" layer="97" style="longdash"/>
 <text x="261.62" y="152.654" size="1.778" layer="97">UVLO 1.0V</text>
 <text x="164.084" y="268.732" size="5.08" layer="94">Boost Converter</text>
-<text x="218.44" y="182.88" size="1.778" layer="97" ratio="15">Recommended VIN (Min) : 1.1V
-Recommended VIN (Max): 3.0V (2 x AAA)</text>
+<text x="218.44" y="182.88" size="1.778" layer="97" ratio="15">Recommended VIN (Min) : 1.5V (1 x AAA)
+Recommended VIN (Max): 3.0V (2 x AAA)
+Maximum VIN: 5.5V</text>
 <text x="218.44" y="195.58" size="1.778" layer="97" ratio="15">Caution!
 =====
 Ensure the battery polarity is correct
