@@ -469,95 +469,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </package>
 </packages>
 </library>
-<library name="New_Parts_Connectors">
-<packages>
-<package name="FPC_16_DOUBLESIDED_BACKFLIP">
-<wire x1="5" y1="1.2" x2="5" y2="-0.75" width="0.01" layer="51"/>
-<wire x1="4.41" y1="-1.75" x2="-4.41" y2="-1.75" width="0.01" layer="51"/>
-<wire x1="-5" y1="1.2" x2="-4.62" y2="1.2" width="0.01" layer="51"/>
-<smd name="1" x="-3.75" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
-<smd name="2" x="-3.25" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
-<rectangle x1="-3.825" y1="1.1" x2="-3.675" y2="1.5" layer="51"/>
-<smd name="MP1" x="-4.75" y="-1.15" dx="0.4" dy="0.8" layer="1"/>
-<rectangle x1="-3.325" y1="1.1" x2="-3.175" y2="1.5" layer="51"/>
-<rectangle x1="-3.875" y1="1.025" x2="-3.625" y2="1.675" layer="31"/>
-<rectangle x1="-3.375" y1="1.025" x2="-3.125" y2="1.675" layer="31"/>
-<wire x1="-4.62" y1="1.2" x2="4.62" y2="1.2" width="0.01" layer="51"/>
-<wire x1="4.62" y1="1.2" x2="5" y2="1.2" width="0.01" layer="51"/>
-<smd name="MP2" x="4.75" y="-1.15" dx="0.4" dy="0.8" layer="1"/>
-<rectangle x1="-4.775" y1="-1.395" x2="-4.625" y2="-0.905" layer="51"/>
-<rectangle x1="4.625" y1="-1.395" x2="4.775" y2="-0.905" layer="51"/>
-<wire x1="-5" y1="1.2" x2="-5" y2="-0.75" width="0.01" layer="51"/>
-<wire x1="-4.77" y1="2.05" x2="4.77" y2="2.05" width="0.01" layer="51"/>
-<wire x1="-4.62" y1="0.2" x2="4.62" y2="0.2" width="0.01" layer="51"/>
-<wire x1="-4.62" y1="-1.55" x2="-4.62" y2="-0.75" width="0.01" layer="51"/>
-<wire x1="-4.62" y1="-0.75" x2="-5" y2="-0.75" width="0.01" layer="51"/>
-<wire x1="4.62" y1="-1.55" x2="4.62" y2="-0.75" width="0.01" layer="51"/>
-<wire x1="5" y1="-0.75" x2="4.62" y2="-0.75" width="0.01" layer="51"/>
-<wire x1="-4.62" y1="-1.55" x2="-4.41" y2="-1.75" width="0.01" layer="51" curve="88.036076"/>
-<wire x1="4.62" y1="-1.55" x2="4.41" y2="-1.75" width="0.01" layer="51" curve="-88.036076"/>
-<wire x1="4.62" y1="0.2" x2="4.62" y2="1.2" width="0.01" layer="51"/>
-<wire x1="-4.62" y1="0.2" x2="-4.62" y2="1.2" width="0.01" layer="51"/>
-<wire x1="4.77" y1="1.31" x2="4.77" y2="2.05" width="0.01" layer="51"/>
-<wire x1="-4.77" y1="2.05" x2="-4.77" y2="1.31" width="0.01" layer="51"/>
-<wire x1="-4.62" y1="1.2" x2="-4.62" y2="1.31" width="0.01" layer="51"/>
-<wire x1="-4.62" y1="1.31" x2="-4.77" y2="1.31" width="0.01" layer="51"/>
-<wire x1="4.62" y1="1.31" x2="4.77" y2="1.31" width="0.01" layer="51"/>
-<wire x1="4.62" y1="1.2" x2="4.62" y2="1.31" width="0.01" layer="51"/>
-<wire x1="-5" y1="1.15" x2="-4.1" y2="1.15" width="0.1524" layer="21"/>
-<wire x1="-5" y1="1.15" x2="-5" y2="-0.45" width="0.1524" layer="21"/>
-<wire x1="-4.4" y1="-1.75" x2="4.4" y2="-1.75" width="0.1524" layer="21"/>
-<wire x1="5" y1="1.15" x2="5" y2="-0.45" width="0.1524" layer="21"/>
-<wire x1="5" y1="1.15" x2="4.1" y2="1.15" width="0.1524" layer="21"/>
-<text x="0" y="-3.25" size="0.2" layer="51" align="center">Ribbon Insert</text>
-<wire x1="0" y1="-2.95" x2="0" y2="-2.25" width="0.05" layer="51"/>
-<wire x1="0" y1="-2.25" x2="0.2" y2="-2.45" width="0.05" layer="51"/>
-<wire x1="0" y1="-2.25" x2="-0.2" y2="-2.45" width="0.05" layer="51"/>
-<smd name="3" x="-2.75" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
-<smd name="4" x="-2.25" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
-<rectangle x1="-2.825" y1="1.1" x2="-2.675" y2="1.5" layer="51"/>
-<rectangle x1="-2.325" y1="1.1" x2="-2.175" y2="1.5" layer="51"/>
-<rectangle x1="-2.875" y1="1.025" x2="-2.625" y2="1.675" layer="31"/>
-<rectangle x1="-2.375" y1="1.025" x2="-2.125" y2="1.675" layer="31"/>
-<smd name="5" x="-1.75" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
-<smd name="6" x="-1.25" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
-<rectangle x1="-1.825" y1="1.1" x2="-1.675" y2="1.5" layer="51"/>
-<rectangle x1="-1.325" y1="1.1" x2="-1.175" y2="1.5" layer="51"/>
-<rectangle x1="-1.875" y1="1.025" x2="-1.625" y2="1.675" layer="31"/>
-<rectangle x1="-1.375" y1="1.025" x2="-1.125" y2="1.675" layer="31"/>
-<smd name="7" x="-0.75" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
-<smd name="8" x="-0.25" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
-<rectangle x1="-0.825" y1="1.1" x2="-0.675" y2="1.5" layer="51"/>
-<rectangle x1="-0.325" y1="1.1" x2="-0.175" y2="1.5" layer="51"/>
-<rectangle x1="-0.875" y1="1.025" x2="-0.625" y2="1.675" layer="31"/>
-<rectangle x1="-0.375" y1="1.025" x2="-0.125" y2="1.675" layer="31"/>
-<smd name="9" x="0.25" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
-<smd name="10" x="0.75" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
-<rectangle x1="0.175" y1="1.1" x2="0.325" y2="1.5" layer="51"/>
-<rectangle x1="0.675" y1="1.1" x2="0.825" y2="1.5" layer="51"/>
-<rectangle x1="0.125" y1="1.025" x2="0.375" y2="1.675" layer="31"/>
-<rectangle x1="0.625" y1="1.025" x2="0.875" y2="1.675" layer="31"/>
-<smd name="11" x="1.25" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
-<smd name="12" x="1.75" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
-<rectangle x1="1.175" y1="1.1" x2="1.325" y2="1.5" layer="51"/>
-<rectangle x1="1.675" y1="1.1" x2="1.825" y2="1.5" layer="51"/>
-<rectangle x1="1.125" y1="1.025" x2="1.375" y2="1.675" layer="31"/>
-<rectangle x1="1.625" y1="1.025" x2="1.875" y2="1.675" layer="31"/>
-<smd name="13" x="2.25" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
-<smd name="14" x="2.75" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
-<rectangle x1="2.175" y1="1.1" x2="2.325" y2="1.5" layer="51"/>
-<rectangle x1="2.675" y1="1.1" x2="2.825" y2="1.5" layer="51"/>
-<rectangle x1="2.125" y1="1.025" x2="2.375" y2="1.675" layer="31"/>
-<rectangle x1="2.625" y1="1.025" x2="2.875" y2="1.675" layer="31"/>
-<smd name="15" x="3.25" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
-<smd name="16" x="3.75" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
-<rectangle x1="3.175" y1="1.1" x2="3.325" y2="1.5" layer="51"/>
-<rectangle x1="3.675" y1="1.1" x2="3.825" y2="1.5" layer="51"/>
-<rectangle x1="3.125" y1="1.025" x2="3.375" y2="1.675" layer="31"/>
-<rectangle x1="3.625" y1="1.025" x2="3.875" y2="1.675" layer="31"/>
-</package>
-</packages>
-</library>
 <library name="SparkX">
 <packages>
 <package name="SPARKX-SMALL">
@@ -3306,6 +3217,91 @@ Used as a test point connection for pogo pins or other debugging tools.
 <text x="-3.048" y="-3.048" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
 <text x="-1.905" y="0" size="0.254" layer="51">Programmer This Side</text>
 </package>
+<package name="FPC_16_0.5MM">
+<wire x1="5" y1="1.2" x2="5" y2="-0.75" width="0.01" layer="51"/>
+<wire x1="4.41" y1="-1.75" x2="-4.41" y2="-1.75" width="0.01" layer="51"/>
+<wire x1="-5" y1="1.2" x2="-4.62" y2="1.2" width="0.01" layer="51"/>
+<smd name="1" x="-3.75" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
+<smd name="2" x="-3.25" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
+<rectangle x1="-3.825" y1="1.1" x2="-3.675" y2="1.5" layer="51"/>
+<smd name="MP1" x="-4.75" y="-1.15" dx="0.4" dy="0.8" layer="1"/>
+<rectangle x1="-3.325" y1="1.1" x2="-3.175" y2="1.5" layer="51"/>
+<rectangle x1="-3.875" y1="1.025" x2="-3.625" y2="1.675" layer="31"/>
+<rectangle x1="-3.375" y1="1.025" x2="-3.125" y2="1.675" layer="31"/>
+<wire x1="-4.62" y1="1.2" x2="4.62" y2="1.2" width="0.01" layer="51"/>
+<wire x1="4.62" y1="1.2" x2="5" y2="1.2" width="0.01" layer="51"/>
+<smd name="MP2" x="4.75" y="-1.15" dx="0.4" dy="0.8" layer="1"/>
+<rectangle x1="-4.775" y1="-1.395" x2="-4.625" y2="-0.905" layer="51"/>
+<rectangle x1="4.625" y1="-1.395" x2="4.775" y2="-0.905" layer="51"/>
+<wire x1="-5" y1="1.2" x2="-5" y2="-0.75" width="0.01" layer="51"/>
+<wire x1="-4.77" y1="2.05" x2="4.77" y2="2.05" width="0.01" layer="51"/>
+<wire x1="-4.62" y1="0.2" x2="4.62" y2="0.2" width="0.01" layer="51"/>
+<wire x1="-4.62" y1="-1.55" x2="-4.62" y2="-0.75" width="0.01" layer="51"/>
+<wire x1="-4.62" y1="-0.75" x2="-5" y2="-0.75" width="0.01" layer="51"/>
+<wire x1="4.62" y1="-1.55" x2="4.62" y2="-0.75" width="0.01" layer="51"/>
+<wire x1="5" y1="-0.75" x2="4.62" y2="-0.75" width="0.01" layer="51"/>
+<wire x1="-4.62" y1="-1.55" x2="-4.41" y2="-1.75" width="0.01" layer="51" curve="88.036076"/>
+<wire x1="4.62" y1="-1.55" x2="4.41" y2="-1.75" width="0.01" layer="51" curve="-88.036076"/>
+<wire x1="4.62" y1="0.2" x2="4.62" y2="1.2" width="0.01" layer="51"/>
+<wire x1="-4.62" y1="0.2" x2="-4.62" y2="1.2" width="0.01" layer="51"/>
+<wire x1="4.77" y1="1.31" x2="4.77" y2="2.05" width="0.01" layer="51"/>
+<wire x1="-4.77" y1="2.05" x2="-4.77" y2="1.31" width="0.01" layer="51"/>
+<wire x1="-4.62" y1="1.2" x2="-4.62" y2="1.31" width="0.01" layer="51"/>
+<wire x1="-4.62" y1="1.31" x2="-4.77" y2="1.31" width="0.01" layer="51"/>
+<wire x1="4.62" y1="1.31" x2="4.77" y2="1.31" width="0.01" layer="51"/>
+<wire x1="4.62" y1="1.2" x2="4.62" y2="1.31" width="0.01" layer="51"/>
+<wire x1="-5" y1="1.15" x2="-4.1" y2="1.15" width="0.1524" layer="21"/>
+<wire x1="-5" y1="1.15" x2="-5" y2="-0.45" width="0.1524" layer="21"/>
+<wire x1="-4.4" y1="-1.75" x2="4.4" y2="-1.75" width="0.1524" layer="21"/>
+<wire x1="5" y1="1.15" x2="5" y2="-0.45" width="0.1524" layer="21"/>
+<wire x1="5" y1="1.15" x2="4.1" y2="1.15" width="0.1524" layer="21"/>
+<text x="0" y="-3.25" size="0.2" layer="51" align="center">Ribbon Insert</text>
+<wire x1="0" y1="-2.95" x2="0" y2="-2.25" width="0.05" layer="51"/>
+<wire x1="0" y1="-2.25" x2="0.2" y2="-2.45" width="0.05" layer="51"/>
+<wire x1="0" y1="-2.25" x2="-0.2" y2="-2.45" width="0.05" layer="51"/>
+<smd name="3" x="-2.75" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
+<smd name="4" x="-2.25" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
+<rectangle x1="-2.825" y1="1.1" x2="-2.675" y2="1.5" layer="51"/>
+<rectangle x1="-2.325" y1="1.1" x2="-2.175" y2="1.5" layer="51"/>
+<rectangle x1="-2.875" y1="1.025" x2="-2.625" y2="1.675" layer="31"/>
+<rectangle x1="-2.375" y1="1.025" x2="-2.125" y2="1.675" layer="31"/>
+<smd name="5" x="-1.75" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
+<smd name="6" x="-1.25" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
+<rectangle x1="-1.825" y1="1.1" x2="-1.675" y2="1.5" layer="51"/>
+<rectangle x1="-1.325" y1="1.1" x2="-1.175" y2="1.5" layer="51"/>
+<rectangle x1="-1.875" y1="1.025" x2="-1.625" y2="1.675" layer="31"/>
+<rectangle x1="-1.375" y1="1.025" x2="-1.125" y2="1.675" layer="31"/>
+<smd name="7" x="-0.75" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
+<smd name="8" x="-0.25" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
+<rectangle x1="-0.825" y1="1.1" x2="-0.675" y2="1.5" layer="51"/>
+<rectangle x1="-0.325" y1="1.1" x2="-0.175" y2="1.5" layer="51"/>
+<rectangle x1="-0.875" y1="1.025" x2="-0.625" y2="1.675" layer="31"/>
+<rectangle x1="-0.375" y1="1.025" x2="-0.125" y2="1.675" layer="31"/>
+<smd name="9" x="0.25" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
+<smd name="10" x="0.75" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
+<rectangle x1="0.175" y1="1.1" x2="0.325" y2="1.5" layer="51"/>
+<rectangle x1="0.675" y1="1.1" x2="0.825" y2="1.5" layer="51"/>
+<rectangle x1="0.125" y1="1.025" x2="0.375" y2="1.675" layer="31"/>
+<rectangle x1="0.625" y1="1.025" x2="0.875" y2="1.675" layer="31"/>
+<smd name="11" x="1.25" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
+<smd name="12" x="1.75" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
+<rectangle x1="1.175" y1="1.1" x2="1.325" y2="1.5" layer="51"/>
+<rectangle x1="1.675" y1="1.1" x2="1.825" y2="1.5" layer="51"/>
+<rectangle x1="1.125" y1="1.025" x2="1.375" y2="1.675" layer="31"/>
+<rectangle x1="1.625" y1="1.025" x2="1.875" y2="1.675" layer="31"/>
+<smd name="13" x="2.25" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
+<smd name="14" x="2.75" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
+<rectangle x1="2.175" y1="1.1" x2="2.325" y2="1.5" layer="51"/>
+<rectangle x1="2.675" y1="1.1" x2="2.825" y2="1.5" layer="51"/>
+<rectangle x1="2.125" y1="1.025" x2="2.375" y2="1.675" layer="31"/>
+<rectangle x1="2.625" y1="1.025" x2="2.875" y2="1.675" layer="31"/>
+<smd name="15" x="3.25" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
+<smd name="16" x="3.75" y="1.35" dx="0.3" dy="0.8" layer="1" cream="no"/>
+<rectangle x1="3.175" y1="1.1" x2="3.325" y2="1.5" layer="51"/>
+<rectangle x1="3.675" y1="1.1" x2="3.825" y2="1.5" layer="51"/>
+<rectangle x1="3.125" y1="1.025" x2="3.375" y2="1.675" layer="31"/>
+<rectangle x1="3.625" y1="1.025" x2="3.875" y2="1.675" layer="31"/>
+</package>
 </packages>
 </library>
 <library name="SparkFun-Jumpers">
@@ -3525,26 +3521,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <rectangle x1="-0.12445625" y1="-1.8770625" x2="0.1244625" y2="-1.07188125" layer="31"/>
 <rectangle x1="0.375925" y1="-1.87198125" x2="0.62484375" y2="-1.0668" layer="31"/>
 <rectangle x1="0.87630625" y1="-1.8770625" x2="1.125225" y2="-1.07188125" layer="31"/>
-</package>
-</packages>
-</library>
-<library name="New-Parts_SparkFun-Resistors">
-<packages>
-<package name="0402-TIGHT">
-<smd name="1" x="-0.5" y="0" dx="0.6" dy="0.6" layer="1"/>
-<smd name="2" x="0.5" y="0" dx="0.6" dy="0.6" layer="1"/>
-<text x="0" y="0.562" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
-<text x="0" y="-0.562" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
-<wire x1="-0.5" y1="-0.25" x2="-0.5" y2="0.25" width="0.002540625" layer="51"/>
-<wire x1="-0.5" y1="0.25" x2="0.5" y2="0.25" width="0.002540625" layer="51"/>
-<wire x1="0.5" y1="0.25" x2="0.5" y2="-0.25" width="0.002540625" layer="51"/>
-<wire x1="0.5" y1="-0.25" x2="-0.5" y2="-0.25" width="0.002540625" layer="51"/>
-<rectangle x1="-0.5" y1="-0.25" x2="-0.3" y2="0.25" layer="51"/>
-<rectangle x1="0.3" y1="-0.25" x2="0.5" y2="0.25" layer="51" rot="R180"/>
-<wire x1="0.9262" y1="0.4262" x2="-0.9262" y2="0.4262" width="0.05" layer="39"/>
-<wire x1="-0.9262" y1="0.4262" x2="-0.9262" y2="-0.4262" width="0.05" layer="39"/>
-<wire x1="-0.9262" y1="-0.4262" x2="0.9262" y2="-0.4262" width="0.05" layer="39"/>
-<wire x1="0.9262" y1="-0.4262" x2="0.9262" y2="0.4262" width="0.05" layer="39"/>
 </package>
 </packages>
 </library>
@@ -3809,18 +3785,16 @@ These are the minimums &lt;a href=&quot;https://jlcpcb.com/capabilities/Capabili
 <element name="FD2" library="SparkFun-Aesthetics" package="FIDUCIAL-MICRO" value="FIDUCIALUFIDUCIAL" x="0.635" y="40.005" smashed="yes" rot="MR0"/>
 <element name="FD3" library="SparkFun-Aesthetics" package="FIDUCIAL-MICRO" value="FIDUCIALUFIDUCIAL" x="10.033" y="0.635" smashed="yes"/>
 <element name="FD4" library="SparkFun-Aesthetics" package="FIDUCIAL-MICRO" value="FIDUCIALUFIDUCIAL" x="10.033" y="0.635" smashed="yes" rot="MR0"/>
-<element name="OUT" library="New_Parts_Connectors" package="FPC_16_DOUBLESIDED_BACKFLIP" value="FPC_16_0.5MM_BACKFLIP" x="5.334" y="2.0955" smashed="yes" rot="R180">
-<attribute name="ATOM_PART" value="FPC05016-42201" x="5.334" y="2.0955" size="1.778" layer="27" font="vector" ratio="15" rot="R180" display="off"/>
-<attribute name="PROD_ID" value="" x="5.334" y="2.0955" size="1.778" layer="27" font="vector" ratio="15" rot="R180" display="off"/>
+<element name="OUT" library="SparkFun-Connectors" package="FPC_16_0.5MM" value="" x="5.334" y="2.0955" smashed="yes" rot="R180">
+<attribute name="PROD_ID" value="CONN-16066" x="5.334" y="2.0955" size="1.778" layer="27" font="vector" ratio="15" rot="R180" display="off"/>
 </element>
 <element name="LOGO2" library="SparkFun-Aesthetics" package="OSHW-LOGO-MINI" value="OSHW-LOGOMINI" x="9.3345" y="16.129" smashed="yes" rot="R90"/>
 <element name="U$1" library="SparkX" package="SPARKX-SMALL" value="SPARKX-LOGO3" x="9.525" y="8.636" smashed="yes" rot="R90"/>
 <element name="U$13" library="output" package="#OUT#0" value="" x="5.334" y="4.8895" smashed="yes"/>
 <element name="U$20" library="SparkX" package="SPARKX-SMALL" value="SPARKX-LOGO3" x="5.334" y="27.94" smashed="yes" rot="MR0"/>
 <element name="LOGO3" library="SparkFun-Aesthetics" package="OSHW-LOGO-MINI" value="OSHW-LOGOMINI" x="5.334" y="23.495" smashed="yes" rot="MR0"/>
-<element name="IN" library="New_Parts_Connectors" package="FPC_16_DOUBLESIDED_BACKFLIP" value="FPC_16_0.5MM_BACKFLIP" x="5.334" y="38.5445" smashed="yes" rot="MR0">
-<attribute name="ATOM_PART" value="FPC05016-42201" x="5.334" y="38.5445" size="1.778" layer="28" ratio="15" rot="MR0" display="off"/>
-<attribute name="PROD_ID" value="" x="5.334" y="38.5445" size="1.778" layer="28" ratio="15" rot="MR0" display="off"/>
+<element name="IN" library="SparkFun-Connectors" package="FPC_16_0.5MM" value="" x="5.334" y="38.5445" smashed="yes" rot="MR0">
+<attribute name="PROD_ID" value="CONN-16066" x="5.334" y="38.5445" size="1.778" layer="28" ratio="15" rot="MR0" display="off"/>
 </element>
 <element name="U$12" library="output" package="#IN#0" value="" x="5.334" y="34.798" smashed="yes" rot="MR0"/>
 <element name="J1" library="SparkFun-Connectors" package="JST-2-SMD" value="" x="5.334" y="37.1475" smashed="yes">
@@ -3835,7 +3809,7 @@ These are the minimums &lt;a href=&quot;https://jlcpcb.com/capabilities/Capabili
 <attribute name="DIGIKEY_PART" value="ATTINY43U-MU-ND" x="5.334" y="26.67" size="1.778" layer="27" font="vector" ratio="15" display="off"/>
 <attribute name="MANU_PART" value="ATtiny43U-MU" x="5.334" y="26.67" size="1.778" layer="27" font="vector" ratio="15" display="off"/>
 <attribute name="NAME" x="4.858" y="27.384" size="0.6096" layer="25" ratio="20"/>
-<attribute name="PROD_ID" value="" x="5.334" y="26.67" size="1.778" layer="27" font="vector" ratio="15" display="off"/>
+<attribute name="PROD_ID" value="IC-16068" x="5.334" y="26.67" size="1.778" layer="27" font="vector" ratio="15" display="off"/>
 </element>
 <element name="C5" library="SparkFun-Capacitors" package="0402-TIGHT" value="4.7uF" x="8.8265" y="25.019" smashed="yes">
 <attribute name="NAME" x="8.8265" y="24.692" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center"/>
@@ -3881,17 +3855,17 @@ These are the minimums &lt;a href=&quot;https://jlcpcb.com/capabilities/Capabili
 <attribute name="NAME" x="2.7305" y="12.827" size="0.6096" layer="25" font="vector" ratio="20" rot="R180"/>
 <attribute name="PROD_ID" value="CAP-14993" x="2.3495" y="12.5095" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="R3" library="New-Parts_SparkFun-Resistors" package="0402-TIGHT" value="453k" x="4.7625" y="16.9545" smashed="yes" rot="R180">
+<element name="R3" library="SparkFun-Resistors" package="0402-TIGHT" value="453k" x="4.7625" y="16.9545" smashed="yes" rot="R180">
 <attribute name="NAME" x="5.207" y="17.272" size="0.6096" layer="25" font="vector" ratio="20" rot="R180"/>
-<attribute name="PROD_ID" value="" x="4.7625" y="16.9545" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="PROD_ID" value="RES-15345" x="4.7625" y="16.9545" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="R1" library="New-Parts_SparkFun-Resistors" package="0402-TIGHT" value="1M" x="2.9845" y="8.255" smashed="yes" rot="R180">
+<element name="R1" library="SparkFun-Resistors" package="0402-TIGHT" value="1M" x="2.9845" y="8.255" smashed="yes" rot="R180">
 <attribute name="NAME" x="3.429" y="8.509" size="0.6096" layer="25" font="vector" ratio="20" rot="R180"/>
-<attribute name="PROD_ID" value="" x="2.9845" y="8.255" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="PROD_ID" value="RES-15185" x="2.9845" y="8.255" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="R2" library="New-Parts_SparkFun-Resistors" package="0402-TIGHT" value="180k" x="2.9845" y="7.27075" smashed="yes">
+<element name="R2" library="SparkFun-Resistors" package="0402-TIGHT" value="180k" x="2.9845" y="7.27075" smashed="yes">
 <attribute name="NAME" x="2.54" y="6.95325" size="0.6096" layer="25" font="vector" ratio="20"/>
-<attribute name="PROD_ID" value="" x="2.9845" y="7.27075" size="1.778" layer="27" display="off"/>
+<attribute name="PROD_ID" value="RES-16069" x="2.9845" y="7.27075" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" value="180k" x="2.9845" y="7.27075" size="1.778" layer="27" display="off"/>
 </element>
 <element name="C1" library="SparkFun-Capacitors" package="0402-TIGHT" value="10uF" x="8.8265" y="13.716" smashed="yes" rot="R90">
