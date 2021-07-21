@@ -1,0 +1,861 @@
+
+C:\Users\pc235\AppData\Local\Temp\arduino_build_387262/Serial_Echo.ino.elf:     file format elf32-avr
+
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+__vectors():
+   0:	10 c0       	rjmp	.+32     	; 0x22 <__ctors_end>
+   2:	34 c0       	rjmp	.+104    	; 0x6c <__bad_interrupt>
+   4:	33 c0       	rjmp	.+102    	; 0x6c <__bad_interrupt>
+   6:	32 c0       	rjmp	.+100    	; 0x6c <__bad_interrupt>
+   8:	31 c0       	rjmp	.+98     	; 0x6c <__bad_interrupt>
+   a:	30 c0       	rjmp	.+96     	; 0x6c <__bad_interrupt>
+   c:	2f c0       	rjmp	.+94     	; 0x6c <__bad_interrupt>
+   e:	2e c0       	rjmp	.+92     	; 0x6c <__bad_interrupt>
+  10:	2d c0       	rjmp	.+90     	; 0x6c <__bad_interrupt>
+  12:	2c c0       	rjmp	.+88     	; 0x6c <__bad_interrupt>
+  14:	b0 c0       	rjmp	.+352    	; 0x176 <__vector_10>
+  16:	f9 c0       	rjmp	.+498    	; 0x20a <__vector_11>
+  18:	29 c0       	rjmp	.+82     	; 0x6c <__bad_interrupt>
+  1a:	28 c0       	rjmp	.+80     	; 0x6c <__bad_interrupt>
+  1c:	27 c0       	rjmp	.+78     	; 0x6c <__bad_interrupt>
+  1e:	26 c0       	rjmp	.+76     	; 0x6c <__bad_interrupt>
+
+00000020 <__ctors_start>:
+__trampolines_start():
+  20:	89 01       	movw	r16, r18
+
+00000022 <__ctors_end>:
+__dtors_end():
+  22:	11 24       	eor	r1, r1
+  24:	1f be       	out	0x3f, r1	; 63
+  26:	cf e5       	ldi	r28, 0x5F	; 95
+  28:	d1 e0       	ldi	r29, 0x01	; 1
+  2a:	de bf       	out	0x3e, r29	; 62
+  2c:	cd bf       	out	0x3d, r28	; 61
+
+0000002e <__do_clear_bss>:
+__do_clear_bss():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2441
+  2e:	20 e0       	ldi	r18, 0x00	; 0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2442
+  30:	a0 e7       	ldi	r26, 0x70	; 112
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2443
+  32:	b0 e0       	ldi	r27, 0x00	; 0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2444
+  34:	01 c0       	rjmp	.+2      	; 0x38 <.do_clear_bss_start>
+
+00000036 <.do_clear_bss_loop>:
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2446
+  36:	1d 92       	st	X+, r1
+
+00000038 <.do_clear_bss_start>:
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2448
+  38:	af 39       	cpi	r26, 0x9F	; 159
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2449
+  3a:	b2 07       	cpc	r27, r18
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2450
+  3c:	e1 f7       	brne	.-8      	; 0x36 <.do_clear_bss_loop>
+
+0000003e <__do_copy_data>:
+__do_copy_data():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2409
+  3e:	10 e0       	ldi	r17, 0x00	; 0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2410
+  40:	a0 e6       	ldi	r26, 0x60	; 96
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2411
+  42:	b0 e0       	ldi	r27, 0x00	; 0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2412
+  44:	ea e5       	ldi	r30, 0x5A	; 90
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2413
+  46:	f3 e0       	ldi	r31, 0x03	; 3
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2414
+  48:	02 c0       	rjmp	.+4      	; 0x4e <__SREG__+0xf>
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2417
+  4a:	05 90       	lpm	r0, Z+
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2422
+  4c:	0d 92       	st	X+, r0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2424
+  4e:	a0 37       	cpi	r26, 0x70	; 112
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2425
+  50:	b1 07       	cpc	r27, r17
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2426
+  52:	d9 f7       	brne	.-10     	; 0x4a <__SREG__+0xb>
+
+00000054 <__do_global_ctors>:
+__do_global_ctors():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2466
+  54:	10 e0       	ldi	r17, 0x00	; 0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2467
+  56:	c1 e1       	ldi	r28, 0x11	; 17
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2468
+  58:	d0 e0       	ldi	r29, 0x00	; 0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2472
+  5a:	03 c0       	rjmp	.+6      	; 0x62 <__do_global_ctors+0xe>
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2474
+  5c:	21 97       	sbiw	r28, 0x01	; 1
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2480
+  5e:	fe 01       	movw	r30, r28
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2481
+  60:	74 d1       	rcall	.+744    	; 0x34a <__tablejump2__>
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2483
+  62:	c0 31       	cpi	r28, 0x10	; 16
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2484
+  64:	d1 07       	cpc	r29, r17
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2489
+  66:	d1 f7       	brne	.-12     	; 0x5c <__do_global_ctors+0x8>
+  68:	20 d1       	rcall	.+576    	; 0x2aa <main>
+  6a:	75 c1       	rjmp	.+746    	; 0x356 <_exit>
+
+0000006c <__bad_interrupt>:
+__vector_1():
+  6c:	c9 cf       	rjmp	.-110    	; 0x0 <__vectors>
+
+0000006e <Print::write(unsigned char const*, unsigned int)>:
+write():
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:34
+
+// Public Methods //////////////////////////////////////////////////////////////
+
+/* default implementation: may be overridden */
+size_t Print::write(const uint8_t *buffer, size_t size)
+{
+  6e:	cf 92       	push	r12
+  70:	df 92       	push	r13
+  72:	ef 92       	push	r14
+  74:	ff 92       	push	r15
+  76:	0f 93       	push	r16
+  78:	1f 93       	push	r17
+  7a:	cf 93       	push	r28
+  7c:	df 93       	push	r29
+  7e:	6c 01       	movw	r12, r24
+  80:	eb 01       	movw	r28, r22
+  82:	7b 01       	movw	r14, r22
+  84:	e4 0e       	add	r14, r20
+  86:	f5 1e       	adc	r15, r21
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:35
+  size_t n = 0;
+  88:	10 e0       	ldi	r17, 0x00	; 0
+  8a:	00 e0       	ldi	r16, 0x00	; 0
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:36
+  while (size--) {
+  8c:	ce 15       	cp	r28, r14
+  8e:	df 05       	cpc	r29, r15
+  90:	61 f0       	breq	.+24     	; 0xaa <Print::write(unsigned char const*, unsigned int)+0x3c>
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:37
+    n += write(*buffer++);
+  92:	69 91       	ld	r22, Y+
+  94:	d6 01       	movw	r26, r12
+  96:	ed 91       	ld	r30, X+
+  98:	fc 91       	ld	r31, X
+  9a:	01 90       	ld	r0, Z+
+  9c:	f0 81       	ld	r31, Z
+  9e:	e0 2d       	mov	r30, r0
+  a0:	c6 01       	movw	r24, r12
+  a2:	09 95       	icall
+  a4:	08 0f       	add	r16, r24
+  a6:	19 1f       	adc	r17, r25
+  a8:	f1 cf       	rjmp	.-30     	; 0x8c <Print::write(unsigned char const*, unsigned int)+0x1e>
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:40
+  }
+  return n;
+}
+  aa:	c8 01       	movw	r24, r16
+  ac:	df 91       	pop	r29
+  ae:	cf 91       	pop	r28
+  b0:	1f 91       	pop	r17
+  b2:	0f 91       	pop	r16
+  b4:	ff 90       	pop	r15
+  b6:	ef 90       	pop	r14
+  b8:	df 90       	pop	r13
+  ba:	cf 90       	pop	r12
+  bc:	08 95       	ret
+
+000000be <TinySoftwareSerial::flush()>:
+flush():
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:242
+}
+
+void TinySoftwareSerial::flush()
+{
+
+}
+  be:	08 95       	ret
+
+000000c0 <TinySoftwareSerial::write(unsigned char)>:
+write():
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:202
+  }
+}
+
+size_t TinySoftwareSerial::write(uint8_t ch)
+{
+  uint8_t oldSREG = SREG;
+  c0:	2f b7       	in	r18, 0x3f	; 63
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:203
+  cli(); //Prevent interrupts from breaking the transmission. Note: TinySoftwareSerial is half duplex.
+  c2:	f8 94       	cli
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:234
+      [uartMask] "r" (_txmask),
+      [uartUnmask] "r" (_txunmask)
+    : "r23",
+      "r24",
+      "r25"
+  );
+  c4:	fc 01       	movw	r30, r24
+  c6:	45 85       	ldd	r20, Z+13	; 0x0d
+  c8:	56 85       	ldd	r21, Z+14	; 0x0e
+  ca:	3a e0       	ldi	r19, 0x0A	; 10
+  cc:	60 95       	com	r22
+  ce:	08 94       	sec
+  d0:	20 f4       	brcc	.+8      	; 0xda <TinySoftwareSerial::write(unsigned char)+0x1a>
+  d2:	7b b3       	in	r23, 0x1b	; 27
+  d4:	75 23       	and	r23, r21
+  d6:	7b bb       	out	0x1b, r23	; 27
+  d8:	04 c0       	rjmp	.+8      	; 0xe2 <TinySoftwareSerial::write(unsigned char)+0x22>
+  da:	7b b3       	in	r23, 0x1b	; 27
+  dc:	74 2b       	or	r23, r20
+  de:	7b bb       	out	0x1b, r23	; 27
+  e0:	00 00       	nop
+  e2:	dd d0       	rcall	.+442    	; 0x29e <uartDelay>
+  e4:	dc d0       	rcall	.+440    	; 0x29e <uartDelay>
+  e6:	db d0       	rcall	.+438    	; 0x29e <uartDelay>
+  e8:	da d0       	rcall	.+436    	; 0x29e <uartDelay>
+  ea:	66 95       	lsr	r22
+  ec:	3a 95       	dec	r19
+  ee:	81 f7       	brne	.-32     	; 0xd0 <TinySoftwareSerial::write(unsigned char)+0x10>
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:235
+  SREG = oldSREG;
+  f0:	2f bf       	out	0x3f, r18	; 63
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:237
+  return 1;
+}
+  f2:	81 e0       	ldi	r24, 0x01	; 1
+  f4:	90 e0       	ldi	r25, 0x00	; 0
+  f6:	08 95       	ret
+
+000000f8 <TinySoftwareSerial::read()>:
+read():
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:191
+}
+
+int TinySoftwareSerial::read(void)
+{
+  // if the head isn't ahead of the tail, we don't have any characters
+  if (_rx_buffer->head == _rx_buffer->tail) {
+  f8:	dc 01       	movw	r26, r24
+  fa:	1f 96       	adiw	r26, 0x0f	; 15
+  fc:	ed 91       	ld	r30, X+
+  fe:	fc 91       	ld	r31, X
+ 100:	20 89       	ldd	r18, Z+16	; 0x10
+ 102:	31 89       	ldd	r19, Z+17	; 0x11
+ 104:	82 89       	ldd	r24, Z+18	; 0x12
+ 106:	93 89       	ldd	r25, Z+19	; 0x13
+ 108:	28 17       	cp	r18, r24
+ 10a:	39 07       	cpc	r19, r25
+ 10c:	79 f0       	breq	.+30     	; 0x12c <TinySoftwareSerial::read()+0x34>
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:194
+    return -1;
+  } else {
+    unsigned char c = _rx_buffer->buffer[_rx_buffer->tail];
+ 10e:	a2 89       	ldd	r26, Z+18	; 0x12
+ 110:	b3 89       	ldd	r27, Z+19	; 0x13
+ 112:	ae 0f       	add	r26, r30
+ 114:	bf 1f       	adc	r27, r31
+ 116:	8c 91       	ld	r24, X
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:195
+    _rx_buffer->tail = (unsigned int)(_rx_buffer->tail + 1) % SERIAL_BUFFER_SIZE;
+ 118:	22 89       	ldd	r18, Z+18	; 0x12
+ 11a:	33 89       	ldd	r19, Z+19	; 0x13
+ 11c:	2f 5f       	subi	r18, 0xFF	; 255
+ 11e:	3f 4f       	sbci	r19, 0xFF	; 255
+ 120:	2f 70       	andi	r18, 0x0F	; 15
+ 122:	33 27       	eor	r19, r19
+ 124:	33 8b       	std	Z+19, r19	; 0x13
+ 126:	22 8b       	std	Z+18, r18	; 0x12
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:196
+    return c;
+ 128:	90 e0       	ldi	r25, 0x00	; 0
+ 12a:	08 95       	ret
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:192
+
+int TinySoftwareSerial::read(void)
+{
+  // if the head isn't ahead of the tail, we don't have any characters
+  if (_rx_buffer->head == _rx_buffer->tail) {
+    return -1;
+ 12c:	8f ef       	ldi	r24, 0xFF	; 255
+ 12e:	9f ef       	ldi	r25, 0xFF	; 255
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:198
+  } else {
+    unsigned char c = _rx_buffer->buffer[_rx_buffer->tail];
+    _rx_buffer->tail = (unsigned int)(_rx_buffer->tail + 1) % SERIAL_BUFFER_SIZE;
+    return c;
+  }
+}
+ 130:	08 95       	ret
+
+00000132 <TinySoftwareSerial::peek()>:
+peek():
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:181
+  }
+}
+
+int TinySoftwareSerial::peek(void)
+{
+  if (_rx_buffer->head == _rx_buffer->tail) {
+ 132:	dc 01       	movw	r26, r24
+ 134:	1f 96       	adiw	r26, 0x0f	; 15
+ 136:	ed 91       	ld	r30, X+
+ 138:	fc 91       	ld	r31, X
+ 13a:	20 89       	ldd	r18, Z+16	; 0x10
+ 13c:	31 89       	ldd	r19, Z+17	; 0x11
+ 13e:	82 89       	ldd	r24, Z+18	; 0x12
+ 140:	93 89       	ldd	r25, Z+19	; 0x13
+ 142:	28 17       	cp	r18, r24
+ 144:	39 07       	cpc	r19, r25
+ 146:	39 f0       	breq	.+14     	; 0x156 <TinySoftwareSerial::peek()+0x24>
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:184
+    return -1;
+  } else {
+    return _rx_buffer->buffer[_rx_buffer->tail];
+ 148:	82 89       	ldd	r24, Z+18	; 0x12
+ 14a:	93 89       	ldd	r25, Z+19	; 0x13
+ 14c:	e8 0f       	add	r30, r24
+ 14e:	f9 1f       	adc	r31, r25
+ 150:	80 81       	ld	r24, Z
+ 152:	90 e0       	ldi	r25, 0x00	; 0
+ 154:	08 95       	ret
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:182
+}
+
+int TinySoftwareSerial::peek(void)
+{
+  if (_rx_buffer->head == _rx_buffer->tail) {
+    return -1;
+ 156:	8f ef       	ldi	r24, 0xFF	; 255
+ 158:	9f ef       	ldi	r25, 0xFF	; 255
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:186
+  } else {
+    return _rx_buffer->buffer[_rx_buffer->tail];
+  }
+}
+ 15a:	08 95       	ret
+
+0000015c <TinySoftwareSerial::available()>:
+available():
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:162
+  _rx_buffer->head = _rx_buffer->tail;
+}
+
+int TinySoftwareSerial::available(void)
+{
+  return (unsigned int)(SERIAL_BUFFER_SIZE + _rx_buffer->head - _rx_buffer->tail) % SERIAL_BUFFER_SIZE;
+ 15c:	dc 01       	movw	r26, r24
+ 15e:	1f 96       	adiw	r26, 0x0f	; 15
+ 160:	ed 91       	ld	r30, X+
+ 162:	fc 91       	ld	r31, X
+ 164:	80 89       	ldd	r24, Z+16	; 0x10
+ 166:	91 89       	ldd	r25, Z+17	; 0x11
+ 168:	22 89       	ldd	r18, Z+18	; 0x12
+ 16a:	33 89       	ldd	r19, Z+19	; 0x13
+ 16c:	82 1b       	sub	r24, r18
+ 16e:	93 0b       	sbc	r25, r19
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:163
+}
+ 170:	8f 70       	andi	r24, 0x0F	; 15
+ 172:	99 27       	eor	r25, r25
+ 174:	08 95       	ret
+
+00000176 <__vector_10>:
+__vector_10():
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:308
+      #error "cannot find Millis() timer overflow vector"
+    #endif
+  #else
+    #error "Millis() timer not defined!"
+  #endif
+  {
+ 176:	1f 92       	push	r1
+ 178:	0f 92       	push	r0
+ 17a:	0f b6       	in	r0, 0x3f	; 63
+ 17c:	0f 92       	push	r0
+ 17e:	11 24       	eor	r1, r1
+ 180:	2f 93       	push	r18
+ 182:	3f 93       	push	r19
+ 184:	8f 93       	push	r24
+ 186:	9f 93       	push	r25
+ 188:	af 93       	push	r26
+ 18a:	bf 93       	push	r27
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:311
+    // copy these to local variables so they can be stored in registers
+    // (volatile variables must be read from memory on every access)
+    unsigned long m = millis_timer_millis;
+ 18c:	80 91 9b 00 	lds	r24, 0x009B	; 0x80009b <millis_timer_millis>
+ 190:	90 91 9c 00 	lds	r25, 0x009C	; 0x80009c <millis_timer_millis+0x1>
+ 194:	a0 91 9d 00 	lds	r26, 0x009D	; 0x80009d <millis_timer_millis+0x2>
+ 198:	b0 91 9e 00 	lds	r27, 0x009E	; 0x80009e <millis_timer_millis+0x3>
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:312
+    unsigned char f = millis_timer_fract;
+ 19c:	30 91 9a 00 	lds	r19, 0x009A	; 0x80009a <millis_timer_fract>
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:319
+    static unsigned char correct_exact = 0;     // rollover intended
+    if (++correct_exact < CORRECT_EXACT_MANY) {
+      ++f;
+    }
+#endif
+    f += FRACT_INC;
+ 1a0:	26 e0       	ldi	r18, 0x06	; 6
+ 1a2:	23 0f       	add	r18, r19
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:321
+
+    if (f >= FRACT_MAX)
+ 1a4:	2d 37       	cpi	r18, 0x7D	; 125
+ 1a6:	68 f1       	brcs	.+90     	; 0x202 <__vector_10+0x8c>
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:323
+    {
+      f -= FRACT_MAX;
+ 1a8:	29 e8       	ldi	r18, 0x89	; 137
+ 1aa:	23 0f       	add	r18, r19
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:324
+      m += MILLIS_INC + 1;
+ 1ac:	03 96       	adiw	r24, 0x03	; 3
+ 1ae:	a1 1d       	adc	r26, r1
+ 1b0:	b1 1d       	adc	r27, r1
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:331
+    else
+    {
+      m += MILLIS_INC;
+    }
+
+    millis_timer_fract = f;
+ 1b2:	20 93 9a 00 	sts	0x009A, r18	; 0x80009a <millis_timer_fract>
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:332
+    millis_timer_millis = m;
+ 1b6:	80 93 9b 00 	sts	0x009B, r24	; 0x80009b <millis_timer_millis>
+ 1ba:	90 93 9c 00 	sts	0x009C, r25	; 0x80009c <millis_timer_millis+0x1>
+ 1be:	a0 93 9d 00 	sts	0x009D, r26	; 0x80009d <millis_timer_millis+0x2>
+ 1c2:	b0 93 9e 00 	sts	0x009E, r27	; 0x80009e <millis_timer_millis+0x3>
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:334
+#ifndef CORRECT_EXACT_MICROS
+    millis_timer_overflow_count++;
+ 1c6:	80 91 96 00 	lds	r24, 0x0096	; 0x800096 <millis_timer_overflow_count>
+ 1ca:	90 91 97 00 	lds	r25, 0x0097	; 0x800097 <millis_timer_overflow_count+0x1>
+ 1ce:	a0 91 98 00 	lds	r26, 0x0098	; 0x800098 <millis_timer_overflow_count+0x2>
+ 1d2:	b0 91 99 00 	lds	r27, 0x0099	; 0x800099 <millis_timer_overflow_count+0x3>
+ 1d6:	01 96       	adiw	r24, 0x01	; 1
+ 1d8:	a1 1d       	adc	r26, r1
+ 1da:	b1 1d       	adc	r27, r1
+ 1dc:	80 93 96 00 	sts	0x0096, r24	; 0x800096 <millis_timer_overflow_count>
+ 1e0:	90 93 97 00 	sts	0x0097, r25	; 0x800097 <millis_timer_overflow_count+0x1>
+ 1e4:	a0 93 98 00 	sts	0x0098, r26	; 0x800098 <millis_timer_overflow_count+0x2>
+ 1e8:	b0 93 99 00 	sts	0x0099, r27	; 0x800099 <millis_timer_overflow_count+0x3>
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:336
+#endif
+  }
+ 1ec:	bf 91       	pop	r27
+ 1ee:	af 91       	pop	r26
+ 1f0:	9f 91       	pop	r25
+ 1f2:	8f 91       	pop	r24
+ 1f4:	3f 91       	pop	r19
+ 1f6:	2f 91       	pop	r18
+ 1f8:	0f 90       	pop	r0
+ 1fa:	0f be       	out	0x3f, r0	; 63
+ 1fc:	0f 90       	pop	r0
+ 1fe:	1f 90       	pop	r1
+ 200:	18 95       	reti
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:328
+      f -= FRACT_MAX;
+      m += MILLIS_INC + 1;
+    }
+    else
+    {
+      m += MILLIS_INC;
+ 202:	02 96       	adiw	r24, 0x02	; 2
+ 204:	a1 1d       	adc	r26, r1
+ 206:	b1 1d       	adc	r27, r1
+ 208:	d4 cf       	rjmp	.-88     	; 0x1b2 <__vector_10+0x3c>
+
+0000020a <__vector_11>:
+__vector_11():
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:90
+//rename the vector so we can use it.
+  #define ANALOG_COMP_vect ANA_COMP_vect
+#elif !defined (ANALOG_COMP_vect)
+  #error Tiny Software Serial cannot find the Analog comparator interrupt vector!
+#endif
+ISR(ANALOG_COMP_vect){
+ 20a:	1f 92       	push	r1
+ 20c:	0f 92       	push	r0
+ 20e:	0f b6       	in	r0, 0x3f	; 63
+ 210:	0f 92       	push	r0
+ 212:	11 24       	eor	r1, r1
+ 214:	2f 93       	push	r18
+ 216:	3f 93       	push	r19
+ 218:	4f 93       	push	r20
+ 21a:	5f 93       	push	r21
+ 21c:	7f 93       	push	r23
+ 21e:	8f 93       	push	r24
+ 220:	9f 93       	push	r25
+ 222:	af 93       	push	r26
+ 224:	bf 93       	push	r27
+ 226:	ef 93       	push	r30
+ 228:	ff 93       	push	r31
+getch():
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:70
+      [mask] "r" (Serial._rxmask)
+    :
+      "r23",
+      "r24",
+      "r25"
+    );
+ 22a:	40 91 90 00 	lds	r20, 0x0090	; 0x800090 <Serial+0xc>
+ 22e:	20 e0       	ldi	r18, 0x00	; 0
+ 230:	38 e0       	ldi	r19, 0x08	; 8
+ 232:	35 d0       	rcall	.+106    	; 0x29e <uartDelay>
+ 234:	34 d0       	rcall	.+104    	; 0x29e <uartDelay>
+ 236:	33 d0       	rcall	.+102    	; 0x29e <uartDelay>
+ 238:	32 d0       	rcall	.+100    	; 0x29e <uartDelay>
+ 23a:	31 d0       	rcall	.+98     	; 0x29e <uartDelay>
+ 23c:	88 94       	clc
+ 23e:	79 b3       	in	r23, 0x19	; 25
+ 240:	74 23       	and	r23, r20
+ 242:	09 f0       	breq	.+2      	; 0x246 <__vector_11+0x3c>
+ 244:	08 94       	sec
+ 246:	27 95       	ror	r18
+ 248:	3a 95       	dec	r19
+ 24a:	09 f0       	breq	.+2      	; 0x24e <__vector_11+0x44>
+ 24c:	f3 cf       	rjmp	.-26     	; 0x234 <__vector_11+0x2a>
+ 24e:	27 d0       	rcall	.+78     	; 0x29e <uartDelay>
+ 250:	26 d0       	rcall	.+76     	; 0x29e <uartDelay>
+__vector_11():
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:92
+#elif !defined (ANALOG_COMP_vect)
+  #error Tiny Software Serial cannot find the Analog comparator interrupt vector!
+#endif
+ISR(ANALOG_COMP_vect){
+  char ch = getch(); //read in the character softwarily - I know its not a word, but it sounded cool, so you know what: #define softwarily 1
+  store_char(ch, Serial._rx_buffer);
+ 252:	e0 91 93 00 	lds	r30, 0x0093	; 0x800093 <Serial+0xf>
+ 256:	f0 91 94 00 	lds	r31, 0x0094	; 0x800094 <Serial+0x10>
+store_char():
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:167
+  return (unsigned int)(SERIAL_BUFFER_SIZE + _rx_buffer->head - _rx_buffer->tail) % SERIAL_BUFFER_SIZE;
+}
+
+void store_char(unsigned char c, soft_ring_buffer *buffer)
+{
+  int i = (unsigned int)(buffer->head + 1) % SERIAL_BUFFER_SIZE;
+ 25a:	80 89       	ldd	r24, Z+16	; 0x10
+ 25c:	91 89       	ldd	r25, Z+17	; 0x11
+ 25e:	01 96       	adiw	r24, 0x01	; 1
+ 260:	8f 70       	andi	r24, 0x0F	; 15
+ 262:	99 27       	eor	r25, r25
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:173
+
+  // if we should be storing the received character into the location
+  // just before the tail (meaning that the head would advance to the
+  // current location of the tail), we're about to overflow the buffer
+  // and so we don't write the character or advance the head.
+  if (i != buffer->tail) {
+ 264:	42 89       	ldd	r20, Z+18	; 0x12
+ 266:	53 89       	ldd	r21, Z+19	; 0x13
+ 268:	84 17       	cp	r24, r20
+ 26a:	95 07       	cpc	r25, r21
+ 26c:	39 f0       	breq	.+14     	; 0x27c <__vector_11+0x72>
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:174
+    buffer->buffer[buffer->head] = c;
+ 26e:	a0 89       	ldd	r26, Z+16	; 0x10
+ 270:	b1 89       	ldd	r27, Z+17	; 0x11
+ 272:	ae 0f       	add	r26, r30
+ 274:	bf 1f       	adc	r27, r31
+ 276:	2c 93       	st	X, r18
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:175
+    buffer->head = i;
+ 278:	91 8b       	std	Z+17, r25	; 0x11
+ 27a:	80 8b       	std	Z+16, r24	; 0x10
+__vector_11():
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:93
+  #error Tiny Software Serial cannot find the Analog comparator interrupt vector!
+#endif
+ISR(ANALOG_COMP_vect){
+  char ch = getch(); //read in the character softwarily - I know its not a word, but it sounded cool, so you know what: #define softwarily 1
+  store_char(ch, Serial._rx_buffer);
+  sbi(ACSR,ACI); //clear the flag.
+ 27c:	44 9a       	sbi	0x08, 4	; 8
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:94
+}
+ 27e:	ff 91       	pop	r31
+ 280:	ef 91       	pop	r30
+ 282:	bf 91       	pop	r27
+ 284:	af 91       	pop	r26
+ 286:	9f 91       	pop	r25
+ 288:	8f 91       	pop	r24
+ 28a:	7f 91       	pop	r23
+ 28c:	5f 91       	pop	r21
+ 28e:	4f 91       	pop	r20
+ 290:	3f 91       	pop	r19
+ 292:	2f 91       	pop	r18
+ 294:	0f 90       	pop	r0
+ 296:	0f be       	out	0x3f, r0	; 63
+ 298:	0f 90       	pop	r0
+ 29a:	1f 90       	pop	r1
+ 29c:	18 95       	reti
+
+0000029e <uartDelay>:
+uartDelay():
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:81
+    "mov r25,%[count]\n"
+    "1:dec r25\n"
+      "brne 1b\n"
+      "ret\n"
+    ::[count] "r" ((uint8_t)Serial._delayCount)
+  );
+ 29e:	80 91 95 00 	lds	r24, 0x0095	; 0x800095 <Serial+0x11>
+ 2a2:	98 2f       	mov	r25, r24
+ 2a4:	9a 95       	dec	r25
+ 2a6:	f1 f7       	brne	.-4      	; 0x2a4 <uartDelay+0x6>
+ 2a8:	08 95       	ret
+
+000002aa <main>:
+init():
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:1138
+*/
+
+  // Use the Millis Timer for fast PWM (unless it doesn't have an output).
+  #if (TIMER_TO_USE_FOR_MILLIS == 0)
+    #if defined(WGM01) // if Timer0 has PWM
+      TCCR0A = (1<<WGM01) | (1<<WGM00);
+ 2aa:	83 e0       	ldi	r24, 0x03	; 3
+ 2ac:	80 bf       	out	0x30, r24	; 48
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:1141
+    #endif
+    #if defined(TCCR0B) //The x61 has a wacky Timer0!
+      TCCR0B = (MillisTimer_Prescale_Index << CS00);
+ 2ae:	83 bf       	out	0x33, r24	; 51
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:1162
+    TCCR1A = 1<<WGM10;
+    TCCR1B = (1<<WGM12) | (MillisTimer_Prescale_Index << CS10);
+  #endif
+
+  // this needs to be called before setup() or some functions won't work there
+  sei();
+ 2b0:	78 94       	sei
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:1169
+  #ifndef DISABLEMILLIS
+    // Enable the overflow interrupt (this is the basic system tic-toc for millis)
+    #if defined(TIMSK) && defined(TOIE0) && (TIMER_TO_USE_FOR_MILLIS == 0)
+      sbi(TIMSK, TOIE0);
+    #elif defined(TIMSK0) && defined(TOIE0) && (TIMER_TO_USE_FOR_MILLIS == 0)
+      sbi(TIMSK0, TOIE0);
+ 2b2:	99 b7       	in	r25, 0x39	; 57
+ 2b4:	91 60       	ori	r25, 0x01	; 1
+ 2b6:	99 bf       	out	0x39, r25	; 57
+initToneTimerInternal():
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:954
+    #if (TIMER_TO_USE_FOR_TONE == 0)
+      // Use the Tone Timer for phase correct PWM
+      TCCR0A = (1<<WGM00) | (0<<WGM01);
+      TCCR0B = (ToneTimer_Prescale_Index << CS00) | (0<<WGM02);
+    #elif defined(__AVR_ATtiny43__)
+      TCCR1A = 3; //WGM 10=1, WGM11=1
+ 2b8:	8f bd       	out	0x2f, r24	; 47
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:955
+      TCCR1B = 3; //prescaler of 64
+ 2ba:	8e bd       	out	0x2e, r24	; 46
+init():
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:1214
+  #if defined( INITIALIZE_ANALOG_TO_DIGITAL_CONVERTER ) && INITIALIZE_ANALOG_TO_DIGITAL_CONVERTER
+    #if defined(ADCSRA)
+      // set a2d prescale factor
+      // ADCSRA = (ADCSRA & ~((1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0))) | (ADC_ARDUINO_PRESCALER << ADPS0) | (1<<ADEN);
+      // dude, this is being called on startup. We know that ADCSRA is 0! Why add a RMW cycle?!
+      ADCSRA = (ADC_ARDUINO_PRESCALER << ADPS0) | (1<<ADEN);
+ 2bc:	86 e8       	ldi	r24, 0x86	; 134
+ 2be:	86 b9       	out	0x06, r24	; 6
+begin():
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:125
+{
+  long tempDelay = (((F_CPU/baud)-39)/12);
+  if ((tempDelay > 255) || (tempDelay <= 0)){
+  end(); //Cannot start as it would screw up uartDelay().
+  }
+  _delayCount = (uint8_t)tempDelay;
+ 2c0:	82 e0       	ldi	r24, 0x02	; 2
+ 2c2:	80 93 95 00 	sts	0x0095, r24	; 0x800095 <Serial+0x11>
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:126
+  cbi(ACSR,ACIE);  //turn off the comparator interrupt to allow change of ACD
+ 2c6:	43 98       	cbi	0x08, 3	; 8
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:128
+#ifdef ACBG
+  sbi(ACSR,ACBG); //enable the internal bandgap reference - used instead of AIN0 to allow it to be used for TX.
+ 2c8:	46 9a       	sbi	0x08, 6	; 8
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:130
+#endif
+  cbi(ACSR,ACD);  //turn on the comparator for RX
+ 2ca:	47 98       	cbi	0x08, 7	; 8
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:134
+#ifdef ACIC
+  cbi(ACSR,ACIC);  //prevent the comparator from affecting timer1 - just to be safe.
+#endif
+  sbi(ACSR,ACIS1);  //interrupt on rising edge (this means RX has gone from Mark state to Start bit state).
+ 2cc:	41 9a       	sbi	0x08, 1	; 8
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:135
+  sbi(ACSR,ACIS0);
+ 2ce:	40 9a       	sbi	0x08, 0	; 8
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:137
+  //Setup the pins in case someone messed with them.
+  ANALOG_COMP_DDR &= ~_rxmask; //set RX to an input
+ 2d0:	8a b3       	in	r24, 0x1a	; 26
+ 2d2:	20 91 90 00 	lds	r18, 0x0090	; 0x800090 <Serial+0xc>
+ 2d6:	92 2f       	mov	r25, r18
+ 2d8:	90 95       	com	r25
+ 2da:	98 23       	and	r25, r24
+ 2dc:	9a bb       	out	0x1a, r25	; 26
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:138
+  ANALOG_COMP_PORT |= _rxmask; //enable pullup on RX pin - to prevent accidental interrupt triggers.
+ 2de:	8b b3       	in	r24, 0x1b	; 27
+ 2e0:	82 2b       	or	r24, r18
+ 2e2:	8b bb       	out	0x1b, r24	; 27
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:139
+  ANALOG_COMP_DDR |= _txmask; //set TX to an output.
+ 2e4:	9a b3       	in	r25, 0x1a	; 26
+ 2e6:	20 91 91 00 	lds	r18, 0x0091	; 0x800091 <Serial+0xd>
+ 2ea:	92 2b       	or	r25, r18
+ 2ec:	9a bb       	out	0x1a, r25	; 26
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:140
+  ANALOG_COMP_PORT |= _txmask; //set TX pin high
+ 2ee:	8b b3       	in	r24, 0x1b	; 27
+ 2f0:	82 2b       	or	r24, r18
+ 2f2:	8b bb       	out	0x1b, r24	; 27
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:141
+  sbi(ACSR,ACI); //clear the flag.
+ 2f4:	44 9a       	sbi	0x08, 4	; 8
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:142
+  sbi(ACSR,ACIE);  //turn on the comparator interrupt to allow us to use it for RX
+ 2f6:	43 9a       	sbi	0x08, 3	; 8
+loop():
+C:\Users\pc235\Documents\Arduino\smol_Power_AAA_examples\Serial_Echo/Serial_Echo.ino:17
+void setup() {
+  Serial.begin(115200);
+}
+
+void loop() {
+  while (Serial.available())
+ 2f8:	84 e8       	ldi	r24, 0x84	; 132
+ 2fa:	90 e0       	ldi	r25, 0x00	; 0
+ 2fc:	2f df       	rcall	.-418    	; 0x15c <TinySoftwareSerial::available()>
+ 2fe:	89 2b       	or	r24, r25
+ 300:	d9 f3       	breq	.-10     	; 0x2f8 <main+0x4e>
+C:\Users\pc235\Documents\Arduino\smol_Power_AAA_examples\Serial_Echo/Serial_Echo.ino:18
+    Serial.write(Serial.read());
+ 302:	84 e8       	ldi	r24, 0x84	; 132
+ 304:	90 e0       	ldi	r25, 0x00	; 0
+ 306:	f8 de       	rcall	.-528    	; 0xf8 <TinySoftwareSerial::read()>
+ 308:	68 2f       	mov	r22, r24
+ 30a:	84 e8       	ldi	r24, 0x84	; 132
+ 30c:	90 e0       	ldi	r25, 0x00	; 0
+ 30e:	d8 de       	rcall	.-592    	; 0xc0 <TinySoftwareSerial::write(unsigned char)>
+ 310:	f3 cf       	rjmp	.-26     	; 0x2f8 <main+0x4e>
+
+00000312 <_GLOBAL__sub_I_getch>:
+_ZN5PrintC2Ev():
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.h:75
+    size_t printNumber(unsigned long, uint8_t);
+    size_t printFloat(double, uint8_t);
+  protected:
+    void setWriteError(int err = 1) { write_error = err; }
+  public:
+    Print() : write_error(0) {}
+ 312:	e4 e8       	ldi	r30, 0x84	; 132
+ 314:	f0 e0       	ldi	r31, 0x00	; 0
+ 316:	13 82       	std	Z+3, r1	; 0x03
+ 318:	12 82       	std	Z+2, r1	; 0x02
+_ZN6StreamC2Ev():
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Stream.h:64
+    virtual int available() = 0;
+    virtual int read() = 0;
+    virtual int peek() = 0;
+    virtual void flush() = 0;
+
+    Stream() {_timeout=1000;}
+ 31a:	88 ee       	ldi	r24, 0xE8	; 232
+ 31c:	93 e0       	ldi	r25, 0x03	; 3
+ 31e:	a0 e0       	ldi	r26, 0x00	; 0
+ 320:	b0 e0       	ldi	r27, 0x00	; 0
+ 322:	84 83       	std	Z+4, r24	; 0x04
+ 324:	95 83       	std	Z+5, r25	; 0x05
+ 326:	a6 83       	std	Z+6, r26	; 0x06
+ 328:	b7 83       	std	Z+7, r27	; 0x07
+__base_ctor ():
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:101
+}
+soft_ring_buffer rx_buffer  =  { { 0 }, 0, 0 };
+
+// Constructor ////////////////////////////////////////////////////////////////
+
+TinySoftwareSerial::TinySoftwareSerial(soft_ring_buffer *rx_buffer, uint8_t txBit, uint8_t rxBit)
+ 32a:	84 e6       	ldi	r24, 0x64	; 100
+ 32c:	90 e0       	ldi	r25, 0x00	; 0
+ 32e:	91 83       	std	Z+1, r25	; 0x01
+ 330:	80 83       	st	Z, r24
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:103
+{
+  _rx_buffer = rx_buffer;
+ 332:	80 e7       	ldi	r24, 0x70	; 112
+ 334:	90 e0       	ldi	r25, 0x00	; 0
+ 336:	90 8b       	std	Z+16, r25	; 0x10
+ 338:	87 87       	std	Z+15, r24	; 0x0f
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:105
+
+  _rxmask = _BV(rxBit);
+ 33a:	80 e2       	ldi	r24, 0x20	; 32
+ 33c:	84 87       	std	Z+12, r24	; 0x0c
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:106
+  _txmask = _BV(txBit);
+ 33e:	80 e1       	ldi	r24, 0x10	; 16
+ 340:	85 87       	std	Z+13, r24	; 0x0d
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:107
+  _txunmask = ~_txmask;
+ 342:	8f ee       	ldi	r24, 0xEF	; 239
+ 344:	86 87       	std	Z+14, r24	; 0x0e
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:109
+
+  _delayCount = 0;
+ 346:	11 8a       	std	Z+17, r1	; 0x11
+_GLOBAL__sub_I_getch():
+C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:269
+
+#ifndef ANALOG_COMP_AIN1_BIT
+#error Please define ANALOG_COMP_AIN1_BIT in the pins_arduino.h file!
+#endif
+
+TinySoftwareSerial Serial(&rx_buffer, ANALOG_COMP_AIN0_BIT, ANALOG_COMP_AIN1_BIT);
+ 348:	08 95       	ret
+
+0000034a <__tablejump2__>:
+__tablejump2__():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2296
+ 34a:	ee 0f       	add	r30, r30
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2297
+ 34c:	ff 1f       	adc	r31, r31
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2328
+ 34e:	05 90       	lpm	r0, Z+
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2329
+ 350:	f4 91       	lpm	r31, Z
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2330
+ 352:	e0 2d       	mov	r30, r0
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2331
+ 354:	09 94       	ijmp
+
+00000356 <_exit>:
+exit():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2278
+ 356:	f8 94       	cli
+
+00000358 <__stop_program>:
+__stop_program():
+/home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2280
+ 358:	ff cf       	rjmp	.-2      	; 0x358 <__stop_program>
