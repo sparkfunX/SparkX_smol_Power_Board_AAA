@@ -16,13 +16,12 @@
 
   Set Board to ATtiny43 (No bootloader)
   Set Clock to 4MHz(internal)
-  Set BOD Level to BOD Enabled 1.8V
-  Set millis()/micros():"Enabled" to Enabled
+  Set millis()/micros() to Disabled
   Set Save EEPROM to EEPROM Not Retained
   Set BOD Level to BOD Disabled (this helps reduce power consumption in low power mode)
 
   Fuse byte settings:
-  Low:  0b11100010 = 0xE2 : no clock divider, no clock out, slowly rising power, 8MHz internal oscillator
+  Low:  0b01100010 = 0x62 : divide clock by 8, no clock out, slowly rising power, 8MHz internal oscillator
   High: 0b11011111 = 0xDF : reset not disabled, no debug wire, SPI programming enabled, WDT not always on, EEPROM not preserved, BOD disabled
   Ext:  0xFF : no self programming
 
@@ -53,38 +52,12 @@
 #include <Wire.h>
 
 #include <avr/sleep.h> //Needed for sleep_mode
-//#include <avr/power.h> //Needed for powering down perihperals such as the ADC/TWI and Timers
+#include <avr/power.h> //Needed for powering down perihperals such as the ADC
 
-//Define the firmware version
-#define POWER_BOARD_AAA_FIRMWARE_VERSION    0x10 // v1.0
+#include <EEPROM.h>
 
-//Define the ATtiny43's default I2C address
-const uint8_t DEFAULT_I2C_ADDRESS = 0x50;
-
-//Define the WDT prescaler settings
-#define SFE_AAA_WDT_PRESCALE_2K             0x00 // 2K cycles = 16ms timeout
-#define SFE_AAA_WDT_PRESCALE_4K             0x01 // 4K cycles = 32ms timeout
-#define SFE_AAA_WDT_PRESCALE_8K             0x02 // 8K cycles = 64ms timeout
-#define SFE_AAA_WDT_PRESCALE_16K            0x03 // 16K cycles = 0.125s timeout
-#define SFE_AAA_WDT_PRESCALE_32K            0x04 // 32K cycles = 0.25s timeout
-#define SFE_AAA_WDT_PRESCALE_64K            0x05 // 64K cycles = 0.5s timeout
-#define SFE_AAA_WDT_PRESCALE_128K           0x06 // 128K cycles = 1.0s timeout
-#define SFE_AAA_WDT_PRESCALE_256K           0x07 // 256K cycles = 2.0s timeout
-#define SFE_AAA_WDT_PRESCALE_512K           0x08 // 512K cycles = 4.0s timeout
-#define SFE_AAA_WDT_PRESCALE_1024K          0x09 // 1024K cycles = 8.0s timeout
-#define DEFAULT_WDT_PRESCALER SFE_AAA_WDT_PRESCALE_128K
-
-//Define the firmware register addresses:
-#define SFE_AAA_REGISTER_I2C_ADDRESS        0x00 // byte     Read/Write: Stored in eeprom
-#define SFE_AAA_REGISTER_RESET_REASON       0x01 // byte     Read only
-#define SFE_AAA_REGISTER_TEMPERATURE        0x02 // uint16_t Read only
-#define SFE_AAA_REGISTER_VBAT               0x03 // uint16_t Read only
-#define SFE_AAA_REGISTER_VCC_VOLTAGE        0x04 // uint16_t Read only
-#define SFE_AAA_REGISTER_ADC_REFERENCE      0x05 // byte     Read/Write
-#define SFE_AAA_REGISTER_WDT_PRESCALER      0x06 // byte     Read/Write: Stored in eeprom
-#define SFE_AAA_REGISTER_POWERDOWN_DURATION 0x07 // uint16_t Read/Write: Stored in eeprom
-#define SFE_AAA_REGISTER_POWERDOWN_NOW      0x08 //          Write only (Sequence is: "SLEEP" + CRC)
-#define SFE_AAA_REGISTER_FIRMWARE_VERSION   0x09 // byte     Read only
+#include "smol_Power_Board_AAA_ATtiny43U_Constants.h"
+#include "smol_Power_Board_AAA_ATtiny43U_EEPROM.h"
 
 //Digital pins
 const byte EN_3V3 = 11; // 3V3 Regulator Enable: pull high to enable 3.3V, pull low to disable
@@ -94,20 +67,39 @@ const byte EN_3V3 = 11; // 3V3 Regulator Enable: pull high to enable 3.3V, pull 
 #define EN_3V3__OFF  LOW  // 3V3 Regulator Enable: pull high to enable 3.3V, pull low to disable
 
 //Global variables
+struct {
+  byte receiveEventRegister = SFE_AAA_REGISTER_UNKNOWN; // Most recent receive event register address
+  byte receiveEventBuffer[16]; // byte array to store the data from the receive event
+  bool receiveEventDetected = false; // Flag to indicate if a receive event has taken place
+} receiveEventData;
+byte registerResetReason;
+uint16_t registerTemperature;
+uint16_t registerVBAT;
+uint16_t registerVCCVoltage;
+byte registerADCReference = SFE_AAA_ADC_REFERENCE_VCC; // Default to using VCC as the ADC reference
 
 //WDT Interrupt Service Routine - controls when the ATtiny43U wakes from sleep
 void wdtISR() {}
 
 void setup()
 {
-  pinMode(EN_3V3, OUTPUT); // Disable the 9603N until PGOOD has gone high
+  //Just in case, make sure the system clock is set to 4MHz (8MHz divided by 2)
+  CLKPR = 1 << CLKPCE; //Set the clock prescaler change enable bit
+  CLKPR = 1; //Set clock prescaler CLKPS bits to 1 == divide by 2
+
+  pinMode(EN_3V3, OUTPUT); // Enable the 3V3 regulator for the smôl bus
   digitalWrite(EN_3V3, EN_3V3__ON);
 
-  //Begin listening on I2C
-  startI2C();
+  registerResetReason = MCUSR & 0x0F; // Record the reset reason from MCUSR
 
-  //Initialise last_activity
-  last_register_address = millis();
+  if (!loadEepromSettings()) // Load the settings from eeprom
+  {
+    initializeEepromSettings(); // Initialize them if required
+    registerResetReason |= SFE_AAA_EEPROM_CORRUPT_ON_RESET; // Flag that the eeprom was corrupt and needed to be initialized
+  }
+
+  //Begin listening on I2C
+  startI2C(true); // Skip Wire.end the first time around
 }
 
 void loop()
@@ -126,15 +118,29 @@ void loop()
 }
 
 //Begin listening on I2C bus as I2C peripheral using the global I2C_ADDRESS
-void startI2C()
+void startI2C(bool skipWireEnd)
 {
-  Wire.end(); //Before we can change addresses we need to stop
+  if (skipWireEnd == false)
+    Wire.end(); //Before we can change addresses we need to stop
 
-  Wire.begin(I2C_ADDRESS); //Do the Wire.begin using the defined I2C_ADDRESS
+  Wire.begin(eeprom_settings.i2cAddress); //Do the Wire.begin using the defined I2C_ADDRESS
 
   //The connections to the interrupts are severed when a Wire.begin occurs. So re-declare them.
   Wire.onReceive(receiveEvent);
   Wire.onRequest(requestEvent);
+}
+
+//Measure the CPU temperature
+void readTemperature()
+{
+  analogReference(INTERNAL); //You must use the internal 1.1v bandgap reference when measuring temperature
+  uint16_t result = 0;
+  for (byte x = 0; x < 8; x++)
+  {
+    result += analogRead(ADC_TEMPERATURE); //ADC_TEMPERATURE is #defined to be the channel for reading the temperature
+    noIntDelay(1);
+  }
+  return (result >> 3); // Divide result by 8
 }
 
 //goToSleep adapted from: https://gist.github.com/JChristensen/5616922

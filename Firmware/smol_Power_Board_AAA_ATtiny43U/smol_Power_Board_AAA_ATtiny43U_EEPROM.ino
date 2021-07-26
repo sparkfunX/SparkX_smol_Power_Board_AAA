@@ -1,14 +1,5 @@
 // smôl Power Board AAA EEPROM storage and fuctions
 
-struct struct_eeprom_settings {
-  byte sizeOfSettings = 0; //sizeOfSettings **must** be the first entry and must be byte
-  byte firmwareVersion = POWER_BOARD_AAA_FIRMWARE_VERSION; // firmwareVersion **must** be the second entry
-  byte i2cAddress = DEFAULT_I2C_ADDRESS;
-  byte wdtPrescaler = DEFAULT_WDT_PRESCALER;
-  uint16_t powerDownDuration = 1; // Default to power-down of 1 WDT interrupt
-  byte CRC;
-} eeprom_settings;
-
 // Load the settings from eeprom into RAM
 // Return true if settings are loaded correctly and valid, false otherwise
 bool loadEepromSettings()
@@ -37,8 +28,8 @@ bool loadEepromSettings()
 void saveEepromSettings()
 {
   eeprom_settings.sizeOfSettings = sizeof(eeprom_settings); // Update eeprom_settings
-  eeprom_settings.CRC = computeCRC8((byte*)&eeprom_settings, eeprom_settings.sizeOfSettings - 1)
-  EEPROM.put(0, settings);
+  eeprom_settings.CRC = computeCRC8((byte*)&eeprom_settings, eeprom_settings.sizeOfSettings - 1);
+  EEPROM.put(0, eeprom_settings);
 }
 
 //Initialize eeprom settings to the defaults
