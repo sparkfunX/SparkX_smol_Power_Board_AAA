@@ -89,7 +89,7 @@ void printEepromSettings()
 void loop() // Test noIntDelay - should print a period every 250ms if the clock has been set correctly to 4MHz
 {
   noIntDelay(250);
-  Serial.println(F("."));
+  Serial.println();
 }
 
 //Software delay. Does not rely on internal timers.
@@ -98,7 +98,7 @@ void noIntDelay(byte amount)
   for (volatile byte y = 0 ; y < amount ; y++)
   {
     //ATtiny84 at 4MHz
-    for (volatile unsigned int x = 0 ; x < 175 ; x++) //1ms at 4MHz
+    for (volatile unsigned int x = 0 ; x < 202 ; x++) //1ms at 4MHz
     {
       __asm__("nop\n\t");
     }

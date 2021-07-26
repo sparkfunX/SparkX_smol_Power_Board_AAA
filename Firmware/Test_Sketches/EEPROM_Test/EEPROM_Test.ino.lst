@@ -6,22 +6,22 @@ Disassembly of section .text:
 
 00000000 <__vectors>:
 __vectors():
-   0:	07 c1       	rjmp	.+526    	; 0x210 <__ctors_end>
-   2:	2b c1       	rjmp	.+598    	; 0x25a <__bad_interrupt>
-   4:	2a c1       	rjmp	.+596    	; 0x25a <__bad_interrupt>
-   6:	29 c1       	rjmp	.+594    	; 0x25a <__bad_interrupt>
-   8:	28 c1       	rjmp	.+592    	; 0x25a <__bad_interrupt>
-   a:	27 c1       	rjmp	.+590    	; 0x25a <__bad_interrupt>
-   c:	26 c1       	rjmp	.+588    	; 0x25a <__bad_interrupt>
-   e:	25 c1       	rjmp	.+586    	; 0x25a <__bad_interrupt>
-  10:	24 c1       	rjmp	.+584    	; 0x25a <__bad_interrupt>
-  12:	23 c1       	rjmp	.+582    	; 0x25a <__bad_interrupt>
-  14:	22 c1       	rjmp	.+580    	; 0x25a <__bad_interrupt>
-  16:	1b c3       	rjmp	.+1590   	; 0x64e <__vector_11>
-  18:	20 c1       	rjmp	.+576    	; 0x25a <__bad_interrupt>
-  1a:	1f c1       	rjmp	.+574    	; 0x25a <__bad_interrupt>
-  1c:	1e c1       	rjmp	.+572    	; 0x25a <__bad_interrupt>
-  1e:	1d c1       	rjmp	.+570    	; 0x25a <__bad_interrupt>
+   0:	06 c1       	rjmp	.+524    	; 0x20e <__ctors_end>
+   2:	2a c1       	rjmp	.+596    	; 0x258 <__bad_interrupt>
+   4:	29 c1       	rjmp	.+594    	; 0x258 <__bad_interrupt>
+   6:	28 c1       	rjmp	.+592    	; 0x258 <__bad_interrupt>
+   8:	27 c1       	rjmp	.+590    	; 0x258 <__bad_interrupt>
+   a:	26 c1       	rjmp	.+588    	; 0x258 <__bad_interrupt>
+   c:	25 c1       	rjmp	.+586    	; 0x258 <__bad_interrupt>
+   e:	24 c1       	rjmp	.+584    	; 0x258 <__bad_interrupt>
+  10:	23 c1       	rjmp	.+582    	; 0x258 <__bad_interrupt>
+  12:	22 c1       	rjmp	.+580    	; 0x258 <__bad_interrupt>
+  14:	21 c1       	rjmp	.+578    	; 0x258 <__bad_interrupt>
+  16:	1a c3       	rjmp	.+1588   	; 0x64c <__vector_11>
+  18:	1f c1       	rjmp	.+574    	; 0x258 <__bad_interrupt>
+  1a:	1e c1       	rjmp	.+572    	; 0x258 <__bad_interrupt>
+  1c:	1d c1       	rjmp	.+570    	; 0x258 <__bad_interrupt>
+  1e:	1c c1       	rjmp	.+568    	; 0x258 <__bad_interrupt>
 
 00000020 <__trampolines_end>:
 __trampolines_start():
@@ -100,183 +100,180 @@ __trampolines_start():
 000001e9 <setup::__c>:
  1e9:	73 6d c3 b4 6c 20 50 6f 77 65 72 20 42 6f 61 72     sm..l Power Boar
  1f9:	64 20 41 41 41 20 45 45 50 52 4f 4d 20 54 65 73     d AAA EEPROM Tes
- 209:	74 00                                               t.
+ 209:	74 00 00                                            t..
 
-0000020b <loop::__c>:
- 20b:	2e 00 00                                            ...
-
-0000020e <__ctors_start>:
+0000020c <__ctors_start>:
 __ctors_start():
- 20e:	77 03       	mulsu	r23, r23
+ 20c:	76 03       	mulsu	r23, r22
 
-00000210 <__ctors_end>:
+0000020e <__ctors_end>:
 __dtors_end():
- 210:	11 24       	eor	r1, r1
- 212:	1f be       	out	0x3f, r1	; 63
- 214:	cf e5       	ldi	r28, 0x5F	; 95
- 216:	d1 e0       	ldi	r29, 0x01	; 1
- 218:	de bf       	out	0x3e, r29	; 62
- 21a:	cd bf       	out	0x3d, r28	; 61
+ 20e:	11 24       	eor	r1, r1
+ 210:	1f be       	out	0x3f, r1	; 63
+ 212:	cf e5       	ldi	r28, 0x5F	; 95
+ 214:	d1 e0       	ldi	r29, 0x01	; 1
+ 216:	de bf       	out	0x3e, r29	; 62
+ 218:	cd bf       	out	0x3d, r28	; 61
 
-0000021c <__do_clear_bss>:
+0000021a <__do_clear_bss>:
 __do_clear_bss():
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2441
- 21c:	20 e0       	ldi	r18, 0x00	; 0
+ 21a:	20 e0       	ldi	r18, 0x00	; 0
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2442
- 21e:	a0 e7       	ldi	r26, 0x70	; 112
+ 21c:	a0 e7       	ldi	r26, 0x70	; 112
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2443
- 220:	b0 e0       	ldi	r27, 0x00	; 0
+ 21e:	b0 e0       	ldi	r27, 0x00	; 0
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2444
- 222:	01 c0       	rjmp	.+2      	; 0x226 <.do_clear_bss_start>
+ 220:	01 c0       	rjmp	.+2      	; 0x224 <.do_clear_bss_start>
 
-00000224 <.do_clear_bss_loop>:
+00000222 <.do_clear_bss_loop>:
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2446
- 224:	1d 92       	st	X+, r1
+ 222:	1d 92       	st	X+, r1
 
-00000226 <.do_clear_bss_start>:
+00000224 <.do_clear_bss_start>:
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2448
- 226:	ad 39       	cpi	r26, 0x9D	; 157
+ 224:	ad 39       	cpi	r26, 0x9D	; 157
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2449
- 228:	b2 07       	cpc	r27, r18
+ 226:	b2 07       	cpc	r27, r18
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2450
- 22a:	e1 f7       	brne	.-8      	; 0x224 <.do_clear_bss_loop>
+ 228:	e1 f7       	brne	.-8      	; 0x222 <.do_clear_bss_loop>
 
-0000022c <__do_copy_data>:
+0000022a <__do_copy_data>:
 __do_copy_data():
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2409
- 22c:	10 e0       	ldi	r17, 0x00	; 0
+ 22a:	10 e0       	ldi	r17, 0x00	; 0
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2410
- 22e:	a0 e6       	ldi	r26, 0x60	; 96
+ 22c:	a0 e6       	ldi	r26, 0x60	; 96
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2411
- 230:	b0 e0       	ldi	r27, 0x00	; 0
+ 22e:	b0 e0       	ldi	r27, 0x00	; 0
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2412
- 232:	e0 eb       	ldi	r30, 0xB0	; 176
+ 230:	ec ea       	ldi	r30, 0xAC	; 172
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2413
- 234:	f8 e0       	ldi	r31, 0x08	; 8
+ 232:	f8 e0       	ldi	r31, 0x08	; 8
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2414
- 236:	02 c0       	rjmp	.+4      	; 0x23c <__do_copy_data+0x10>
+ 234:	02 c0       	rjmp	.+4      	; 0x23a <__do_copy_data+0x10>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2417
- 238:	05 90       	lpm	r0, Z+
+ 236:	05 90       	lpm	r0, Z+
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2422
- 23a:	0d 92       	st	X+, r0
+ 238:	0d 92       	st	X+, r0
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2424
- 23c:	a0 37       	cpi	r26, 0x70	; 112
+ 23a:	a0 37       	cpi	r26, 0x70	; 112
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2425
- 23e:	b1 07       	cpc	r27, r17
+ 23c:	b1 07       	cpc	r27, r17
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2426
- 240:	d9 f7       	brne	.-10     	; 0x238 <__do_copy_data+0xc>
+ 23e:	d9 f7       	brne	.-10     	; 0x236 <__do_copy_data+0xc>
 
-00000242 <__do_global_ctors>:
+00000240 <__do_global_ctors>:
 __do_global_ctors():
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2466
- 242:	11 e0       	ldi	r17, 0x01	; 1
+ 240:	11 e0       	ldi	r17, 0x01	; 1
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2467
- 244:	c8 e0       	ldi	r28, 0x08	; 8
+ 242:	c7 e0       	ldi	r28, 0x07	; 7
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2468
- 246:	d1 e0       	ldi	r29, 0x01	; 1
+ 244:	d1 e0       	ldi	r29, 0x01	; 1
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2472
- 248:	03 c0       	rjmp	.+6      	; 0x250 <__do_global_ctors+0xe>
+ 246:	03 c0       	rjmp	.+6      	; 0x24e <__do_global_ctors+0xe>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2474
- 24a:	21 97       	sbiw	r28, 0x01	; 1
+ 248:	21 97       	sbiw	r28, 0x01	; 1
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2480
- 24c:	fe 01       	movw	r30, r28
+ 24a:	fe 01       	movw	r30, r28
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2481
- 24e:	28 d3       	rcall	.+1616   	; 0x8a0 <__tablejump2__>
+ 24c:	27 d3       	rcall	.+1614   	; 0x89c <__tablejump2__>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2483
- 250:	c7 30       	cpi	r28, 0x07	; 7
+ 24e:	c6 30       	cpi	r28, 0x06	; 6
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2484
- 252:	d1 07       	cpc	r29, r17
+ 250:	d1 07       	cpc	r29, r17
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2489
- 254:	d1 f7       	brne	.-12     	; 0x24a <__do_global_ctors+0x8>
- 256:	73 d2       	rcall	.+1254   	; 0x73e <main>
- 258:	29 c3       	rjmp	.+1618   	; 0x8ac <_exit>
+ 252:	d1 f7       	brne	.-12     	; 0x248 <__do_global_ctors+0x8>
+ 254:	73 d2       	rcall	.+1254   	; 0x73c <main>
+ 256:	28 c3       	rjmp	.+1616   	; 0x8a8 <_exit>
 
-0000025a <__bad_interrupt>:
+00000258 <__bad_interrupt>:
 __vector_1():
- 25a:	d2 ce       	rjmp	.-604    	; 0x0 <__vectors>
+ 258:	d3 ce       	rjmp	.-602    	; 0x0 <__vectors>
 
-0000025c <noIntDelay(unsigned char) [clone .constprop.5]>:
+0000025a <noIntDelay(unsigned char) [clone .constprop.5]>:
 _Z10noIntDelayh.constprop.5():
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:96
- 25c:	cf 93       	push	r28
- 25e:	df 93       	push	r29
- 260:	00 d0       	rcall	.+0      	; 0x262 <noIntDelay(unsigned char) [clone .constprop.5]+0x6>
- 262:	1f 92       	push	r1
- 264:	cd b7       	in	r28, 0x3d	; 61
- 266:	de b7       	in	r29, 0x3e	; 62
+ 25a:	cf 93       	push	r28
+ 25c:	df 93       	push	r29
+ 25e:	00 d0       	rcall	.+0      	; 0x260 <noIntDelay(unsigned char) [clone .constprop.5]+0x6>
+ 260:	1f 92       	push	r1
+ 262:	cd b7       	in	r28, 0x3d	; 61
+ 264:	de b7       	in	r29, 0x3e	; 62
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:98
- 268:	1b 82       	std	Y+3, r1	; 0x03
- 26a:	8b 81       	ldd	r24, Y+3	; 0x03
- 26c:	8a 3f       	cpi	r24, 0xFA	; 250
- 26e:	90 f4       	brcc	.+36     	; 0x294 <noIntDelay(unsigned char) [clone .constprop.5]+0x38>
+ 266:	1b 82       	std	Y+3, r1	; 0x03
+ 268:	8b 81       	ldd	r24, Y+3	; 0x03
+ 26a:	8a 3f       	cpi	r24, 0xFA	; 250
+ 26c:	90 f4       	brcc	.+36     	; 0x292 <noIntDelay(unsigned char) [clone .constprop.5]+0x38>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:101
- 270:	1a 82       	std	Y+2, r1	; 0x02
- 272:	19 82       	std	Y+1, r1	; 0x01
- 274:	89 81       	ldd	r24, Y+1	; 0x01
- 276:	9a 81       	ldd	r25, Y+2	; 0x02
- 278:	8f 3a       	cpi	r24, 0xAF	; 175
- 27a:	91 05       	cpc	r25, r1
- 27c:	38 f4       	brcc	.+14     	; 0x28c <noIntDelay(unsigned char) [clone .constprop.5]+0x30>
+ 26e:	1a 82       	std	Y+2, r1	; 0x02
+ 270:	19 82       	std	Y+1, r1	; 0x01
+ 272:	89 81       	ldd	r24, Y+1	; 0x01
+ 274:	9a 81       	ldd	r25, Y+2	; 0x02
+ 276:	8a 3c       	cpi	r24, 0xCA	; 202
+ 278:	91 05       	cpc	r25, r1
+ 27a:	38 f4       	brcc	.+14     	; 0x28a <noIntDelay(unsigned char) [clone .constprop.5]+0x30>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:103
- 27e:	00 00       	nop
+ 27c:	00 00       	nop
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:101
- 280:	89 81       	ldd	r24, Y+1	; 0x01
- 282:	9a 81       	ldd	r25, Y+2	; 0x02
- 284:	01 96       	adiw	r24, 0x01	; 1
- 286:	9a 83       	std	Y+2, r25	; 0x02
- 288:	89 83       	std	Y+1, r24	; 0x01
- 28a:	f4 cf       	rjmp	.-24     	; 0x274 <noIntDelay(unsigned char) [clone .constprop.5]+0x18>
+ 27e:	89 81       	ldd	r24, Y+1	; 0x01
+ 280:	9a 81       	ldd	r25, Y+2	; 0x02
+ 282:	01 96       	adiw	r24, 0x01	; 1
+ 284:	9a 83       	std	Y+2, r25	; 0x02
+ 286:	89 83       	std	Y+1, r24	; 0x01
+ 288:	f4 cf       	rjmp	.-24     	; 0x272 <noIntDelay(unsigned char) [clone .constprop.5]+0x18>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:98
- 28c:	8b 81       	ldd	r24, Y+3	; 0x03
- 28e:	8f 5f       	subi	r24, 0xFF	; 255
- 290:	8b 83       	std	Y+3, r24	; 0x03
- 292:	eb cf       	rjmp	.-42     	; 0x26a <noIntDelay(unsigned char) [clone .constprop.5]+0xe>
+ 28a:	8b 81       	ldd	r24, Y+3	; 0x03
+ 28c:	8f 5f       	subi	r24, 0xFF	; 255
+ 28e:	8b 83       	std	Y+3, r24	; 0x03
+ 290:	eb cf       	rjmp	.-42     	; 0x268 <noIntDelay(unsigned char) [clone .constprop.5]+0xe>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:106
+ 292:	0f 90       	pop	r0
  294:	0f 90       	pop	r0
  296:	0f 90       	pop	r0
- 298:	0f 90       	pop	r0
- 29a:	df 91       	pop	r29
- 29c:	cf 91       	pop	r28
- 29e:	08 95       	ret
+ 298:	df 91       	pop	r29
+ 29a:	cf 91       	pop	r28
+ 29c:	08 95       	ret
 
-000002a0 <computeCRC8(unsigned char*, unsigned char) [clone .constprop.3]>:
-_Z11computeCRC8Phh.constprop.3():
+0000029e <computeCRC8(unsigned char*, unsigned char) [clone .constprop.4]>:
+_Z11computeCRC8Phh.constprop.4():
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:50
- 2a0:	38 2f       	mov	r19, r24
- 2a2:	e6 e9       	ldi	r30, 0x96	; 150
- 2a4:	f0 e0       	ldi	r31, 0x00	; 0
+ 29e:	38 2f       	mov	r19, r24
+ 2a0:	e6 e9       	ldi	r30, 0x96	; 150
+ 2a2:	f0 e0       	ldi	r31, 0x00	; 0
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:54
- 2a6:	90 e0       	ldi	r25, 0x00	; 0
+ 2a4:	90 e0       	ldi	r25, 0x00	; 0
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:52
- 2a8:	8f ef       	ldi	r24, 0xFF	; 255
+ 2a6:	8f ef       	ldi	r24, 0xFF	; 255
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:61
- 2aa:	41 e3       	ldi	r20, 0x31	; 49
+ 2a8:	41 e3       	ldi	r20, 0x31	; 49
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:54
- 2ac:	93 17       	cp	r25, r19
- 2ae:	69 f0       	breq	.+26     	; 0x2ca <computeCRC8(unsigned char*, unsigned char) [clone .constprop.3]+0x2a>
+ 2aa:	93 17       	cp	r25, r19
+ 2ac:	69 f0       	breq	.+26     	; 0x2c8 <computeCRC8(unsigned char*, unsigned char) [clone .constprop.4]+0x2a>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:56
- 2b0:	21 91       	ld	r18, Z+
- 2b2:	82 27       	eor	r24, r18
- 2b4:	28 e0       	ldi	r18, 0x08	; 8
+ 2ae:	21 91       	ld	r18, Z+
+ 2b0:	82 27       	eor	r24, r18
+ 2b2:	28 e0       	ldi	r18, 0x08	; 8
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:60
- 2b6:	87 ff       	sbrs	r24, 7
- 2b8:	06 c0       	rjmp	.+12     	; 0x2c6 <computeCRC8(unsigned char*, unsigned char) [clone .constprop.3]+0x26>
+ 2b4:	87 ff       	sbrs	r24, 7
+ 2b6:	06 c0       	rjmp	.+12     	; 0x2c4 <computeCRC8(unsigned char*, unsigned char) [clone .constprop.4]+0x26>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:61
- 2ba:	88 0f       	add	r24, r24
- 2bc:	84 27       	eor	r24, r20
- 2be:	21 50       	subi	r18, 0x01	; 1
+ 2b8:	88 0f       	add	r24, r24
+ 2ba:	84 27       	eor	r24, r20
+ 2bc:	21 50       	subi	r18, 0x01	; 1
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:58
- 2c0:	d1 f7       	brne	.-12     	; 0x2b6 <computeCRC8(unsigned char*, unsigned char) [clone .constprop.3]+0x16>
+ 2be:	d1 f7       	brne	.-12     	; 0x2b4 <computeCRC8(unsigned char*, unsigned char) [clone .constprop.4]+0x16>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:54
- 2c2:	9f 5f       	subi	r25, 0xFF	; 255
- 2c4:	f3 cf       	rjmp	.-26     	; 0x2ac <computeCRC8(unsigned char*, unsigned char) [clone .constprop.3]+0xc>
+ 2c0:	9f 5f       	subi	r25, 0xFF	; 255
+ 2c2:	f3 cf       	rjmp	.-26     	; 0x2aa <computeCRC8(unsigned char*, unsigned char) [clone .constprop.4]+0xc>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:63
- 2c6:	88 0f       	add	r24, r24
- 2c8:	fa cf       	rjmp	.-12     	; 0x2be <computeCRC8(unsigned char*, unsigned char) [clone .constprop.3]+0x1e>
+ 2c4:	88 0f       	add	r24, r24
+ 2c6:	fa cf       	rjmp	.-12     	; 0x2bc <computeCRC8(unsigned char*, unsigned char) [clone .constprop.4]+0x1e>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:68
- 2ca:	08 95       	ret
+ 2c8:	08 95       	ret
 
-000002cc <TinySoftwareSerial::flush()>:
+000002ca <TinySoftwareSerial::flush()>:
 _ZN18TinySoftwareSerial5flushEv():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:242
 }
@@ -285,9 +282,9 @@ void TinySoftwareSerial::flush()
 {
 
 }
- 2cc:	08 95       	ret
+ 2ca:	08 95       	ret
 
-000002ce <TinySoftwareSerial::write(unsigned char)>:
+000002cc <TinySoftwareSerial::write(unsigned char)>:
 _ZN18TinySoftwareSerial5writeEh():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:202
   }
@@ -296,10 +293,10 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
 size_t TinySoftwareSerial::write(uint8_t ch)
 {
   uint8_t oldSREG = SREG;
- 2ce:	2f b7       	in	r18, 0x3f	; 63
+ 2cc:	2f b7       	in	r18, 0x3f	; 63
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:203
   cli(); //Prevent interrupts from breaking the transmission. Note: TinySoftwareSerial is half duplex.
- 2d0:	f8 94       	cli
+ 2ce:	f8 94       	cli
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:234
       [uartMask] "r" (_txmask),
       [uartUnmask] "r" (_txunmask)
@@ -307,39 +304,39 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
       "r24",
       "r25"
   );
- 2d2:	fc 01       	movw	r30, r24
- 2d4:	45 85       	ldd	r20, Z+13	; 0x0d
- 2d6:	56 85       	ldd	r21, Z+14	; 0x0e
- 2d8:	3a e0       	ldi	r19, 0x0A	; 10
- 2da:	60 95       	com	r22
- 2dc:	08 94       	sec
- 2de:	20 f4       	brcc	.+8      	; 0x2e8 <TinySoftwareSerial::write(unsigned char)+0x1a>
- 2e0:	7b b3       	in	r23, 0x1b	; 27
- 2e2:	75 23       	and	r23, r21
- 2e4:	7b bb       	out	0x1b, r23	; 27
- 2e6:	04 c0       	rjmp	.+8      	; 0x2f0 <TinySoftwareSerial::write(unsigned char)+0x22>
- 2e8:	7b b3       	in	r23, 0x1b	; 27
- 2ea:	74 2b       	or	r23, r20
- 2ec:	7b bb       	out	0x1b, r23	; 27
- 2ee:	00 00       	nop
- 2f0:	f8 d1       	rcall	.+1008   	; 0x6e2 <uartDelay>
- 2f2:	f7 d1       	rcall	.+1006   	; 0x6e2 <uartDelay>
- 2f4:	f6 d1       	rcall	.+1004   	; 0x6e2 <uartDelay>
- 2f6:	f5 d1       	rcall	.+1002   	; 0x6e2 <uartDelay>
- 2f8:	66 95       	lsr	r22
- 2fa:	3a 95       	dec	r19
- 2fc:	81 f7       	brne	.-32     	; 0x2de <TinySoftwareSerial::write(unsigned char)+0x10>
+ 2d0:	fc 01       	movw	r30, r24
+ 2d2:	45 85       	ldd	r20, Z+13	; 0x0d
+ 2d4:	56 85       	ldd	r21, Z+14	; 0x0e
+ 2d6:	3a e0       	ldi	r19, 0x0A	; 10
+ 2d8:	60 95       	com	r22
+ 2da:	08 94       	sec
+ 2dc:	20 f4       	brcc	.+8      	; 0x2e6 <TinySoftwareSerial::write(unsigned char)+0x1a>
+ 2de:	7b b3       	in	r23, 0x1b	; 27
+ 2e0:	75 23       	and	r23, r21
+ 2e2:	7b bb       	out	0x1b, r23	; 27
+ 2e4:	04 c0       	rjmp	.+8      	; 0x2ee <TinySoftwareSerial::write(unsigned char)+0x22>
+ 2e6:	7b b3       	in	r23, 0x1b	; 27
+ 2e8:	74 2b       	or	r23, r20
+ 2ea:	7b bb       	out	0x1b, r23	; 27
+ 2ec:	00 00       	nop
+ 2ee:	f8 d1       	rcall	.+1008   	; 0x6e0 <uartDelay>
+ 2f0:	f7 d1       	rcall	.+1006   	; 0x6e0 <uartDelay>
+ 2f2:	f6 d1       	rcall	.+1004   	; 0x6e0 <uartDelay>
+ 2f4:	f5 d1       	rcall	.+1002   	; 0x6e0 <uartDelay>
+ 2f6:	66 95       	lsr	r22
+ 2f8:	3a 95       	dec	r19
+ 2fa:	81 f7       	brne	.-32     	; 0x2dc <TinySoftwareSerial::write(unsigned char)+0x10>
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:235
   SREG = oldSREG;
- 2fe:	2f bf       	out	0x3f, r18	; 63
+ 2fc:	2f bf       	out	0x3f, r18	; 63
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:237
   return 1;
 }
- 300:	81 e0       	ldi	r24, 0x01	; 1
- 302:	90 e0       	ldi	r25, 0x00	; 0
- 304:	08 95       	ret
+ 2fe:	81 e0       	ldi	r24, 0x01	; 1
+ 300:	90 e0       	ldi	r25, 0x00	; 0
+ 302:	08 95       	ret
 
-00000306 <Print::println() [clone .constprop.15]>:
+00000304 <Print::println() [clone .constprop.15]>:
 _ZN5Print7printlnEv.constprop.15():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:119
     ch = pgm_read_byte( s );
@@ -348,8 +345,8 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
 }
 
 size_t Print::println(void)
- 306:	cf 93       	push	r28
- 308:	df 93       	push	r29
+ 304:	cf 93       	push	r28
+ 306:	df 93       	push	r29
 print():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:58
   return write(str);
@@ -358,15 +355,15 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
 size_t Print::print(char c)
 {
   return write(c);
- 30a:	6d e0       	ldi	r22, 0x0D	; 13
- 30c:	84 e8       	ldi	r24, 0x84	; 132
- 30e:	90 e0       	ldi	r25, 0x00	; 0
- 310:	de df       	rcall	.-68     	; 0x2ce <TinySoftwareSerial::write(unsigned char)>
- 312:	ec 01       	movw	r28, r24
- 314:	6a e0       	ldi	r22, 0x0A	; 10
- 316:	84 e8       	ldi	r24, 0x84	; 132
- 318:	90 e0       	ldi	r25, 0x00	; 0
- 31a:	d9 df       	rcall	.-78     	; 0x2ce <TinySoftwareSerial::write(unsigned char)>
+ 308:	6d e0       	ldi	r22, 0x0D	; 13
+ 30a:	84 e8       	ldi	r24, 0x84	; 132
+ 30c:	90 e0       	ldi	r25, 0x00	; 0
+ 30e:	de df       	rcall	.-68     	; 0x2cc <TinySoftwareSerial::write(unsigned char)>
+ 310:	ec 01       	movw	r28, r24
+ 312:	6a e0       	ldi	r22, 0x0A	; 10
+ 314:	84 e8       	ldi	r24, 0x84	; 132
+ 316:	90 e0       	ldi	r25, 0x00	; 0
+ 318:	d9 df       	rcall	.-78     	; 0x2cc <TinySoftwareSerial::write(unsigned char)>
 _ZN5Print7printlnEv.constprop.15():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:124
 size_t Print::println(void)
@@ -375,13 +372,13 @@ size_t Print::println(void)
   n += print('\n');
   return n;
 }
- 31c:	8c 0f       	add	r24, r28
- 31e:	9d 1f       	adc	r25, r29
- 320:	df 91       	pop	r29
- 322:	cf 91       	pop	r28
- 324:	08 95       	ret
+ 31a:	8c 0f       	add	r24, r28
+ 31c:	9d 1f       	adc	r25, r29
+ 31e:	df 91       	pop	r29
+ 320:	cf 91       	pop	r28
+ 322:	08 95       	ret
 
-00000326 <Print::print(__FlashStringHelper const*) [clone .constprop.8]>:
+00000324 <Print::print(__FlashStringHelper const*) [clone .constprop.8]>:
 _ZN5Print5printEPK19__FlashStringHelper.constprop.8():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:222
   return vfprintf(&f, ifsh, ap);
@@ -390,74 +387,74 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
 #ifdef FLASHSTRING_SUPPORT
 
 size_t Print::print(const __FlashStringHelper *ifsh)
- 326:	0f 93       	push	r16
- 328:	1f 93       	push	r17
- 32a:	cf 93       	push	r28
- 32c:	df 93       	push	r29
- 32e:	8c 01       	movw	r16, r24
+ 324:	0f 93       	push	r16
+ 326:	1f 93       	push	r17
+ 328:	cf 93       	push	r28
+ 32a:	df 93       	push	r29
+ 32c:	8c 01       	movw	r16, r24
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:225
 {
   PGM_P p = reinterpret_cast<PGM_P>(ifsh);
   size_t n = 0;
- 330:	d0 e0       	ldi	r29, 0x00	; 0
- 332:	c0 e0       	ldi	r28, 0x00	; 0
+ 32e:	d0 e0       	ldi	r29, 0x00	; 0
+ 330:	c0 e0       	ldi	r28, 0x00	; 0
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:227
   while (1) {
     unsigned char c = pgm_read_byte(p++);
- 334:	f8 01       	movw	r30, r16
- 336:	ec 0f       	add	r30, r28
- 338:	fd 1f       	adc	r31, r29
- 33a:	64 91       	lpm	r22, Z
+ 332:	f8 01       	movw	r30, r16
+ 334:	ec 0f       	add	r30, r28
+ 336:	fd 1f       	adc	r31, r29
+ 338:	64 91       	lpm	r22, Z
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:228
     if (c == 0) break;
- 33c:	66 23       	and	r22, r22
- 33e:	39 f0       	breq	.+14     	; 0x34e <Print::print(__FlashStringHelper const*) [clone .constprop.8]+0x28>
+ 33a:	66 23       	and	r22, r22
+ 33c:	39 f0       	breq	.+14     	; 0x34c <Print::print(__FlashStringHelper const*) [clone .constprop.8]+0x28>
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:229
     if (write(c)) n++;
- 340:	84 e8       	ldi	r24, 0x84	; 132
- 342:	90 e0       	ldi	r25, 0x00	; 0
- 344:	c4 df       	rcall	.-120    	; 0x2ce <TinySoftwareSerial::write(unsigned char)>
- 346:	89 2b       	or	r24, r25
- 348:	11 f0       	breq	.+4      	; 0x34e <Print::print(__FlashStringHelper const*) [clone .constprop.8]+0x28>
- 34a:	21 96       	adiw	r28, 0x01	; 1
- 34c:	f3 cf       	rjmp	.-26     	; 0x334 <Print::print(__FlashStringHelper const*) [clone .constprop.8]+0xe>
+ 33e:	84 e8       	ldi	r24, 0x84	; 132
+ 340:	90 e0       	ldi	r25, 0x00	; 0
+ 342:	c4 df       	rcall	.-120    	; 0x2cc <TinySoftwareSerial::write(unsigned char)>
+ 344:	89 2b       	or	r24, r25
+ 346:	11 f0       	breq	.+4      	; 0x34c <Print::print(__FlashStringHelper const*) [clone .constprop.8]+0x28>
+ 348:	21 96       	adiw	r28, 0x01	; 1
+ 34a:	f3 cf       	rjmp	.-26     	; 0x332 <Print::print(__FlashStringHelper const*) [clone .constprop.8]+0xe>
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:233
     else break;
   }
   return n;
 }
- 34e:	ce 01       	movw	r24, r28
- 350:	df 91       	pop	r29
- 352:	cf 91       	pop	r28
- 354:	1f 91       	pop	r17
- 356:	0f 91       	pop	r16
- 358:	08 95       	ret
+ 34c:	ce 01       	movw	r24, r28
+ 34e:	df 91       	pop	r29
+ 350:	cf 91       	pop	r28
+ 352:	1f 91       	pop	r17
+ 354:	0f 91       	pop	r16
+ 356:	08 95       	ret
 
-0000035a <Print::println(__FlashStringHelper const*) [clone .constprop.4]>:
-_ZN5Print7printlnEPK19__FlashStringHelper.constprop.4():
+00000358 <Print::println(__FlashStringHelper const*) [clone .constprop.3]>:
+_ZN5Print7printlnEPK19__FlashStringHelper.constprop.3():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:235
 
 size_t Print::println(const __FlashStringHelper *ifsh)
- 35a:	cf 93       	push	r28
- 35c:	df 93       	push	r29
+ 358:	cf 93       	push	r28
+ 35a:	df 93       	push	r29
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:237
 {
   size_t n = print(ifsh);
- 35e:	e3 df       	rcall	.-58     	; 0x326 <Print::print(__FlashStringHelper const*) [clone .constprop.8]>
- 360:	ec 01       	movw	r28, r24
+ 35c:	e3 df       	rcall	.-58     	; 0x324 <Print::print(__FlashStringHelper const*) [clone .constprop.8]>
+ 35e:	ec 01       	movw	r28, r24
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:238
   n += println();
- 362:	d1 df       	rcall	.-94     	; 0x306 <Print::println() [clone .constprop.15]>
+ 360:	d1 df       	rcall	.-94     	; 0x304 <Print::println() [clone .constprop.15]>
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:240
   return n;
 }
- 364:	8c 0f       	add	r24, r28
- 366:	9d 1f       	adc	r25, r29
- 368:	df 91       	pop	r29
- 36a:	cf 91       	pop	r28
- 36c:	08 95       	ret
+ 362:	8c 0f       	add	r24, r28
+ 364:	9d 1f       	adc	r25, r29
+ 366:	df 91       	pop	r29
+ 368:	cf 91       	pop	r28
+ 36a:	08 95       	ret
 
-0000036e <TinySoftwareSerial::read()>:
+0000036c <TinySoftwareSerial::read()>:
 _ZN18TinySoftwareSerial4readEv():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:191
 }
@@ -466,40 +463,40 @@ int TinySoftwareSerial::read(void)
 {
   // if the head isn't ahead of the tail, we don't have any characters
   if (_rx_buffer->head == _rx_buffer->tail) {
- 36e:	dc 01       	movw	r26, r24
- 370:	1f 96       	adiw	r26, 0x0f	; 15
- 372:	ed 91       	ld	r30, X+
- 374:	fc 91       	ld	r31, X
- 376:	20 89       	ldd	r18, Z+16	; 0x10
- 378:	31 89       	ldd	r19, Z+17	; 0x11
- 37a:	82 89       	ldd	r24, Z+18	; 0x12
- 37c:	93 89       	ldd	r25, Z+19	; 0x13
- 37e:	28 17       	cp	r18, r24
- 380:	39 07       	cpc	r19, r25
- 382:	79 f0       	breq	.+30     	; 0x3a2 <TinySoftwareSerial::read()+0x34>
+ 36c:	dc 01       	movw	r26, r24
+ 36e:	1f 96       	adiw	r26, 0x0f	; 15
+ 370:	ed 91       	ld	r30, X+
+ 372:	fc 91       	ld	r31, X
+ 374:	20 89       	ldd	r18, Z+16	; 0x10
+ 376:	31 89       	ldd	r19, Z+17	; 0x11
+ 378:	82 89       	ldd	r24, Z+18	; 0x12
+ 37a:	93 89       	ldd	r25, Z+19	; 0x13
+ 37c:	28 17       	cp	r18, r24
+ 37e:	39 07       	cpc	r19, r25
+ 380:	79 f0       	breq	.+30     	; 0x3a0 <TinySoftwareSerial::read()+0x34>
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:194
     return -1;
   } else {
     unsigned char c = _rx_buffer->buffer[_rx_buffer->tail];
- 384:	a2 89       	ldd	r26, Z+18	; 0x12
- 386:	b3 89       	ldd	r27, Z+19	; 0x13
- 388:	ae 0f       	add	r26, r30
- 38a:	bf 1f       	adc	r27, r31
- 38c:	8c 91       	ld	r24, X
+ 382:	a2 89       	ldd	r26, Z+18	; 0x12
+ 384:	b3 89       	ldd	r27, Z+19	; 0x13
+ 386:	ae 0f       	add	r26, r30
+ 388:	bf 1f       	adc	r27, r31
+ 38a:	8c 91       	ld	r24, X
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:195
     _rx_buffer->tail = (unsigned int)(_rx_buffer->tail + 1) % SERIAL_BUFFER_SIZE;
- 38e:	22 89       	ldd	r18, Z+18	; 0x12
- 390:	33 89       	ldd	r19, Z+19	; 0x13
- 392:	2f 5f       	subi	r18, 0xFF	; 255
- 394:	3f 4f       	sbci	r19, 0xFF	; 255
- 396:	2f 70       	andi	r18, 0x0F	; 15
- 398:	33 27       	eor	r19, r19
- 39a:	33 8b       	std	Z+19, r19	; 0x13
- 39c:	22 8b       	std	Z+18, r18	; 0x12
+ 38c:	22 89       	ldd	r18, Z+18	; 0x12
+ 38e:	33 89       	ldd	r19, Z+19	; 0x13
+ 390:	2f 5f       	subi	r18, 0xFF	; 255
+ 392:	3f 4f       	sbci	r19, 0xFF	; 255
+ 394:	2f 70       	andi	r18, 0x0F	; 15
+ 396:	33 27       	eor	r19, r19
+ 398:	33 8b       	std	Z+19, r19	; 0x13
+ 39a:	22 8b       	std	Z+18, r18	; 0x12
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:196
     return c;
- 39e:	90 e0       	ldi	r25, 0x00	; 0
- 3a0:	08 95       	ret
+ 39c:	90 e0       	ldi	r25, 0x00	; 0
+ 39e:	08 95       	ret
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:192
 
 int TinySoftwareSerial::read(void)
@@ -507,8 +504,8 @@ int TinySoftwareSerial::read(void)
   // if the head isn't ahead of the tail, we don't have any characters
   if (_rx_buffer->head == _rx_buffer->tail) {
     return -1;
- 3a2:	8f ef       	ldi	r24, 0xFF	; 255
- 3a4:	9f ef       	ldi	r25, 0xFF	; 255
+ 3a0:	8f ef       	ldi	r24, 0xFF	; 255
+ 3a2:	9f ef       	ldi	r25, 0xFF	; 255
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:198
   } else {
     unsigned char c = _rx_buffer->buffer[_rx_buffer->tail];
@@ -516,9 +513,9 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
     return c;
   }
 }
- 3a6:	08 95       	ret
+ 3a4:	08 95       	ret
 
-000003a8 <TinySoftwareSerial::peek()>:
+000003a6 <TinySoftwareSerial::peek()>:
 _ZN18TinySoftwareSerial4peekEv():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:181
   }
@@ -527,28 +524,28 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
 int TinySoftwareSerial::peek(void)
 {
   if (_rx_buffer->head == _rx_buffer->tail) {
- 3a8:	dc 01       	movw	r26, r24
- 3aa:	1f 96       	adiw	r26, 0x0f	; 15
- 3ac:	ed 91       	ld	r30, X+
- 3ae:	fc 91       	ld	r31, X
- 3b0:	20 89       	ldd	r18, Z+16	; 0x10
- 3b2:	31 89       	ldd	r19, Z+17	; 0x11
- 3b4:	82 89       	ldd	r24, Z+18	; 0x12
- 3b6:	93 89       	ldd	r25, Z+19	; 0x13
- 3b8:	28 17       	cp	r18, r24
- 3ba:	39 07       	cpc	r19, r25
- 3bc:	39 f0       	breq	.+14     	; 0x3cc <TinySoftwareSerial::peek()+0x24>
+ 3a6:	dc 01       	movw	r26, r24
+ 3a8:	1f 96       	adiw	r26, 0x0f	; 15
+ 3aa:	ed 91       	ld	r30, X+
+ 3ac:	fc 91       	ld	r31, X
+ 3ae:	20 89       	ldd	r18, Z+16	; 0x10
+ 3b0:	31 89       	ldd	r19, Z+17	; 0x11
+ 3b2:	82 89       	ldd	r24, Z+18	; 0x12
+ 3b4:	93 89       	ldd	r25, Z+19	; 0x13
+ 3b6:	28 17       	cp	r18, r24
+ 3b8:	39 07       	cpc	r19, r25
+ 3ba:	39 f0       	breq	.+14     	; 0x3ca <TinySoftwareSerial::peek()+0x24>
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:184
     return -1;
   } else {
     return _rx_buffer->buffer[_rx_buffer->tail];
- 3be:	82 89       	ldd	r24, Z+18	; 0x12
- 3c0:	93 89       	ldd	r25, Z+19	; 0x13
- 3c2:	e8 0f       	add	r30, r24
- 3c4:	f9 1f       	adc	r31, r25
- 3c6:	80 81       	ld	r24, Z
- 3c8:	90 e0       	ldi	r25, 0x00	; 0
- 3ca:	08 95       	ret
+ 3bc:	82 89       	ldd	r24, Z+18	; 0x12
+ 3be:	93 89       	ldd	r25, Z+19	; 0x13
+ 3c0:	e8 0f       	add	r30, r24
+ 3c2:	f9 1f       	adc	r31, r25
+ 3c4:	80 81       	ld	r24, Z
+ 3c6:	90 e0       	ldi	r25, 0x00	; 0
+ 3c8:	08 95       	ret
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:182
 }
 
@@ -556,16 +553,16 @@ int TinySoftwareSerial::peek(void)
 {
   if (_rx_buffer->head == _rx_buffer->tail) {
     return -1;
- 3cc:	8f ef       	ldi	r24, 0xFF	; 255
- 3ce:	9f ef       	ldi	r25, 0xFF	; 255
+ 3ca:	8f ef       	ldi	r24, 0xFF	; 255
+ 3cc:	9f ef       	ldi	r25, 0xFF	; 255
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:186
   } else {
     return _rx_buffer->buffer[_rx_buffer->tail];
   }
 }
- 3d0:	08 95       	ret
+ 3ce:	08 95       	ret
 
-000003d2 <TinySoftwareSerial::available()>:
+000003d0 <TinySoftwareSerial::available()>:
 _ZN18TinySoftwareSerial9availableEv():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:162
   _rx_buffer->head = _rx_buffer->tail;
@@ -574,23 +571,23 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
 int TinySoftwareSerial::available(void)
 {
   return (unsigned int)(SERIAL_BUFFER_SIZE + _rx_buffer->head - _rx_buffer->tail) % SERIAL_BUFFER_SIZE;
- 3d2:	dc 01       	movw	r26, r24
- 3d4:	1f 96       	adiw	r26, 0x0f	; 15
- 3d6:	ed 91       	ld	r30, X+
- 3d8:	fc 91       	ld	r31, X
- 3da:	80 89       	ldd	r24, Z+16	; 0x10
- 3dc:	91 89       	ldd	r25, Z+17	; 0x11
- 3de:	22 89       	ldd	r18, Z+18	; 0x12
- 3e0:	33 89       	ldd	r19, Z+19	; 0x13
- 3e2:	82 1b       	sub	r24, r18
- 3e4:	93 0b       	sbc	r25, r19
+ 3d0:	dc 01       	movw	r26, r24
+ 3d2:	1f 96       	adiw	r26, 0x0f	; 15
+ 3d4:	ed 91       	ld	r30, X+
+ 3d6:	fc 91       	ld	r31, X
+ 3d8:	80 89       	ldd	r24, Z+16	; 0x10
+ 3da:	91 89       	ldd	r25, Z+17	; 0x11
+ 3dc:	22 89       	ldd	r18, Z+18	; 0x12
+ 3de:	33 89       	ldd	r19, Z+19	; 0x13
+ 3e0:	82 1b       	sub	r24, r18
+ 3e2:	93 0b       	sbc	r25, r19
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:163
 }
- 3e6:	8f 70       	andi	r24, 0x0F	; 15
- 3e8:	99 27       	eor	r25, r25
- 3ea:	08 95       	ret
+ 3e4:	8f 70       	andi	r24, 0x0F	; 15
+ 3e6:	99 27       	eor	r25, r25
+ 3e8:	08 95       	ret
 
-000003ec <Print::write(unsigned char const*, unsigned int)>:
+000003ea <Print::write(unsigned char const*, unsigned int)>:
 _ZN5Print5writeEPKhj():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:34
 
@@ -599,58 +596,58 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
 /* default implementation: may be overridden */
 size_t Print::write(const uint8_t *buffer, size_t size)
 {
- 3ec:	cf 92       	push	r12
- 3ee:	df 92       	push	r13
- 3f0:	ef 92       	push	r14
- 3f2:	ff 92       	push	r15
- 3f4:	0f 93       	push	r16
- 3f6:	1f 93       	push	r17
- 3f8:	cf 93       	push	r28
- 3fa:	df 93       	push	r29
- 3fc:	6c 01       	movw	r12, r24
- 3fe:	eb 01       	movw	r28, r22
- 400:	7b 01       	movw	r14, r22
- 402:	e4 0e       	add	r14, r20
- 404:	f5 1e       	adc	r15, r21
+ 3ea:	cf 92       	push	r12
+ 3ec:	df 92       	push	r13
+ 3ee:	ef 92       	push	r14
+ 3f0:	ff 92       	push	r15
+ 3f2:	0f 93       	push	r16
+ 3f4:	1f 93       	push	r17
+ 3f6:	cf 93       	push	r28
+ 3f8:	df 93       	push	r29
+ 3fa:	6c 01       	movw	r12, r24
+ 3fc:	eb 01       	movw	r28, r22
+ 3fe:	7b 01       	movw	r14, r22
+ 400:	e4 0e       	add	r14, r20
+ 402:	f5 1e       	adc	r15, r21
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:35
   size_t n = 0;
- 406:	10 e0       	ldi	r17, 0x00	; 0
- 408:	00 e0       	ldi	r16, 0x00	; 0
+ 404:	10 e0       	ldi	r17, 0x00	; 0
+ 406:	00 e0       	ldi	r16, 0x00	; 0
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:36
   while (size--) {
- 40a:	ce 15       	cp	r28, r14
- 40c:	df 05       	cpc	r29, r15
- 40e:	61 f0       	breq	.+24     	; 0x428 <__LOCK_REGION_LENGTH__+0x28>
+ 408:	ce 15       	cp	r28, r14
+ 40a:	df 05       	cpc	r29, r15
+ 40c:	61 f0       	breq	.+24     	; 0x426 <__LOCK_REGION_LENGTH__+0x26>
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:37
     n += write(*buffer++);
- 410:	69 91       	ld	r22, Y+
- 412:	d6 01       	movw	r26, r12
- 414:	ed 91       	ld	r30, X+
- 416:	fc 91       	ld	r31, X
- 418:	01 90       	ld	r0, Z+
- 41a:	f0 81       	ld	r31, Z
- 41c:	e0 2d       	mov	r30, r0
- 41e:	c6 01       	movw	r24, r12
- 420:	09 95       	icall
- 422:	08 0f       	add	r16, r24
- 424:	19 1f       	adc	r17, r25
- 426:	f1 cf       	rjmp	.-30     	; 0x40a <__LOCK_REGION_LENGTH__+0xa>
+ 40e:	69 91       	ld	r22, Y+
+ 410:	d6 01       	movw	r26, r12
+ 412:	ed 91       	ld	r30, X+
+ 414:	fc 91       	ld	r31, X
+ 416:	01 90       	ld	r0, Z+
+ 418:	f0 81       	ld	r31, Z
+ 41a:	e0 2d       	mov	r30, r0
+ 41c:	c6 01       	movw	r24, r12
+ 41e:	09 95       	icall
+ 420:	08 0f       	add	r16, r24
+ 422:	19 1f       	adc	r17, r25
+ 424:	f1 cf       	rjmp	.-30     	; 0x408 <__LOCK_REGION_LENGTH__+0x8>
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:40
   }
   return n;
 }
- 428:	c8 01       	movw	r24, r16
- 42a:	df 91       	pop	r29
- 42c:	cf 91       	pop	r28
- 42e:	1f 91       	pop	r17
- 430:	0f 91       	pop	r16
- 432:	ff 90       	pop	r15
- 434:	ef 90       	pop	r14
- 436:	df 90       	pop	r13
- 438:	cf 90       	pop	r12
- 43a:	08 95       	ret
+ 426:	c8 01       	movw	r24, r16
+ 428:	df 91       	pop	r29
+ 42a:	cf 91       	pop	r28
+ 42c:	1f 91       	pop	r17
+ 42e:	0f 91       	pop	r16
+ 430:	ff 90       	pop	r15
+ 432:	ef 90       	pop	r14
+ 434:	df 90       	pop	r13
+ 436:	cf 90       	pop	r12
+ 438:	08 95       	ret
 
-0000043c <unsigned char& EEPROMClass::get<unsigned char>(int, unsigned char&) [clone .isra.0] [clone .constprop.19]>:
+0000043a <unsigned char& EEPROMClass::get<unsigned char>(int, unsigned char&) [clone .isra.0] [clone .constprop.19]>:
 _ZN11EEPROMClass3getIhEERT_iS2_.isra.0.constprop.19():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\libraries\EEPROM/EEPROM.h:145
     EEPtr begin()                        { return 0x00; }
@@ -659,9 +656,9 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\li
 
     //Functionality to 'get' and 'put' objects to and from EEPROM.
     template< typename T > T &get( int idx, T &t ){
- 43c:	cf 93       	push	r28
- 43e:	df 93       	push	r29
- 440:	eb 01       	movw	r28, r22
+ 43a:	cf 93       	push	r28
+ 43c:	df 93       	push	r29
+ 43e:	eb 01       	movw	r28, r22
 operator*():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\libraries\EEPROM/EEPROM.h:53
 
@@ -670,7 +667,7 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\li
 
     //Access/read members.
     uint8_t operator*() const            { return eeprom_read_byte( (uint8_t*) index ); }
- 442:	ef d1       	rcall	.+990    	; 0x822 <eeprom_read_byte>
+ 440:	ee d1       	rcall	.+988    	; 0x81e <eeprom_read_byte>
 _ZN11EEPROMClass3getIhEERT_iS2_.isra.0.constprop.19():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\libraries\EEPROM/EEPROM.h:148
 
@@ -679,65 +676,65 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\li
         EEPtr e = idx;
         uint8_t *ptr = (uint8_t*) &t;
         for( int count = sizeof(T) ; count ; --count, ++e )  *ptr++ = *e;
- 444:	88 83       	st	Y, r24
+ 442:	88 83       	st	Y, r24
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\libraries\EEPROM/EEPROM.h:150
         return t;
     }
- 446:	ce 01       	movw	r24, r28
- 448:	df 91       	pop	r29
- 44a:	cf 91       	pop	r28
- 44c:	08 95       	ret
+ 444:	ce 01       	movw	r24, r28
+ 446:	df 91       	pop	r29
+ 448:	cf 91       	pop	r28
+ 44a:	08 95       	ret
 
-0000044e <loadEepromSettings()>:
+0000044c <loadEepromSettings()>:
 _Z18loadEepromSettingsv():
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:6
- 44e:	cf 92       	push	r12
- 450:	df 92       	push	r13
- 452:	ef 92       	push	r14
- 454:	ff 92       	push	r15
- 456:	0f 93       	push	r16
- 458:	1f 93       	push	r17
- 45a:	cf 93       	push	r28
- 45c:	df 93       	push	r29
- 45e:	00 d0       	rcall	.+0      	; 0x460 <loadEepromSettings()+0x12>
- 460:	cd b7       	in	r28, 0x3d	; 61
- 462:	de b7       	in	r29, 0x3e	; 62
+ 44c:	cf 92       	push	r12
+ 44e:	df 92       	push	r13
+ 450:	ef 92       	push	r14
+ 452:	ff 92       	push	r15
+ 454:	0f 93       	push	r16
+ 456:	1f 93       	push	r17
+ 458:	cf 93       	push	r28
+ 45a:	df 93       	push	r29
+ 45c:	00 d0       	rcall	.+0      	; 0x45e <loadEepromSettings()+0x12>
+ 45e:	cd b7       	in	r28, 0x3d	; 61
+ 460:	de b7       	in	r29, 0x3e	; 62
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:9
- 464:	19 82       	std	Y+1, r1	; 0x01
+ 462:	19 82       	std	Y+1, r1	; 0x01
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:10
- 466:	be 01       	movw	r22, r28
- 468:	6f 5f       	subi	r22, 0xFF	; 255
- 46a:	7f 4f       	sbci	r23, 0xFF	; 255
- 46c:	90 e0       	ldi	r25, 0x00	; 0
- 46e:	80 e0       	ldi	r24, 0x00	; 0
- 470:	e5 df       	rcall	.-54     	; 0x43c <unsigned char& EEPROMClass::get<unsigned char>(int, unsigned char&) [clone .isra.0] [clone .constprop.19]>
+ 464:	be 01       	movw	r22, r28
+ 466:	6f 5f       	subi	r22, 0xFF	; 255
+ 468:	7f 4f       	sbci	r23, 0xFF	; 255
+ 46a:	90 e0       	ldi	r25, 0x00	; 0
+ 46c:	80 e0       	ldi	r24, 0x00	; 0
+ 46e:	e5 df       	rcall	.-54     	; 0x43a <unsigned char& EEPROMClass::get<unsigned char>(int, unsigned char&) [clone .isra.0] [clone .constprop.19]>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:11
- 472:	09 81       	ldd	r16, Y+1	; 0x01
+ 470:	09 81       	ldd	r16, Y+1	; 0x01
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:14
- 474:	1a 82       	std	Y+2, r1	; 0x02
+ 472:	1a 82       	std	Y+2, r1	; 0x02
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:15
- 476:	be 01       	movw	r22, r28
- 478:	6e 5f       	subi	r22, 0xFE	; 254
- 47a:	7f 4f       	sbci	r23, 0xFF	; 255
- 47c:	81 e0       	ldi	r24, 0x01	; 1
- 47e:	90 e0       	ldi	r25, 0x00	; 0
- 480:	dd df       	rcall	.-70     	; 0x43c <unsigned char& EEPROMClass::get<unsigned char>(int, unsigned char&) [clone .isra.0] [clone .constprop.19]>
+ 474:	be 01       	movw	r22, r28
+ 476:	6e 5f       	subi	r22, 0xFE	; 254
+ 478:	7f 4f       	sbci	r23, 0xFF	; 255
+ 47a:	81 e0       	ldi	r24, 0x01	; 1
+ 47c:	90 e0       	ldi	r25, 0x00	; 0
+ 47e:	dd df       	rcall	.-70     	; 0x43a <unsigned char& EEPROMClass::get<unsigned char>(int, unsigned char&) [clone .isra.0] [clone .constprop.19]>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:16
- 482:	8a 81       	ldd	r24, Y+2	; 0x02
- 484:	80 31       	cpi	r24, 0x10	; 16
- 486:	19 f4       	brne	.+6      	; 0x48e <loadEepromSettings()+0x40>
+ 480:	8a 81       	ldd	r24, Y+2	; 0x02
+ 482:	80 31       	cpi	r24, 0x10	; 16
+ 484:	19 f4       	brne	.+6      	; 0x48c <loadEepromSettings()+0x40>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:11
- 488:	11 e0       	ldi	r17, 0x01	; 1
- 48a:	07 30       	cpi	r16, 0x07	; 7
- 48c:	09 f0       	breq	.+2      	; 0x490 <loadEepromSettings()+0x42>
+ 486:	11 e0       	ldi	r17, 0x01	; 1
+ 488:	07 30       	cpi	r16, 0x07	; 7
+ 48a:	09 f0       	breq	.+2      	; 0x48e <loadEepromSettings()+0x42>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:17
- 48e:	10 e0       	ldi	r17, 0x00	; 0
- 490:	86 e9       	ldi	r24, 0x96	; 150
- 492:	c8 2e       	mov	r12, r24
- 494:	80 e0       	ldi	r24, 0x00	; 0
- 496:	d8 2e       	mov	r13, r24
- 498:	f1 2c       	mov	r15, r1
- 49a:	e1 2c       	mov	r14, r1
+ 48c:	10 e0       	ldi	r17, 0x00	; 0
+ 48e:	86 e9       	ldi	r24, 0x96	; 150
+ 490:	c8 2e       	mov	r12, r24
+ 492:	80 e0       	ldi	r24, 0x00	; 0
+ 494:	d8 2e       	mov	r13, r24
+ 496:	f1 2c       	mov	r15, r1
+ 498:	e1 2c       	mov	r14, r1
 operator*():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\libraries\EEPROM/EEPROM.h:53
 
@@ -746,8 +743,8 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\li
 
     //Access/read members.
     uint8_t operator*() const            { return eeprom_read_byte( (uint8_t*) index ); }
- 49c:	c7 01       	movw	r24, r14
- 49e:	c1 d1       	rcall	.+898    	; 0x822 <eeprom_read_byte>
+ 49a:	c7 01       	movw	r24, r14
+ 49c:	c0 d1       	rcall	.+896    	; 0x81e <eeprom_read_byte>
 _ZN11EEPROMClass3getI22struct_eeprom_settingsEERT_iS3_.isra.1():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\libraries\EEPROM/EEPROM.h:148
 
@@ -756,42 +753,42 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\li
         EEPtr e = idx;
         uint8_t *ptr = (uint8_t*) &t;
         for( int count = sizeof(T) ; count ; --count, ++e )  *ptr++ = *e;
- 4a0:	f6 01       	movw	r30, r12
- 4a2:	81 93       	st	Z+, r24
- 4a4:	6f 01       	movw	r12, r30
- 4a6:	ff ef       	ldi	r31, 0xFF	; 255
- 4a8:	ef 1a       	sub	r14, r31
- 4aa:	ff 0a       	sbc	r15, r31
- 4ac:	87 e0       	ldi	r24, 0x07	; 7
- 4ae:	e8 16       	cp	r14, r24
- 4b0:	f1 04       	cpc	r15, r1
- 4b2:	a1 f7       	brne	.-24     	; 0x49c <loadEepromSettings()+0x4e>
+ 49e:	f6 01       	movw	r30, r12
+ 4a0:	81 93       	st	Z+, r24
+ 4a2:	6f 01       	movw	r12, r30
+ 4a4:	ff ef       	ldi	r31, 0xFF	; 255
+ 4a6:	ef 1a       	sub	r14, r31
+ 4a8:	ff 0a       	sbc	r15, r31
+ 4aa:	87 e0       	ldi	r24, 0x07	; 7
+ 4ac:	e8 16       	cp	r14, r24
+ 4ae:	f1 04       	cpc	r15, r1
+ 4b0:	a1 f7       	brne	.-24     	; 0x49a <loadEepromSettings()+0x4e>
 checkEepromSettingsCRC():
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:46
- 4b4:	80 91 96 00 	lds	r24, 0x0096	; 0x800096 <eeprom_settings>
- 4b8:	81 50       	subi	r24, 0x01	; 1
- 4ba:	f2 de       	rcall	.-540    	; 0x2a0 <computeCRC8(unsigned char*, unsigned char) [clone .constprop.3]>
+ 4b2:	80 91 96 00 	lds	r24, 0x0096	; 0x800096 <eeprom_settings>
+ 4b6:	81 50       	subi	r24, 0x01	; 1
+ 4b8:	f2 de       	rcall	.-540    	; 0x29e <computeCRC8(unsigned char*, unsigned char) [clone .constprop.4]>
 _Z18loadEepromSettingsv():
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:21
- 4bc:	90 91 9c 00 	lds	r25, 0x009C	; 0x80009c <eeprom_settings+0x6>
- 4c0:	89 13       	cpse	r24, r25
+ 4ba:	90 91 9c 00 	lds	r25, 0x009C	; 0x80009c <eeprom_settings+0x6>
+ 4be:	89 13       	cpse	r24, r25
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:22
- 4c2:	10 e0       	ldi	r17, 0x00	; 0
+ 4c0:	10 e0       	ldi	r17, 0x00	; 0
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:25
- 4c4:	81 2f       	mov	r24, r17
+ 4c2:	81 2f       	mov	r24, r17
+ 4c4:	0f 90       	pop	r0
  4c6:	0f 90       	pop	r0
- 4c8:	0f 90       	pop	r0
- 4ca:	df 91       	pop	r29
- 4cc:	cf 91       	pop	r28
- 4ce:	1f 91       	pop	r17
- 4d0:	0f 91       	pop	r16
- 4d2:	ff 90       	pop	r15
- 4d4:	ef 90       	pop	r14
- 4d6:	df 90       	pop	r13
- 4d8:	cf 90       	pop	r12
- 4da:	08 95       	ret
+ 4c8:	df 91       	pop	r29
+ 4ca:	cf 91       	pop	r28
+ 4cc:	1f 91       	pop	r17
+ 4ce:	0f 91       	pop	r16
+ 4d0:	ff 90       	pop	r15
+ 4d2:	ef 90       	pop	r14
+ 4d4:	df 90       	pop	r13
+ 4d6:	cf 90       	pop	r12
+ 4d8:	08 95       	ret
 
-000004dc <Print::printNumber(unsigned long, unsigned char) [clone .constprop.13]>:
+000004da <Print::printNumber(unsigned long, unsigned char) [clone .constprop.13]>:
 _ZN5Print11printNumberEmh.constprop.13():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:257
 
@@ -800,79 +797,79 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
 // Private Methods /////////////////////////////////////////////////////////////
 
 size_t Print::printNumber(unsigned long n, uint8_t base) {
- 4dc:	8f 92       	push	r8
- 4de:	9f 92       	push	r9
- 4e0:	af 92       	push	r10
- 4e2:	bf 92       	push	r11
- 4e4:	ef 92       	push	r14
- 4e6:	ff 92       	push	r15
- 4e8:	0f 93       	push	r16
- 4ea:	1f 93       	push	r17
- 4ec:	cf 93       	push	r28
- 4ee:	df 93       	push	r29
- 4f0:	cd b7       	in	r28, 0x3d	; 61
- 4f2:	de b7       	in	r29, 0x3e	; 62
- 4f4:	a1 97       	sbiw	r28, 0x21	; 33
- 4f6:	0f b6       	in	r0, 0x3f	; 63
- 4f8:	f8 94       	cli
- 4fa:	de bf       	out	0x3e, r29	; 62
- 4fc:	0f be       	out	0x3f, r0	; 63
- 4fe:	cd bf       	out	0x3d, r28	; 61
- 500:	16 2f       	mov	r17, r22
- 502:	04 2f       	mov	r16, r20
+ 4da:	8f 92       	push	r8
+ 4dc:	9f 92       	push	r9
+ 4de:	af 92       	push	r10
+ 4e0:	bf 92       	push	r11
+ 4e2:	ef 92       	push	r14
+ 4e4:	ff 92       	push	r15
+ 4e6:	0f 93       	push	r16
+ 4e8:	1f 93       	push	r17
+ 4ea:	cf 93       	push	r28
+ 4ec:	df 93       	push	r29
+ 4ee:	cd b7       	in	r28, 0x3d	; 61
+ 4f0:	de b7       	in	r29, 0x3e	; 62
+ 4f2:	a1 97       	sbiw	r28, 0x21	; 33
+ 4f4:	0f b6       	in	r0, 0x3f	; 63
+ 4f6:	f8 94       	cli
+ 4f8:	de bf       	out	0x3e, r29	; 62
+ 4fa:	0f be       	out	0x3f, r0	; 63
+ 4fc:	cd bf       	out	0x3d, r28	; 61
+ 4fe:	16 2f       	mov	r17, r22
+ 500:	04 2f       	mov	r16, r20
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:261
   char buf[8 * sizeof(long) + 1]; // Assumes 8-bit chars plus zero byte.
   char *str = &buf[sizeof(buf) - 1];
 
   *str = '\0';
- 504:	19 a2       	std	Y+33, r1	; 0x21
+ 502:	19 a2       	std	Y+33, r1	; 0x21
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:264
 
   // prevent crash if called with base == 1
   if (base < 2) base = 10;
- 506:	42 30       	cpi	r20, 0x02	; 2
- 508:	08 f4       	brcc	.+2      	; 0x50c <Print::printNumber(unsigned long, unsigned char) [clone .constprop.13]+0x30>
- 50a:	0a e0       	ldi	r16, 0x0A	; 10
- 50c:	7e 01       	movw	r14, r28
- 50e:	21 e2       	ldi	r18, 0x21	; 33
- 510:	e2 0e       	add	r14, r18
- 512:	f1 1c       	adc	r15, r1
+ 504:	42 30       	cpi	r20, 0x02	; 2
+ 506:	08 f4       	brcc	.+2      	; 0x50a <Print::printNumber(unsigned long, unsigned char) [clone .constprop.13]+0x30>
+ 508:	0a e0       	ldi	r16, 0x0A	; 10
+ 50a:	7e 01       	movw	r14, r28
+ 50c:	21 e2       	ldi	r18, 0x21	; 33
+ 50e:	e2 0e       	add	r14, r18
+ 510:	f1 1c       	adc	r15, r1
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:268
 
   do {
     unsigned long m = n;
     n /= base;
- 514:	80 2e       	mov	r8, r16
- 516:	91 2c       	mov	r9, r1
- 518:	b1 2c       	mov	r11, r1
- 51a:	a1 2c       	mov	r10, r1
- 51c:	61 2f       	mov	r22, r17
- 51e:	a5 01       	movw	r20, r10
- 520:	94 01       	movw	r18, r8
- 522:	9c d1       	rcall	.+824    	; 0x85c <__udivmodsi4>
+ 512:	80 2e       	mov	r8, r16
+ 514:	91 2c       	mov	r9, r1
+ 516:	b1 2c       	mov	r11, r1
+ 518:	a1 2c       	mov	r10, r1
+ 51a:	61 2f       	mov	r22, r17
+ 51c:	a5 01       	movw	r20, r10
+ 51e:	94 01       	movw	r18, r8
+ 520:	9b d1       	rcall	.+822    	; 0x858 <__udivmodsi4>
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:269
     char c = m - base * n;
- 524:	80 2f       	mov	r24, r16
- 526:	62 2f       	mov	r22, r18
- 528:	90 d1       	rcall	.+800    	; 0x84a <__mulqi3>
- 52a:	18 1b       	sub	r17, r24
+ 522:	80 2f       	mov	r24, r16
+ 524:	62 2f       	mov	r22, r18
+ 526:	8f d1       	rcall	.+798    	; 0x846 <__mulqi3>
+ 528:	18 1b       	sub	r17, r24
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:270
     *--str = c < 10 ? c + '0' : c + 'A' - 10;
- 52c:	1a 30       	cpi	r17, 0x0A	; 10
- 52e:	3c f5       	brge	.+78     	; 0x57e <Print::printNumber(unsigned long, unsigned char) [clone .constprop.13]+0xa2>
- 530:	10 5d       	subi	r17, 0xD0	; 208
- 532:	f7 01       	movw	r30, r14
- 534:	12 93       	st	-Z, r17
- 536:	7f 01       	movw	r14, r30
- 538:	12 2f       	mov	r17, r18
- 53a:	73 2f       	mov	r23, r19
- 53c:	ca 01       	movw	r24, r20
+ 52a:	1a 30       	cpi	r17, 0x0A	; 10
+ 52c:	3c f5       	brge	.+78     	; 0x57c <Print::printNumber(unsigned long, unsigned char) [clone .constprop.13]+0xa2>
+ 52e:	10 5d       	subi	r17, 0xD0	; 208
+ 530:	f7 01       	movw	r30, r14
+ 532:	12 93       	st	-Z, r17
+ 534:	7f 01       	movw	r14, r30
+ 536:	12 2f       	mov	r17, r18
+ 538:	73 2f       	mov	r23, r19
+ 53a:	ca 01       	movw	r24, r20
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:271
   } while(n);
- 53e:	23 2b       	or	r18, r19
- 540:	24 2b       	or	r18, r20
- 542:	25 2b       	or	r18, r21
- 544:	59 f7       	brne	.-42     	; 0x51c <Print::printNumber(unsigned long, unsigned char) [clone .constprop.13]+0x40>
+ 53c:	23 2b       	or	r18, r19
+ 53e:	24 2b       	or	r18, r20
+ 540:	25 2b       	or	r18, r21
+ 542:	59 f7       	brne	.-42     	; 0x51a <Print::printNumber(unsigned long, unsigned char) [clone .constprop.13]+0x40>
 write():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.h:81
 
@@ -881,39 +878,39 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
 
     virtual size_t write(uint8_t) = 0;
     size_t write(const char *str) { return write((const uint8_t *)str, strlen(str)); }
- 546:	01 90       	ld	r0, Z+
- 548:	00 20       	and	r0, r0
- 54a:	e9 f7       	brne	.-6      	; 0x546 <Print::printNumber(unsigned long, unsigned char) [clone .constprop.13]+0x6a>
- 54c:	31 97       	sbiw	r30, 0x01	; 1
- 54e:	af 01       	movw	r20, r30
- 550:	4e 19       	sub	r20, r14
- 552:	5f 09       	sbc	r21, r15
- 554:	b7 01       	movw	r22, r14
- 556:	84 e8       	ldi	r24, 0x84	; 132
- 558:	90 e0       	ldi	r25, 0x00	; 0
- 55a:	48 df       	rcall	.-368    	; 0x3ec <Print::write(unsigned char const*, unsigned int)>
+ 544:	01 90       	ld	r0, Z+
+ 546:	00 20       	and	r0, r0
+ 548:	e9 f7       	brne	.-6      	; 0x544 <Print::printNumber(unsigned long, unsigned char) [clone .constprop.13]+0x6a>
+ 54a:	31 97       	sbiw	r30, 0x01	; 1
+ 54c:	af 01       	movw	r20, r30
+ 54e:	4e 19       	sub	r20, r14
+ 550:	5f 09       	sbc	r21, r15
+ 552:	b7 01       	movw	r22, r14
+ 554:	84 e8       	ldi	r24, 0x84	; 132
+ 556:	90 e0       	ldi	r25, 0x00	; 0
+ 558:	48 df       	rcall	.-368    	; 0x3ea <Print::write(unsigned char const*, unsigned int)>
 _ZN5Print11printNumberEmh.constprop.13():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:274
 
   return write(str);
 }
- 55c:	a1 96       	adiw	r28, 0x21	; 33
- 55e:	0f b6       	in	r0, 0x3f	; 63
- 560:	f8 94       	cli
- 562:	de bf       	out	0x3e, r29	; 62
- 564:	0f be       	out	0x3f, r0	; 63
- 566:	cd bf       	out	0x3d, r28	; 61
- 568:	df 91       	pop	r29
- 56a:	cf 91       	pop	r28
- 56c:	1f 91       	pop	r17
- 56e:	0f 91       	pop	r16
- 570:	ff 90       	pop	r15
- 572:	ef 90       	pop	r14
- 574:	bf 90       	pop	r11
- 576:	af 90       	pop	r10
- 578:	9f 90       	pop	r9
- 57a:	8f 90       	pop	r8
- 57c:	08 95       	ret
+ 55a:	a1 96       	adiw	r28, 0x21	; 33
+ 55c:	0f b6       	in	r0, 0x3f	; 63
+ 55e:	f8 94       	cli
+ 560:	de bf       	out	0x3e, r29	; 62
+ 562:	0f be       	out	0x3f, r0	; 63
+ 564:	cd bf       	out	0x3d, r28	; 61
+ 566:	df 91       	pop	r29
+ 568:	cf 91       	pop	r28
+ 56a:	1f 91       	pop	r17
+ 56c:	0f 91       	pop	r16
+ 56e:	ff 90       	pop	r15
+ 570:	ef 90       	pop	r14
+ 572:	bf 90       	pop	r11
+ 574:	af 90       	pop	r10
+ 576:	9f 90       	pop	r9
+ 578:	8f 90       	pop	r8
+ 57a:	08 95       	ret
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:270
 
   do {
@@ -921,10 +918,10 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
     n /= base;
     char c = m - base * n;
     *--str = c < 10 ? c + '0' : c + 'A' - 10;
- 57e:	19 5c       	subi	r17, 0xC9	; 201
- 580:	d8 cf       	rjmp	.-80     	; 0x532 <Print::printNumber(unsigned long, unsigned char) [clone .constprop.13]+0x56>
+ 57c:	19 5c       	subi	r17, 0xC9	; 201
+ 57e:	d8 cf       	rjmp	.-80     	; 0x530 <Print::printNumber(unsigned long, unsigned char) [clone .constprop.13]+0x56>
 
-00000582 <Print::println(unsigned char, int) [clone .constprop.9]>:
+00000580 <Print::println(unsigned char, int) [clone .constprop.9]>:
 _ZN5Print7printlnEhi.constprop.9():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:147
   size_t n = print(c);
@@ -933,9 +930,9 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
 }
 
 size_t Print::println(unsigned char b, int base)
- 582:	cf 93       	push	r28
- 584:	df 93       	push	r29
- 586:	46 2f       	mov	r20, r22
+ 580:	cf 93       	push	r28
+ 582:	df 93       	push	r29
+ 584:	46 2f       	mov	r20, r22
 print():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:63
   return write(c);
@@ -944,10 +941,10 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
 size_t Print::print(unsigned char b, int base)
 {
   return print((unsigned long) b, base);
- 588:	68 2f       	mov	r22, r24
- 58a:	70 e0       	ldi	r23, 0x00	; 0
- 58c:	90 e0       	ldi	r25, 0x00	; 0
- 58e:	80 e0       	ldi	r24, 0x00	; 0
+ 586:	68 2f       	mov	r22, r24
+ 588:	70 e0       	ldi	r23, 0x00	; 0
+ 58a:	90 e0       	ldi	r25, 0x00	; 0
+ 58c:	80 e0       	ldi	r24, 0x00	; 0
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:95
 }
 
@@ -955,8 +952,8 @@ size_t Print::print(unsigned long n, int base)
 {
   if (base == 0) return write(n);
   else return printNumber(n, base);
- 590:	a5 df       	rcall	.-182    	; 0x4dc <Print::printNumber(unsigned long, unsigned char) [clone .constprop.13]>
- 592:	ec 01       	movw	r28, r24
+ 58e:	a5 df       	rcall	.-182    	; 0x4da <Print::printNumber(unsigned long, unsigned char) [clone .constprop.13]>
+ 590:	ec 01       	movw	r28, r24
 _ZN5Print7printlnEhi.constprop.9():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:150
 }
@@ -965,35 +962,35 @@ size_t Print::println(unsigned char b, int base)
 {
   size_t n = print(b, base);
   n += println();
- 594:	b8 de       	rcall	.-656    	; 0x306 <Print::println() [clone .constprop.15]>
+ 592:	b8 de       	rcall	.-656    	; 0x304 <Print::println() [clone .constprop.15]>
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:152
   return n;
 }
- 596:	8c 0f       	add	r24, r28
- 598:	9d 1f       	adc	r25, r29
- 59a:	df 91       	pop	r29
- 59c:	cf 91       	pop	r28
- 59e:	08 95       	ret
+ 594:	8c 0f       	add	r24, r28
+ 596:	9d 1f       	adc	r25, r29
+ 598:	df 91       	pop	r29
+ 59a:	cf 91       	pop	r28
+ 59c:	08 95       	ret
 
-000005a0 <saveEepromSettings()>:
+0000059e <saveEepromSettings()>:
 _Z18saveEepromSettingsv():
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:29
- 5a0:	ff 92       	push	r15
- 5a2:	0f 93       	push	r16
- 5a4:	1f 93       	push	r17
- 5a6:	cf 93       	push	r28
- 5a8:	df 93       	push	r29
+ 59e:	ff 92       	push	r15
+ 5a0:	0f 93       	push	r16
+ 5a2:	1f 93       	push	r17
+ 5a4:	cf 93       	push	r28
+ 5a6:	df 93       	push	r29
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:30
- 5aa:	87 e0       	ldi	r24, 0x07	; 7
- 5ac:	80 93 96 00 	sts	0x0096, r24	; 0x800096 <eeprom_settings>
+ 5a8:	87 e0       	ldi	r24, 0x07	; 7
+ 5aa:	80 93 96 00 	sts	0x0096, r24	; 0x800096 <eeprom_settings>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:31
- 5b0:	86 e0       	ldi	r24, 0x06	; 6
- 5b2:	76 de       	rcall	.-788    	; 0x2a0 <computeCRC8(unsigned char*, unsigned char) [clone .constprop.3]>
- 5b4:	80 93 9c 00 	sts	0x009C, r24	; 0x80009c <eeprom_settings+0x6>
- 5b8:	06 e9       	ldi	r16, 0x96	; 150
- 5ba:	10 e0       	ldi	r17, 0x00	; 0
- 5bc:	d0 e0       	ldi	r29, 0x00	; 0
- 5be:	c0 e0       	ldi	r28, 0x00	; 0
+ 5ae:	86 e0       	ldi	r24, 0x06	; 6
+ 5b0:	76 de       	rcall	.-788    	; 0x29e <computeCRC8(unsigned char*, unsigned char) [clone .constprop.4]>
+ 5b2:	80 93 9c 00 	sts	0x009C, r24	; 0x80009c <eeprom_settings+0x6>
+ 5b6:	06 e9       	ldi	r16, 0x96	; 150
+ 5b8:	10 e0       	ldi	r17, 0x00	; 0
+ 5ba:	d0 e0       	ldi	r29, 0x00	; 0
+ 5bc:	c0 e0       	ldi	r28, 0x00	; 0
 _ZN11EEPROMClass3putI22struct_eeprom_settingsEERKT_iS4_.isra.2():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\libraries\EEPROM/EEPROM.h:155
     }
@@ -1002,9 +999,9 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\li
         EEPtr e = idx;
         const uint8_t *ptr = (const uint8_t*) &t;
         for( int count = sizeof(T) ; count ; --count, ++e )  (*e).update( *ptr++ );
- 5c0:	f8 01       	movw	r30, r16
- 5c2:	f1 90       	ld	r15, Z+
- 5c4:	8f 01       	movw	r16, r30
+ 5be:	f8 01       	movw	r30, r16
+ 5c0:	f1 90       	ld	r15, Z+
+ 5c2:	8f 01       	movw	r16, r30
 operator*():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\libraries\EEPROM/EEPROM.h:53
 
@@ -1013,8 +1010,8 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\li
 
     //Access/read members.
     uint8_t operator*() const            { return eeprom_read_byte( (uint8_t*) index ); }
- 5c6:	ce 01       	movw	r24, r28
- 5c8:	2c d1       	rcall	.+600    	; 0x822 <eeprom_read_byte>
+ 5c4:	ce 01       	movw	r24, r28
+ 5c6:	2b d1       	rcall	.+598    	; 0x81e <eeprom_read_byte>
 update():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\libraries\EEPROM/EEPROM.h:74
     EERef &operator &=( uint8_t in )     { return *this = **this & in; }
@@ -1023,8 +1020,8 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\li
     EERef &operator >>=( uint8_t in )    { return *this = **this >> in; }
 
     EERef &update( uint8_t in )          { return  in != *this ? *this = in : *this; }
- 5ca:	f8 16       	cp	r15, r24
- 5cc:	19 f0       	breq	.+6      	; 0x5d4 <saveEepromSettings()+0x34>
+ 5c8:	f8 16       	cp	r15, r24
+ 5ca:	19 f0       	breq	.+6      	; 0x5d2 <saveEepromSettings()+0x34>
 _ZN5EERefaSEh():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\libraries\EEPROM/EEPROM.h:61
     //Assignment/write members.
@@ -1033,10 +1030,10 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\li
       EERef &operator=( uint8_t in )       { return safe_eeprom_write_byte( (uint8_t*) index, in ), *this;  }
     #else
       EERef &operator=( uint8_t in )       { return eeprom_write_byte( (uint8_t*) index, in ), *this;  }
- 5ce:	6f 2d       	mov	r22, r15
- 5d0:	ce 01       	movw	r24, r28
- 5d2:	2e d1       	rcall	.+604    	; 0x830 <eeprom_write_byte>
- 5d4:	21 96       	adiw	r28, 0x01	; 1
+ 5cc:	6f 2d       	mov	r22, r15
+ 5ce:	ce 01       	movw	r24, r28
+ 5d0:	2d d1       	rcall	.+602    	; 0x82c <eeprom_write_byte>
+ 5d2:	21 96       	adiw	r28, 0x01	; 1
 _ZN11EEPROMClass3putI22struct_eeprom_settingsEERKT_iS4_.isra.2():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\libraries\EEPROM/EEPROM.h:155
     }
@@ -1045,61 +1042,61 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\li
         EEPtr e = idx;
         const uint8_t *ptr = (const uint8_t*) &t;
         for( int count = sizeof(T) ; count ; --count, ++e )  (*e).update( *ptr++ );
- 5d6:	c7 30       	cpi	r28, 0x07	; 7
- 5d8:	d1 05       	cpc	r29, r1
- 5da:	91 f7       	brne	.-28     	; 0x5c0 <saveEepromSettings()+0x20>
+ 5d4:	c7 30       	cpi	r28, 0x07	; 7
+ 5d6:	d1 05       	cpc	r29, r1
+ 5d8:	91 f7       	brne	.-28     	; 0x5be <saveEepromSettings()+0x20>
 _Z18saveEepromSettingsv():
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:33
- 5dc:	df 91       	pop	r29
- 5de:	cf 91       	pop	r28
- 5e0:	1f 91       	pop	r17
- 5e2:	0f 91       	pop	r16
- 5e4:	ff 90       	pop	r15
- 5e6:	08 95       	ret
+ 5da:	df 91       	pop	r29
+ 5dc:	cf 91       	pop	r28
+ 5de:	1f 91       	pop	r17
+ 5e0:	0f 91       	pop	r16
+ 5e2:	ff 90       	pop	r15
+ 5e4:	08 95       	ret
 
-000005e8 <printEepromSettings()>:
+000005e6 <printEepromSettings()>:
 _Z19printEepromSettingsv():
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:80
- 5e8:	cf 93       	push	r28
- 5ea:	df 93       	push	r29
+ 5e6:	cf 93       	push	r28
+ 5e8:	df 93       	push	r29
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:81
- 5ec:	8f e8       	ldi	r24, 0x8F	; 143
- 5ee:	90 e0       	ldi	r25, 0x00	; 0
- 5f0:	9a de       	rcall	.-716    	; 0x326 <Print::print(__FlashStringHelper const*) [clone .constprop.8]>
- 5f2:	c6 e9       	ldi	r28, 0x96	; 150
- 5f4:	d0 e0       	ldi	r29, 0x00	; 0
- 5f6:	6a e0       	ldi	r22, 0x0A	; 10
- 5f8:	70 e0       	ldi	r23, 0x00	; 0
- 5fa:	88 81       	ld	r24, Y
- 5fc:	c2 df       	rcall	.-124    	; 0x582 <Print::println(unsigned char, int) [clone .constprop.9]>
+ 5ea:	8f e8       	ldi	r24, 0x8F	; 143
+ 5ec:	90 e0       	ldi	r25, 0x00	; 0
+ 5ee:	9a de       	rcall	.-716    	; 0x324 <Print::print(__FlashStringHelper const*) [clone .constprop.8]>
+ 5f0:	c6 e9       	ldi	r28, 0x96	; 150
+ 5f2:	d0 e0       	ldi	r29, 0x00	; 0
+ 5f4:	6a e0       	ldi	r22, 0x0A	; 10
+ 5f6:	70 e0       	ldi	r23, 0x00	; 0
+ 5f8:	88 81       	ld	r24, Y
+ 5fa:	c2 df       	rcall	.-124    	; 0x580 <Print::println(unsigned char, int) [clone .constprop.9]>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:82
- 5fe:	88 e7       	ldi	r24, 0x78	; 120
- 600:	90 e0       	ldi	r25, 0x00	; 0
- 602:	91 de       	rcall	.-734    	; 0x326 <Print::print(__FlashStringHelper const*) [clone .constprop.8]>
- 604:	60 e1       	ldi	r22, 0x10	; 16
- 606:	70 e0       	ldi	r23, 0x00	; 0
- 608:	89 81       	ldd	r24, Y+1	; 0x01
- 60a:	bb df       	rcall	.-138    	; 0x582 <Print::println(unsigned char, int) [clone .constprop.9]>
+ 5fc:	88 e7       	ldi	r24, 0x78	; 120
+ 5fe:	90 e0       	ldi	r25, 0x00	; 0
+ 600:	91 de       	rcall	.-734    	; 0x324 <Print::print(__FlashStringHelper const*) [clone .constprop.8]>
+ 602:	60 e1       	ldi	r22, 0x10	; 16
+ 604:	70 e0       	ldi	r23, 0x00	; 0
+ 606:	89 81       	ldd	r24, Y+1	; 0x01
+ 608:	bb df       	rcall	.-138    	; 0x580 <Print::println(unsigned char, int) [clone .constprop.9]>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:83
- 60c:	81 e6       	ldi	r24, 0x61	; 97
- 60e:	90 e0       	ldi	r25, 0x00	; 0
- 610:	8a de       	rcall	.-748    	; 0x326 <Print::print(__FlashStringHelper const*) [clone .constprop.8]>
- 612:	60 e1       	ldi	r22, 0x10	; 16
- 614:	70 e0       	ldi	r23, 0x00	; 0
- 616:	8a 81       	ldd	r24, Y+2	; 0x02
- 618:	b4 df       	rcall	.-152    	; 0x582 <Print::println(unsigned char, int) [clone .constprop.9]>
+ 60a:	81 e6       	ldi	r24, 0x61	; 97
+ 60c:	90 e0       	ldi	r25, 0x00	; 0
+ 60e:	8a de       	rcall	.-748    	; 0x324 <Print::print(__FlashStringHelper const*) [clone .constprop.8]>
+ 610:	60 e1       	ldi	r22, 0x10	; 16
+ 612:	70 e0       	ldi	r23, 0x00	; 0
+ 614:	8a 81       	ldd	r24, Y+2	; 0x02
+ 616:	b4 df       	rcall	.-152    	; 0x580 <Print::println(unsigned char, int) [clone .constprop.9]>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:84
- 61a:	8c e4       	ldi	r24, 0x4C	; 76
- 61c:	90 e0       	ldi	r25, 0x00	; 0
- 61e:	83 de       	rcall	.-762    	; 0x326 <Print::print(__FlashStringHelper const*) [clone .constprop.8]>
- 620:	6a e0       	ldi	r22, 0x0A	; 10
- 622:	70 e0       	ldi	r23, 0x00	; 0
- 624:	8b 81       	ldd	r24, Y+3	; 0x03
- 626:	ad df       	rcall	.-166    	; 0x582 <Print::println(unsigned char, int) [clone .constprop.9]>
+ 618:	8c e4       	ldi	r24, 0x4C	; 76
+ 61a:	90 e0       	ldi	r25, 0x00	; 0
+ 61c:	83 de       	rcall	.-762    	; 0x324 <Print::print(__FlashStringHelper const*) [clone .constprop.8]>
+ 61e:	6a e0       	ldi	r22, 0x0A	; 10
+ 620:	70 e0       	ldi	r23, 0x00	; 0
+ 622:	8b 81       	ldd	r24, Y+3	; 0x03
+ 624:	ad df       	rcall	.-166    	; 0x580 <Print::println(unsigned char, int) [clone .constprop.9]>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:85
- 628:	87 e3       	ldi	r24, 0x37	; 55
- 62a:	90 e0       	ldi	r25, 0x00	; 0
- 62c:	7c de       	rcall	.-776    	; 0x326 <Print::print(__FlashStringHelper const*) [clone .constprop.8]>
+ 626:	87 e3       	ldi	r24, 0x37	; 55
+ 628:	90 e0       	ldi	r25, 0x00	; 0
+ 62a:	7c de       	rcall	.-776    	; 0x324 <Print::print(__FlashStringHelper const*) [clone .constprop.8]>
 print():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:73
   return print((long) n, base);
@@ -1108,10 +1105,10 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
 size_t Print::print(unsigned int n, int base)
 {
   return print((unsigned long) n, base);
- 62e:	6c 81       	ldd	r22, Y+4	; 0x04
- 630:	7d 81       	ldd	r23, Y+5	; 0x05
- 632:	90 e0       	ldi	r25, 0x00	; 0
- 634:	80 e0       	ldi	r24, 0x00	; 0
+ 62c:	6c 81       	ldd	r22, Y+4	; 0x04
+ 62e:	7d 81       	ldd	r23, Y+5	; 0x05
+ 630:	90 e0       	ldi	r25, 0x00	; 0
+ 632:	80 e0       	ldi	r24, 0x00	; 0
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:95
 }
 
@@ -1119,8 +1116,8 @@ size_t Print::print(unsigned long n, int base)
 {
   if (base == 0) return write(n);
   else return printNumber(n, base);
- 636:	4a e0       	ldi	r20, 0x0A	; 10
- 638:	51 df       	rcall	.-350    	; 0x4dc <Print::printNumber(unsigned long, unsigned char) [clone .constprop.13]>
+ 634:	4a e0       	ldi	r20, 0x0A	; 10
+ 636:	51 df       	rcall	.-350    	; 0x4da <Print::printNumber(unsigned long, unsigned char) [clone .constprop.13]>
 println():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/Print.cpp:164
 }
@@ -1129,22 +1126,22 @@ size_t Print::println(unsigned int num, int base)
 {
   size_t n = print(num, base);
   n += println();
- 63a:	65 de       	rcall	.-822    	; 0x306 <Print::println() [clone .constprop.15]>
+ 638:	65 de       	rcall	.-822    	; 0x304 <Print::println() [clone .constprop.15]>
 _Z19printEepromSettingsv():
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:86
- 63c:	80 e2       	ldi	r24, 0x20	; 32
- 63e:	90 e0       	ldi	r25, 0x00	; 0
- 640:	72 de       	rcall	.-796    	; 0x326 <Print::print(__FlashStringHelper const*) [clone .constprop.8]>
- 642:	60 e1       	ldi	r22, 0x10	; 16
- 644:	70 e0       	ldi	r23, 0x00	; 0
- 646:	8e 81       	ldd	r24, Y+6	; 0x06
+ 63a:	80 e2       	ldi	r24, 0x20	; 32
+ 63c:	90 e0       	ldi	r25, 0x00	; 0
+ 63e:	72 de       	rcall	.-796    	; 0x324 <Print::print(__FlashStringHelper const*) [clone .constprop.8]>
+ 640:	60 e1       	ldi	r22, 0x10	; 16
+ 642:	70 e0       	ldi	r23, 0x00	; 0
+ 644:	8e 81       	ldd	r24, Y+6	; 0x06
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:87
- 648:	df 91       	pop	r29
- 64a:	cf 91       	pop	r28
+ 646:	df 91       	pop	r29
+ 648:	cf 91       	pop	r28
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:86
- 64c:	9a cf       	rjmp	.-204    	; 0x582 <Print::println(unsigned char, int) [clone .constprop.9]>
+ 64a:	9a cf       	rjmp	.-204    	; 0x580 <Print::println(unsigned char, int) [clone .constprop.9]>
 
-0000064e <__vector_11>:
+0000064c <__vector_11>:
 __vector_11():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:90
 //rename the vector so we can use it.
@@ -1153,22 +1150,22 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
   #error Tiny Software Serial cannot find the Analog comparator interrupt vector!
 #endif
 ISR(ANALOG_COMP_vect){
- 64e:	1f 92       	push	r1
- 650:	0f 92       	push	r0
- 652:	0f b6       	in	r0, 0x3f	; 63
- 654:	0f 92       	push	r0
- 656:	11 24       	eor	r1, r1
- 658:	2f 93       	push	r18
- 65a:	3f 93       	push	r19
- 65c:	4f 93       	push	r20
- 65e:	5f 93       	push	r21
- 660:	7f 93       	push	r23
- 662:	8f 93       	push	r24
- 664:	9f 93       	push	r25
- 666:	af 93       	push	r26
- 668:	bf 93       	push	r27
- 66a:	ef 93       	push	r30
- 66c:	ff 93       	push	r31
+ 64c:	1f 92       	push	r1
+ 64e:	0f 92       	push	r0
+ 650:	0f b6       	in	r0, 0x3f	; 63
+ 652:	0f 92       	push	r0
+ 654:	11 24       	eor	r1, r1
+ 656:	2f 93       	push	r18
+ 658:	3f 93       	push	r19
+ 65a:	4f 93       	push	r20
+ 65c:	5f 93       	push	r21
+ 65e:	7f 93       	push	r23
+ 660:	8f 93       	push	r24
+ 662:	9f 93       	push	r25
+ 664:	af 93       	push	r26
+ 666:	bf 93       	push	r27
+ 668:	ef 93       	push	r30
+ 66a:	ff 93       	push	r31
 getch():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:70
       [mask] "r" (Serial._rxmask)
@@ -1177,25 +1174,25 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
       "r24",
       "r25"
     );
- 66e:	40 91 90 00 	lds	r20, 0x0090	; 0x800090 <Serial+0xc>
- 672:	20 e0       	ldi	r18, 0x00	; 0
- 674:	38 e0       	ldi	r19, 0x08	; 8
- 676:	35 d0       	rcall	.+106    	; 0x6e2 <uartDelay>
- 678:	34 d0       	rcall	.+104    	; 0x6e2 <uartDelay>
- 67a:	33 d0       	rcall	.+102    	; 0x6e2 <uartDelay>
- 67c:	32 d0       	rcall	.+100    	; 0x6e2 <uartDelay>
- 67e:	31 d0       	rcall	.+98     	; 0x6e2 <uartDelay>
- 680:	88 94       	clc
- 682:	79 b3       	in	r23, 0x19	; 25
- 684:	74 23       	and	r23, r20
- 686:	09 f0       	breq	.+2      	; 0x68a <__vector_11+0x3c>
- 688:	08 94       	sec
- 68a:	27 95       	ror	r18
- 68c:	3a 95       	dec	r19
- 68e:	09 f0       	breq	.+2      	; 0x692 <__vector_11+0x44>
- 690:	f3 cf       	rjmp	.-26     	; 0x678 <__vector_11+0x2a>
- 692:	27 d0       	rcall	.+78     	; 0x6e2 <uartDelay>
- 694:	26 d0       	rcall	.+76     	; 0x6e2 <uartDelay>
+ 66c:	40 91 90 00 	lds	r20, 0x0090	; 0x800090 <Serial+0xc>
+ 670:	20 e0       	ldi	r18, 0x00	; 0
+ 672:	38 e0       	ldi	r19, 0x08	; 8
+ 674:	35 d0       	rcall	.+106    	; 0x6e0 <uartDelay>
+ 676:	34 d0       	rcall	.+104    	; 0x6e0 <uartDelay>
+ 678:	33 d0       	rcall	.+102    	; 0x6e0 <uartDelay>
+ 67a:	32 d0       	rcall	.+100    	; 0x6e0 <uartDelay>
+ 67c:	31 d0       	rcall	.+98     	; 0x6e0 <uartDelay>
+ 67e:	88 94       	clc
+ 680:	79 b3       	in	r23, 0x19	; 25
+ 682:	74 23       	and	r23, r20
+ 684:	09 f0       	breq	.+2      	; 0x688 <__vector_11+0x3c>
+ 686:	08 94       	sec
+ 688:	27 95       	ror	r18
+ 68a:	3a 95       	dec	r19
+ 68c:	09 f0       	breq	.+2      	; 0x690 <__vector_11+0x44>
+ 68e:	f3 cf       	rjmp	.-26     	; 0x676 <__vector_11+0x2a>
+ 690:	27 d0       	rcall	.+78     	; 0x6e0 <uartDelay>
+ 692:	26 d0       	rcall	.+76     	; 0x6e0 <uartDelay>
 __vector_11():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:92
 #elif !defined (ANALOG_COMP_vect)
@@ -1204,8 +1201,8 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
 ISR(ANALOG_COMP_vect){
   char ch = getch(); //read in the character softwarily - I know its not a word, but it sounded cool, so you know what: #define softwarily 1
   store_char(ch, Serial._rx_buffer);
- 696:	e0 91 93 00 	lds	r30, 0x0093	; 0x800093 <Serial+0xf>
- 69a:	f0 91 94 00 	lds	r31, 0x0094	; 0x800094 <Serial+0x10>
+ 694:	e0 91 93 00 	lds	r30, 0x0093	; 0x800093 <Serial+0xf>
+ 698:	f0 91 94 00 	lds	r31, 0x0094	; 0x800094 <Serial+0x10>
 store_char():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:167
   return (unsigned int)(SERIAL_BUFFER_SIZE + _rx_buffer->head - _rx_buffer->tail) % SERIAL_BUFFER_SIZE;
@@ -1214,11 +1211,11 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
 void store_char(unsigned char c, soft_ring_buffer *buffer)
 {
   int i = (unsigned int)(buffer->head + 1) % SERIAL_BUFFER_SIZE;
- 69e:	80 89       	ldd	r24, Z+16	; 0x10
- 6a0:	91 89       	ldd	r25, Z+17	; 0x11
- 6a2:	01 96       	adiw	r24, 0x01	; 1
- 6a4:	8f 70       	andi	r24, 0x0F	; 15
- 6a6:	99 27       	eor	r25, r25
+ 69c:	80 89       	ldd	r24, Z+16	; 0x10
+ 69e:	91 89       	ldd	r25, Z+17	; 0x11
+ 6a0:	01 96       	adiw	r24, 0x01	; 1
+ 6a2:	8f 70       	andi	r24, 0x0F	; 15
+ 6a4:	99 27       	eor	r25, r25
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:173
 
   // if we should be storing the received character into the location
@@ -1226,22 +1223,22 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
   // current location of the tail), we're about to overflow the buffer
   // and so we don't write the character or advance the head.
   if (i != buffer->tail) {
- 6a8:	42 89       	ldd	r20, Z+18	; 0x12
- 6aa:	53 89       	ldd	r21, Z+19	; 0x13
- 6ac:	84 17       	cp	r24, r20
- 6ae:	95 07       	cpc	r25, r21
- 6b0:	39 f0       	breq	.+14     	; 0x6c0 <__vector_11+0x72>
+ 6a6:	42 89       	ldd	r20, Z+18	; 0x12
+ 6a8:	53 89       	ldd	r21, Z+19	; 0x13
+ 6aa:	84 17       	cp	r24, r20
+ 6ac:	95 07       	cpc	r25, r21
+ 6ae:	39 f0       	breq	.+14     	; 0x6be <__vector_11+0x72>
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:174
     buffer->buffer[buffer->head] = c;
- 6b2:	a0 89       	ldd	r26, Z+16	; 0x10
- 6b4:	b1 89       	ldd	r27, Z+17	; 0x11
- 6b6:	ae 0f       	add	r26, r30
- 6b8:	bf 1f       	adc	r27, r31
- 6ba:	2c 93       	st	X, r18
+ 6b0:	a0 89       	ldd	r26, Z+16	; 0x10
+ 6b2:	b1 89       	ldd	r27, Z+17	; 0x11
+ 6b4:	ae 0f       	add	r26, r30
+ 6b6:	bf 1f       	adc	r27, r31
+ 6b8:	2c 93       	st	X, r18
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:175
     buffer->head = i;
- 6bc:	91 8b       	std	Z+17, r25	; 0x11
- 6be:	80 8b       	std	Z+16, r24	; 0x10
+ 6ba:	91 8b       	std	Z+17, r25	; 0x11
+ 6bc:	80 8b       	std	Z+16, r24	; 0x10
 __vector_11():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:93
   #error Tiny Software Serial cannot find the Analog comparator interrupt vector!
@@ -1250,27 +1247,27 @@ ISR(ANALOG_COMP_vect){
   char ch = getch(); //read in the character softwarily - I know its not a word, but it sounded cool, so you know what: #define softwarily 1
   store_char(ch, Serial._rx_buffer);
   sbi(ACSR,ACI); //clear the flag.
- 6c0:	44 9a       	sbi	0x08, 4	; 8
+ 6be:	44 9a       	sbi	0x08, 4	; 8
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:94
 }
- 6c2:	ff 91       	pop	r31
- 6c4:	ef 91       	pop	r30
- 6c6:	bf 91       	pop	r27
- 6c8:	af 91       	pop	r26
- 6ca:	9f 91       	pop	r25
- 6cc:	8f 91       	pop	r24
- 6ce:	7f 91       	pop	r23
- 6d0:	5f 91       	pop	r21
- 6d2:	4f 91       	pop	r20
- 6d4:	3f 91       	pop	r19
- 6d6:	2f 91       	pop	r18
- 6d8:	0f 90       	pop	r0
- 6da:	0f be       	out	0x3f, r0	; 63
- 6dc:	0f 90       	pop	r0
- 6de:	1f 90       	pop	r1
- 6e0:	18 95       	reti
+ 6c0:	ff 91       	pop	r31
+ 6c2:	ef 91       	pop	r30
+ 6c4:	bf 91       	pop	r27
+ 6c6:	af 91       	pop	r26
+ 6c8:	9f 91       	pop	r25
+ 6ca:	8f 91       	pop	r24
+ 6cc:	7f 91       	pop	r23
+ 6ce:	5f 91       	pop	r21
+ 6d0:	4f 91       	pop	r20
+ 6d2:	3f 91       	pop	r19
+ 6d4:	2f 91       	pop	r18
+ 6d6:	0f 90       	pop	r0
+ 6d8:	0f be       	out	0x3f, r0	; 63
+ 6da:	0f 90       	pop	r0
+ 6dc:	1f 90       	pop	r1
+ 6de:	18 95       	reti
 
-000006e2 <uartDelay>:
+000006e0 <uartDelay>:
 uartDelay():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:81
     "mov r25,%[count]\n"
@@ -1279,56 +1276,56 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
       "ret\n"
     ::[count] "r" ((uint8_t)Serial._delayCount)
   );
- 6e2:	80 91 95 00 	lds	r24, 0x0095	; 0x800095 <Serial+0x11>
- 6e6:	98 2f       	mov	r25, r24
- 6e8:	9a 95       	dec	r25
- 6ea:	f1 f7       	brne	.-4      	; 0x6e8 <uartDelay+0x6>
- 6ec:	08 95       	ret
+ 6e0:	80 91 95 00 	lds	r24, 0x0095	; 0x800095 <Serial+0x11>
+ 6e4:	98 2f       	mov	r25, r24
+ 6e6:	9a 95       	dec	r25
+ 6e8:	f1 f7       	brne	.-4      	; 0x6e6 <uartDelay+0x6>
+ 6ea:	08 95       	ret
 
-000006ee <global constructors keyed to 65535_0_EEPROM_Test.ino.cpp.o.1888>:
+000006ec <global constructors keyed to 65535_0_EEPROM_Test.ino.cpp.o.1888>:
 _GLOBAL__I_65535_0_EEPROM_Test.ino.cpp.o.1888():
- 6ee:	e4 e8       	ldi	r30, 0x84	; 132
- 6f0:	f0 e0       	ldi	r31, 0x00	; 0
- 6f2:	13 82       	std	Z+3, r1	; 0x03
- 6f4:	12 82       	std	Z+2, r1	; 0x02
- 6f6:	88 ee       	ldi	r24, 0xE8	; 232
- 6f8:	93 e0       	ldi	r25, 0x03	; 3
- 6fa:	a0 e0       	ldi	r26, 0x00	; 0
- 6fc:	b0 e0       	ldi	r27, 0x00	; 0
- 6fe:	84 83       	std	Z+4, r24	; 0x04
- 700:	95 83       	std	Z+5, r25	; 0x05
- 702:	a6 83       	std	Z+6, r26	; 0x06
- 704:	b7 83       	std	Z+7, r27	; 0x07
- 706:	84 e6       	ldi	r24, 0x64	; 100
- 708:	90 e0       	ldi	r25, 0x00	; 0
- 70a:	91 83       	std	Z+1, r25	; 0x01
- 70c:	80 83       	st	Z, r24
- 70e:	80 e7       	ldi	r24, 0x70	; 112
- 710:	90 e0       	ldi	r25, 0x00	; 0
- 712:	90 8b       	std	Z+16, r25	; 0x10
- 714:	87 87       	std	Z+15, r24	; 0x0f
- 716:	80 e2       	ldi	r24, 0x20	; 32
- 718:	84 87       	std	Z+12, r24	; 0x0c
- 71a:	80 e1       	ldi	r24, 0x10	; 16
- 71c:	85 87       	std	Z+13, r24	; 0x0d
- 71e:	9f ee       	ldi	r25, 0xEF	; 239
- 720:	96 87       	std	Z+14, r25	; 0x0e
- 722:	11 8a       	std	Z+17, r1	; 0x11
- 724:	e6 e9       	ldi	r30, 0x96	; 150
- 726:	f0 e0       	ldi	r31, 0x00	; 0
- 728:	10 82       	st	Z, r1
- 72a:	81 83       	std	Z+1, r24	; 0x01
- 72c:	80 e5       	ldi	r24, 0x50	; 80
- 72e:	82 83       	std	Z+2, r24	; 0x02
- 730:	86 e0       	ldi	r24, 0x06	; 6
- 732:	83 83       	std	Z+3, r24	; 0x03
- 734:	81 e0       	ldi	r24, 0x01	; 1
- 736:	90 e0       	ldi	r25, 0x00	; 0
- 738:	95 83       	std	Z+5, r25	; 0x05
- 73a:	84 83       	std	Z+4, r24	; 0x04
- 73c:	08 95       	ret
+ 6ec:	e4 e8       	ldi	r30, 0x84	; 132
+ 6ee:	f0 e0       	ldi	r31, 0x00	; 0
+ 6f0:	13 82       	std	Z+3, r1	; 0x03
+ 6f2:	12 82       	std	Z+2, r1	; 0x02
+ 6f4:	88 ee       	ldi	r24, 0xE8	; 232
+ 6f6:	93 e0       	ldi	r25, 0x03	; 3
+ 6f8:	a0 e0       	ldi	r26, 0x00	; 0
+ 6fa:	b0 e0       	ldi	r27, 0x00	; 0
+ 6fc:	84 83       	std	Z+4, r24	; 0x04
+ 6fe:	95 83       	std	Z+5, r25	; 0x05
+ 700:	a6 83       	std	Z+6, r26	; 0x06
+ 702:	b7 83       	std	Z+7, r27	; 0x07
+ 704:	84 e6       	ldi	r24, 0x64	; 100
+ 706:	90 e0       	ldi	r25, 0x00	; 0
+ 708:	91 83       	std	Z+1, r25	; 0x01
+ 70a:	80 83       	st	Z, r24
+ 70c:	80 e7       	ldi	r24, 0x70	; 112
+ 70e:	90 e0       	ldi	r25, 0x00	; 0
+ 710:	90 8b       	std	Z+16, r25	; 0x10
+ 712:	87 87       	std	Z+15, r24	; 0x0f
+ 714:	80 e2       	ldi	r24, 0x20	; 32
+ 716:	84 87       	std	Z+12, r24	; 0x0c
+ 718:	80 e1       	ldi	r24, 0x10	; 16
+ 71a:	85 87       	std	Z+13, r24	; 0x0d
+ 71c:	9f ee       	ldi	r25, 0xEF	; 239
+ 71e:	96 87       	std	Z+14, r25	; 0x0e
+ 720:	11 8a       	std	Z+17, r1	; 0x11
+ 722:	e6 e9       	ldi	r30, 0x96	; 150
+ 724:	f0 e0       	ldi	r31, 0x00	; 0
+ 726:	10 82       	st	Z, r1
+ 728:	81 83       	std	Z+1, r24	; 0x01
+ 72a:	80 e5       	ldi	r24, 0x50	; 80
+ 72c:	82 83       	std	Z+2, r24	; 0x02
+ 72e:	86 e0       	ldi	r24, 0x06	; 6
+ 730:	83 83       	std	Z+3, r24	; 0x03
+ 732:	81 e0       	ldi	r24, 0x01	; 1
+ 734:	90 e0       	ldi	r25, 0x00	; 0
+ 736:	95 83       	std	Z+5, r25	; 0x05
+ 738:	84 83       	std	Z+4, r24	; 0x04
+ 73a:	08 95       	ret
 
-0000073e <main>:
+0000073c <main>:
 main():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:1077
     // normal oscillator, we want a setting that fuses won't give us,
@@ -1337,14 +1334,14 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
       CCP=0xD8; //enable change of protected register
     #else
       CLKPR=1<<CLKPCE; //enable change of protected register
- 73e:	20 e8       	ldi	r18, 0x80	; 128
- 740:	26 bd       	out	0x26, r18	; 38
+ 73c:	20 e8       	ldi	r18, 0x80	; 128
+ 73e:	26 bd       	out	0x26, r18	; 38
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:1080
     #endif
     #if (F_CPU ==4000000L)
       CLKPR=1; //prescale by 2 for 4MHz
- 742:	91 e0       	ldi	r25, 0x01	; 1
- 744:	96 bd       	out	0x26, r25	; 38
+ 740:	91 e0       	ldi	r25, 0x01	; 1
+ 742:	96 bd       	out	0x26, r25	; 38
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:1138
 */
 
@@ -1352,13 +1349,13 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
   #if (TIMER_TO_USE_FOR_MILLIS == 0)
     #if defined(WGM01) // if Timer0 has PWM
       TCCR0A = (1<<WGM01) | (1<<WGM00);
- 746:	83 e0       	ldi	r24, 0x03	; 3
- 748:	80 bf       	out	0x30, r24	; 48
+ 744:	83 e0       	ldi	r24, 0x03	; 3
+ 746:	80 bf       	out	0x30, r24	; 48
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:1141
     #endif
     #if defined(TCCR0B) //The x61 has a wacky Timer0!
       TCCR0B = (MillisTimer_Prescale_Index << CS00);
- 74a:	83 bf       	out	0x33, r24	; 51
+ 748:	83 bf       	out	0x33, r24	; 51
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:1162
     TCCR1A = 1<<WGM10;
     TCCR1B = (1<<WGM12) | (MillisTimer_Prescale_Index << CS10);
@@ -1366,7 +1363,7 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
 
   // this needs to be called before setup() or some functions won't work there
   sei();
- 74c:	78 94       	sei
+ 74a:	78 94       	sei
 initToneTimerInternal():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:954
     #if (TIMER_TO_USE_FOR_TONE == 0)
@@ -1375,10 +1372,10 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
       TCCR0B = (ToneTimer_Prescale_Index << CS00) | (0<<WGM02);
     #elif defined(__AVR_ATtiny43__)
       TCCR1A = 3; //WGM 10=1, WGM11=1
- 74e:	8f bd       	out	0x2f, r24	; 47
+ 74c:	8f bd       	out	0x2f, r24	; 47
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:955
       TCCR1B = 3; //prescaler of 64
- 750:	8e bd       	out	0x2e, r24	; 46
+ 74e:	8e bd       	out	0x2e, r24	; 46
 main():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/wiring.c:1214
   #if defined( INITIALIZE_ANALOG_TO_DIGITAL_CONVERTER ) && INITIALIZE_ANALOG_TO_DIGITAL_CONVERTER
@@ -1387,13 +1384,13 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
       // ADCSRA = (ADCSRA & ~((1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0))) | (ADC_ARDUINO_PRESCALER << ADPS0) | (1<<ADEN);
       // dude, this is being called on startup. We know that ADCSRA is 0! Why add a RMW cycle?!
       ADCSRA = (ADC_ARDUINO_PRESCALER << ADPS0) | (1<<ADEN);
- 752:	85 e8       	ldi	r24, 0x85	; 133
- 754:	86 b9       	out	0x06, r24	; 6
+ 750:	85 e8       	ldi	r24, 0x85	; 133
+ 752:	86 b9       	out	0x06, r24	; 6
 setup():
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:35
- 756:	26 bd       	out	0x26, r18	; 38
+ 754:	26 bd       	out	0x26, r18	; 38
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:36
- 758:	96 bd       	out	0x26, r25	; 38
+ 756:	96 bd       	out	0x26, r25	; 38
 begin():
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:125
 {
@@ -1402,299 +1399,298 @@ C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\co
   end(); //Cannot start as it would screw up uartDelay().
   }
   _delayCount = (uint8_t)tempDelay;
- 75a:	8f e1       	ldi	r24, 0x1F	; 31
- 75c:	80 93 95 00 	sts	0x0095, r24	; 0x800095 <Serial+0x11>
+ 758:	8f e1       	ldi	r24, 0x1F	; 31
+ 75a:	80 93 95 00 	sts	0x0095, r24	; 0x800095 <Serial+0x11>
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:126
   cbi(ACSR,ACIE);  //turn off the comparator interrupt to allow change of ACD
- 760:	43 98       	cbi	0x08, 3	; 8
+ 75e:	43 98       	cbi	0x08, 3	; 8
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:128
 #ifdef ACBG
   sbi(ACSR,ACBG); //enable the internal bandgap reference - used instead of AIN0 to allow it to be used for TX.
- 762:	46 9a       	sbi	0x08, 6	; 8
+ 760:	46 9a       	sbi	0x08, 6	; 8
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:130
 #endif
   cbi(ACSR,ACD);  //turn on the comparator for RX
- 764:	47 98       	cbi	0x08, 7	; 8
+ 762:	47 98       	cbi	0x08, 7	; 8
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:134
 #ifdef ACIC
   cbi(ACSR,ACIC);  //prevent the comparator from affecting timer1 - just to be safe.
 #endif
   sbi(ACSR,ACIS1);  //interrupt on rising edge (this means RX has gone from Mark state to Start bit state).
- 766:	41 9a       	sbi	0x08, 1	; 8
+ 764:	41 9a       	sbi	0x08, 1	; 8
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:135
   sbi(ACSR,ACIS0);
- 768:	40 9a       	sbi	0x08, 0	; 8
+ 766:	40 9a       	sbi	0x08, 0	; 8
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:137
   //Setup the pins in case someone messed with them.
   ANALOG_COMP_DDR &= ~_rxmask; //set RX to an input
- 76a:	8a b3       	in	r24, 0x1a	; 26
- 76c:	20 91 90 00 	lds	r18, 0x0090	; 0x800090 <Serial+0xc>
- 770:	92 2f       	mov	r25, r18
- 772:	90 95       	com	r25
- 774:	98 23       	and	r25, r24
- 776:	9a bb       	out	0x1a, r25	; 26
+ 768:	8a b3       	in	r24, 0x1a	; 26
+ 76a:	20 91 90 00 	lds	r18, 0x0090	; 0x800090 <Serial+0xc>
+ 76e:	92 2f       	mov	r25, r18
+ 770:	90 95       	com	r25
+ 772:	98 23       	and	r25, r24
+ 774:	9a bb       	out	0x1a, r25	; 26
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:138
   ANALOG_COMP_PORT |= _rxmask; //enable pullup on RX pin - to prevent accidental interrupt triggers.
- 778:	8b b3       	in	r24, 0x1b	; 27
- 77a:	82 2b       	or	r24, r18
- 77c:	8b bb       	out	0x1b, r24	; 27
+ 776:	8b b3       	in	r24, 0x1b	; 27
+ 778:	82 2b       	or	r24, r18
+ 77a:	8b bb       	out	0x1b, r24	; 27
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:139
   ANALOG_COMP_DDR |= _txmask; //set TX to an output.
- 77e:	9a b3       	in	r25, 0x1a	; 26
- 780:	20 91 91 00 	lds	r18, 0x0091	; 0x800091 <Serial+0xd>
- 784:	92 2b       	or	r25, r18
- 786:	9a bb       	out	0x1a, r25	; 26
+ 77c:	9a b3       	in	r25, 0x1a	; 26
+ 77e:	20 91 91 00 	lds	r18, 0x0091	; 0x800091 <Serial+0xd>
+ 782:	92 2b       	or	r25, r18
+ 784:	9a bb       	out	0x1a, r25	; 26
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:140
   ANALOG_COMP_PORT |= _txmask; //set TX pin high
- 788:	8b b3       	in	r24, 0x1b	; 27
- 78a:	82 2b       	or	r24, r18
- 78c:	8b bb       	out	0x1b, r24	; 27
+ 786:	8b b3       	in	r24, 0x1b	; 27
+ 788:	82 2b       	or	r24, r18
+ 78a:	8b bb       	out	0x1b, r24	; 27
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:141
   sbi(ACSR,ACI); //clear the flag.
- 78e:	44 9a       	sbi	0x08, 4	; 8
+ 78c:	44 9a       	sbi	0x08, 4	; 8
 C:\Users\pc235\AppData\Local\Arduino15\packages\ATTinyCore\hardware\avr\1.5.2\cores\tiny/TinySoftwareSerial.cpp:142
   sbi(ACSR,ACIE);  //turn on the comparator interrupt to allow us to use it for RX
- 790:	43 9a       	sbi	0x08, 3	; 8
+ 78e:	43 9a       	sbi	0x08, 3	; 8
 setup():
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:39
- 792:	89 ee       	ldi	r24, 0xE9	; 233
- 794:	91 e0       	ldi	r25, 0x01	; 1
- 796:	e1 dd       	rcall	.-1086   	; 0x35a <Print::println(__FlashStringHelper const*) [clone .constprop.4]>
+ 790:	89 ee       	ldi	r24, 0xE9	; 233
+ 792:	91 e0       	ldi	r25, 0x01	; 1
+ 794:	e1 dd       	rcall	.-1086   	; 0x358 <Print::println(__FlashStringHelper const*) [clone .constprop.3]>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:41
- 798:	5a de       	rcall	.-844    	; 0x44e <loadEepromSettings()>
- 79a:	88 23       	and	r24, r24
- 79c:	01 f1       	breq	.+64     	; 0x7de <main+0xa0>
+ 796:	5a de       	rcall	.-844    	; 0x44c <loadEepromSettings()>
+ 798:	88 23       	and	r24, r24
+ 79a:	f9 f0       	breq	.+62     	; 0x7da <main+0x9e>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:43
- 79e:	87 e2       	ldi	r24, 0x27	; 39
- 7a0:	91 e0       	ldi	r25, 0x01	; 1
- 7a2:	db dd       	rcall	.-1098   	; 0x35a <Print::println(__FlashStringHelper const*) [clone .constprop.4]>
+ 79c:	87 e2       	ldi	r24, 0x27	; 39
+ 79e:	91 e0       	ldi	r25, 0x01	; 1
+ 7a0:	db dd       	rcall	.-1098   	; 0x358 <Print::println(__FlashStringHelper const*) [clone .constprop.3]>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:44
- 7a4:	21 df       	rcall	.-446    	; 0x5e8 <printEepromSettings()>
+ 7a2:	21 df       	rcall	.-446    	; 0x5e6 <printEepromSettings()>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:46
- 7a6:	88 e0       	ldi	r24, 0x08	; 8
- 7a8:	91 e0       	ldi	r25, 0x01	; 1
- 7aa:	d7 dd       	rcall	.-1106   	; 0x35a <Print::println(__FlashStringHelper const*) [clone .constprop.4]>
+ 7a4:	88 e0       	ldi	r24, 0x08	; 8
+ 7a6:	91 e0       	ldi	r25, 0x01	; 1
+ 7a8:	d7 dd       	rcall	.-1106   	; 0x358 <Print::println(__FlashStringHelper const*) [clone .constprop.3]>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:47
- 7ac:	80 91 9a 00 	lds	r24, 0x009A	; 0x80009a <eeprom_settings+0x4>
- 7b0:	90 91 9b 00 	lds	r25, 0x009B	; 0x80009b <eeprom_settings+0x5>
- 7b4:	01 96       	adiw	r24, 0x01	; 1
- 7b6:	90 93 9b 00 	sts	0x009B, r25	; 0x80009b <eeprom_settings+0x5>
- 7ba:	80 93 9a 00 	sts	0x009A, r24	; 0x80009a <eeprom_settings+0x4>
+ 7aa:	80 91 9a 00 	lds	r24, 0x009A	; 0x80009a <eeprom_settings+0x4>
+ 7ae:	90 91 9b 00 	lds	r25, 0x009B	; 0x80009b <eeprom_settings+0x5>
+ 7b2:	01 96       	adiw	r24, 0x01	; 1
+ 7b4:	90 93 9b 00 	sts	0x009B, r25	; 0x80009b <eeprom_settings+0x5>
+ 7b8:	80 93 9a 00 	sts	0x009A, r24	; 0x80009a <eeprom_settings+0x4>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:48
- 7be:	f0 de       	rcall	.-544    	; 0x5a0 <saveEepromSettings()>
+ 7bc:	f0 de       	rcall	.-544    	; 0x59e <saveEepromSettings()>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:50
- 7c0:	46 de       	rcall	.-884    	; 0x44e <loadEepromSettings()>
- 7c2:	88 23       	and	r24, r24
- 7c4:	41 f0       	breq	.+16     	; 0x7d6 <main+0x98>
+ 7be:	46 de       	rcall	.-884    	; 0x44c <loadEepromSettings()>
+ 7c0:	88 23       	and	r24, r24
+ 7c2:	39 f0       	breq	.+14     	; 0x7d2 <main+0x96>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:52
- 7c6:	8d ee       	ldi	r24, 0xED	; 237
- 7c8:	90 e0       	ldi	r25, 0x00	; 0
+ 7c4:	8d ee       	ldi	r24, 0xED	; 237
+ 7c6:	90 e0       	ldi	r25, 0x00	; 0
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:69
- 7ca:	c7 dd       	rcall	.-1138   	; 0x35a <Print::println(__FlashStringHelper const*) [clone .constprop.4]>
+ 7c8:	c7 dd       	rcall	.-1138   	; 0x358 <Print::println(__FlashStringHelper const*) [clone .constprop.3]>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:70
- 7cc:	0d df       	rcall	.-486    	; 0x5e8 <printEepromSettings()>
+ 7ca:	0d df       	rcall	.-486    	; 0x5e6 <printEepromSettings()>
 loop():
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:91
- 7ce:	46 dd       	rcall	.-1396   	; 0x25c <noIntDelay(unsigned char) [clone .constprop.5]>
+ 7cc:	46 dd       	rcall	.-1396   	; 0x25a <noIntDelay(unsigned char) [clone .constprop.5]>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:92
- 7d0:	8b e0       	ldi	r24, 0x0B	; 11
- 7d2:	92 e0       	ldi	r25, 0x02	; 2
- 7d4:	02 c0       	rjmp	.+4      	; 0x7da <main+0x9c>
+ 7ce:	9a dd       	rcall	.-1228   	; 0x304 <Print::println() [clone .constprop.15]>
+ 7d0:	fd cf       	rjmp	.-6      	; 0x7cc <main+0x90>
 setup():
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:57
- 7d6:	84 ea       	ldi	r24, 0xA4	; 164
- 7d8:	90 e0       	ldi	r25, 0x00	; 0
+ 7d2:	84 ea       	ldi	r24, 0xA4	; 164
+ 7d4:	90 e0       	ldi	r25, 0x00	; 0
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:74
- 7da:	bf dd       	rcall	.-1154   	; 0x35a <Print::println(__FlashStringHelper const*) [clone .constprop.4]>
- 7dc:	f8 cf       	rjmp	.-16     	; 0x7ce <main+0x90>
+ 7d6:	c0 dd       	rcall	.-1152   	; 0x358 <Print::println(__FlashStringHelper const*) [clone .constprop.3]>
+ 7d8:	f9 cf       	rjmp	.-14     	; 0x7cc <main+0x90>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:62
- 7de:	8a ec       	ldi	r24, 0xCA	; 202
- 7e0:	91 e0       	ldi	r25, 0x01	; 1
- 7e2:	bb dd       	rcall	.-1162   	; 0x35a <Print::println(__FlashStringHelper const*) [clone .constprop.4]>
+ 7da:	8a ec       	ldi	r24, 0xCA	; 202
+ 7dc:	91 e0       	ldi	r25, 0x01	; 1
+ 7de:	bc dd       	rcall	.-1160   	; 0x358 <Print::println(__FlashStringHelper const*) [clone .constprop.3]>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:63
- 7e4:	86 ea       	ldi	r24, 0xA6	; 166
- 7e6:	91 e0       	ldi	r25, 0x01	; 1
- 7e8:	b8 dd       	rcall	.-1168   	; 0x35a <Print::println(__FlashStringHelper const*) [clone .constprop.4]>
+ 7e0:	86 ea       	ldi	r24, 0xA6	; 166
+ 7e2:	91 e0       	ldi	r25, 0x01	; 1
+ 7e4:	b9 dd       	rcall	.-1166   	; 0x358 <Print::println(__FlashStringHelper const*) [clone .constprop.3]>
 initializeEepromSettings():
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:39
- 7ea:	10 92 96 00 	sts	0x0096, r1	; 0x800096 <eeprom_settings>
- 7ee:	80 e1       	ldi	r24, 0x10	; 16
- 7f0:	80 93 97 00 	sts	0x0097, r24	; 0x800097 <eeprom_settings+0x1>
- 7f4:	80 e5       	ldi	r24, 0x50	; 80
- 7f6:	80 93 98 00 	sts	0x0098, r24	; 0x800098 <eeprom_settings+0x2>
- 7fa:	86 e0       	ldi	r24, 0x06	; 6
- 7fc:	80 93 99 00 	sts	0x0099, r24	; 0x800099 <eeprom_settings+0x3>
- 800:	81 e0       	ldi	r24, 0x01	; 1
- 802:	90 e0       	ldi	r25, 0x00	; 0
- 804:	90 93 9b 00 	sts	0x009B, r25	; 0x80009b <eeprom_settings+0x5>
- 808:	80 93 9a 00 	sts	0x009A, r24	; 0x80009a <eeprom_settings+0x4>
+ 7e6:	10 92 96 00 	sts	0x0096, r1	; 0x800096 <eeprom_settings>
+ 7ea:	80 e1       	ldi	r24, 0x10	; 16
+ 7ec:	80 93 97 00 	sts	0x0097, r24	; 0x800097 <eeprom_settings+0x1>
+ 7f0:	80 e5       	ldi	r24, 0x50	; 80
+ 7f2:	80 93 98 00 	sts	0x0098, r24	; 0x800098 <eeprom_settings+0x2>
+ 7f6:	86 e0       	ldi	r24, 0x06	; 6
+ 7f8:	80 93 99 00 	sts	0x0099, r24	; 0x800099 <eeprom_settings+0x3>
+ 7fc:	81 e0       	ldi	r24, 0x01	; 1
+ 7fe:	90 e0       	ldi	r25, 0x00	; 0
+ 800:	90 93 9b 00 	sts	0x009B, r25	; 0x80009b <eeprom_settings+0x5>
+ 804:	80 93 9a 00 	sts	0x009A, r24	; 0x80009a <eeprom_settings+0x4>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/smol_Power_Board_AAA_ATtiny43U_EEPROM.ino:40
- 80c:	c9 de       	rcall	.-622    	; 0x5a0 <saveEepromSettings()>
+ 808:	ca de       	rcall	.-620    	; 0x59e <saveEepromSettings()>
 setup():
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:65
- 80e:	26 dd       	rcall	.-1460   	; 0x25c <noIntDelay(unsigned char) [clone .constprop.5]>
+ 80a:	27 dd       	rcall	.-1458   	; 0x25a <noIntDelay(unsigned char) [clone .constprop.5]>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:67
- 810:	1e de       	rcall	.-964    	; 0x44e <loadEepromSettings()>
- 812:	88 23       	and	r24, r24
- 814:	19 f0       	breq	.+6      	; 0x81c <main+0xde>
+ 80c:	1f de       	rcall	.-962    	; 0x44c <loadEepromSettings()>
+ 80e:	88 23       	and	r24, r24
+ 810:	19 f0       	breq	.+6      	; 0x818 <main+0xdc>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:69
- 816:	8b e8       	ldi	r24, 0x8B	; 139
- 818:	91 e0       	ldi	r25, 0x01	; 1
- 81a:	d7 cf       	rjmp	.-82     	; 0x7ca <main+0x8c>
+ 812:	8b e8       	ldi	r24, 0x8B	; 139
+ 814:	91 e0       	ldi	r25, 0x01	; 1
+ 816:	d8 cf       	rjmp	.-80     	; 0x7c8 <main+0x8c>
 C:\Users\pc235\Documents\GitHub\SparkX_smôl_Power_Board_AAA\Firmware\Test_Sketches\EEPROM_Test/EEPROM_Test.ino:74
- 81c:	82 e4       	ldi	r24, 0x42	; 66
- 81e:	91 e0       	ldi	r25, 0x01	; 1
- 820:	dc cf       	rjmp	.-72     	; 0x7da <main+0x9c>
+ 818:	82 e4       	ldi	r24, 0x42	; 66
+ 81a:	91 e0       	ldi	r25, 0x01	; 1
+ 81c:	dc cf       	rjmp	.-72     	; 0x7d6 <main+0x9a>
 
-00000822 <eeprom_read_byte>:
+0000081e <eeprom_read_byte>:
 eeprom_read_byte():
- 822:	e1 99       	sbic	0x1c, 1	; 28
- 824:	fe cf       	rjmp	.-4      	; 0x822 <eeprom_read_byte>
- 826:	8e bb       	out	0x1e, r24	; 30
- 828:	e0 9a       	sbi	0x1c, 0	; 28
- 82a:	99 27       	eor	r25, r25
- 82c:	8d b3       	in	r24, 0x1d	; 29
- 82e:	08 95       	ret
+ 81e:	e1 99       	sbic	0x1c, 1	; 28
+ 820:	fe cf       	rjmp	.-4      	; 0x81e <eeprom_read_byte>
+ 822:	8e bb       	out	0x1e, r24	; 30
+ 824:	e0 9a       	sbi	0x1c, 0	; 28
+ 826:	99 27       	eor	r25, r25
+ 828:	8d b3       	in	r24, 0x1d	; 29
+ 82a:	08 95       	ret
 
-00000830 <eeprom_write_byte>:
+0000082c <eeprom_write_byte>:
 eeprom_write_byte():
- 830:	26 2f       	mov	r18, r22
+ 82c:	26 2f       	mov	r18, r22
 
-00000832 <eeprom_write_r18>:
- 832:	e1 99       	sbic	0x1c, 1	; 28
- 834:	fe cf       	rjmp	.-4      	; 0x832 <eeprom_write_r18>
- 836:	1c ba       	out	0x1c, r1	; 28
- 838:	8e bb       	out	0x1e, r24	; 30
- 83a:	2d bb       	out	0x1d, r18	; 29
- 83c:	0f b6       	in	r0, 0x3f	; 63
- 83e:	f8 94       	cli
- 840:	e2 9a       	sbi	0x1c, 2	; 28
- 842:	e1 9a       	sbi	0x1c, 1	; 28
- 844:	0f be       	out	0x3f, r0	; 63
- 846:	01 96       	adiw	r24, 0x01	; 1
- 848:	08 95       	ret
+0000082e <eeprom_write_r18>:
+ 82e:	e1 99       	sbic	0x1c, 1	; 28
+ 830:	fe cf       	rjmp	.-4      	; 0x82e <eeprom_write_r18>
+ 832:	1c ba       	out	0x1c, r1	; 28
+ 834:	8e bb       	out	0x1e, r24	; 30
+ 836:	2d bb       	out	0x1d, r18	; 29
+ 838:	0f b6       	in	r0, 0x3f	; 63
+ 83a:	f8 94       	cli
+ 83c:	e2 9a       	sbi	0x1c, 2	; 28
+ 83e:	e1 9a       	sbi	0x1c, 1	; 28
+ 840:	0f be       	out	0x3f, r0	; 63
+ 842:	01 96       	adiw	r24, 0x01	; 1
+ 844:	08 95       	ret
 
-0000084a <__mulqi3>:
+00000846 <__mulqi3>:
 __mulqi3():
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:224
- 84a:	00 24       	eor	r0, r0
+ 846:	00 24       	eor	r0, r0
 
-0000084c <__mulqi3_loop>:
+00000848 <__mulqi3_loop>:
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:226
- 84c:	80 fd       	sbrc	r24, 0
+ 848:	80 fd       	sbrc	r24, 0
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:227
- 84e:	06 0e       	add	r0, r22
+ 84a:	06 0e       	add	r0, r22
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:228
- 850:	66 0f       	add	r22, r22
+ 84c:	66 0f       	add	r22, r22
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:229
- 852:	11 f0       	breq	.+4      	; 0x858 <__mulqi3_exit>
+ 84e:	11 f0       	breq	.+4      	; 0x854 <__mulqi3_exit>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:230
- 854:	86 95       	lsr	r24
+ 850:	86 95       	lsr	r24
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:231
- 856:	d1 f7       	brne	.-12     	; 0x84c <__mulqi3_loop>
+ 852:	d1 f7       	brne	.-12     	; 0x848 <__mulqi3_loop>
 
-00000858 <__mulqi3_exit>:
+00000854 <__mulqi3_exit>:
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:233
- 858:	80 2d       	mov	r24, r0
+ 854:	80 2d       	mov	r24, r0
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:234
- 85a:	08 95       	ret
+ 856:	08 95       	ret
 
-0000085c <__udivmodsi4>:
+00000858 <__udivmodsi4>:
 __udivmodsi4():
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1638
- 85c:	a1 e2       	ldi	r26, 0x21	; 33
+ 858:	a1 e2       	ldi	r26, 0x21	; 33
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1639
- 85e:	1a 2e       	mov	r1, r26
+ 85a:	1a 2e       	mov	r1, r26
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1640
- 860:	aa 1b       	sub	r26, r26
+ 85c:	aa 1b       	sub	r26, r26
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1641
- 862:	bb 1b       	sub	r27, r27
+ 85e:	bb 1b       	sub	r27, r27
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1642
- 864:	fd 01       	movw	r30, r26
+ 860:	fd 01       	movw	r30, r26
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1644
- 866:	0d c0       	rjmp	.+26     	; 0x882 <__udivmodsi4_ep>
+ 862:	0d c0       	rjmp	.+26     	; 0x87e <__udivmodsi4_ep>
 
-00000868 <__udivmodsi4_loop>:
+00000864 <__udivmodsi4_loop>:
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1646
- 868:	aa 1f       	adc	r26, r26
+ 864:	aa 1f       	adc	r26, r26
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1647
- 86a:	bb 1f       	adc	r27, r27
+ 866:	bb 1f       	adc	r27, r27
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1648
- 86c:	ee 1f       	adc	r30, r30
+ 868:	ee 1f       	adc	r30, r30
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1649
- 86e:	ff 1f       	adc	r31, r31
+ 86a:	ff 1f       	adc	r31, r31
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1650
- 870:	a2 17       	cp	r26, r18
+ 86c:	a2 17       	cp	r26, r18
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1651
- 872:	b3 07       	cpc	r27, r19
+ 86e:	b3 07       	cpc	r27, r19
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1652
- 874:	e4 07       	cpc	r30, r20
+ 870:	e4 07       	cpc	r30, r20
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1653
- 876:	f5 07       	cpc	r31, r21
+ 872:	f5 07       	cpc	r31, r21
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1654
- 878:	20 f0       	brcs	.+8      	; 0x882 <__udivmodsi4_ep>
+ 874:	20 f0       	brcs	.+8      	; 0x87e <__udivmodsi4_ep>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1655
- 87a:	a2 1b       	sub	r26, r18
+ 876:	a2 1b       	sub	r26, r18
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1656
- 87c:	b3 0b       	sbc	r27, r19
+ 878:	b3 0b       	sbc	r27, r19
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1657
- 87e:	e4 0b       	sbc	r30, r20
+ 87a:	e4 0b       	sbc	r30, r20
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1658
- 880:	f5 0b       	sbc	r31, r21
+ 87c:	f5 0b       	sbc	r31, r21
 
-00000882 <__udivmodsi4_ep>:
+0000087e <__udivmodsi4_ep>:
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1660
- 882:	66 1f       	adc	r22, r22
+ 87e:	66 1f       	adc	r22, r22
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1661
- 884:	77 1f       	adc	r23, r23
+ 880:	77 1f       	adc	r23, r23
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1662
- 886:	88 1f       	adc	r24, r24
+ 882:	88 1f       	adc	r24, r24
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1663
- 888:	99 1f       	adc	r25, r25
+ 884:	99 1f       	adc	r25, r25
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1664
- 88a:	1a 94       	dec	r1
+ 886:	1a 94       	dec	r1
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1665
- 88c:	69 f7       	brne	.-38     	; 0x868 <__udivmodsi4_loop>
+ 888:	69 f7       	brne	.-38     	; 0x864 <__udivmodsi4_loop>
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1667
- 88e:	60 95       	com	r22
+ 88a:	60 95       	com	r22
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1668
- 890:	70 95       	com	r23
+ 88c:	70 95       	com	r23
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1669
- 892:	80 95       	com	r24
+ 88e:	80 95       	com	r24
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1670
- 894:	90 95       	com	r25
+ 890:	90 95       	com	r25
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1672
- 896:	9b 01       	movw	r18, r22
+ 892:	9b 01       	movw	r18, r22
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1674
- 898:	ac 01       	movw	r20, r24
+ 894:	ac 01       	movw	r20, r24
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1676
- 89a:	bd 01       	movw	r22, r26
+ 896:	bd 01       	movw	r22, r26
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1678
- 89c:	cf 01       	movw	r24, r30
+ 898:	cf 01       	movw	r24, r30
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1680
- 89e:	08 95       	ret
+ 89a:	08 95       	ret
 
-000008a0 <__tablejump2__>:
+0000089c <__tablejump2__>:
 __tablejump2__():
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2296
- 8a0:	ee 0f       	add	r30, r30
+ 89c:	ee 0f       	add	r30, r30
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2297
- 8a2:	ff 1f       	adc	r31, r31
+ 89e:	ff 1f       	adc	r31, r31
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2328
- 8a4:	05 90       	lpm	r0, Z+
+ 8a0:	05 90       	lpm	r0, Z+
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2329
- 8a6:	f4 91       	lpm	r31, Z
+ 8a2:	f4 91       	lpm	r31, Z
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2330
- 8a8:	e0 2d       	mov	r30, r0
+ 8a4:	e0 2d       	mov	r30, r0
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2331
- 8aa:	09 94       	ijmp
+ 8a6:	09 94       	ijmp
 
-000008ac <_exit>:
+000008a8 <_exit>:
 exit():
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2278
- 8ac:	f8 94       	cli
+ 8a8:	f8 94       	cli
 
-000008ae <__stop_program>:
+000008aa <__stop_program>:
 __stop_program():
 /home/jenkins-mingw32/workspace/avr-gcc-staging/label/Ubuntu14.04x64-mingw32/gcc-build/avr/avr25/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2280
- 8ae:	ff cf       	rjmp	.-2      	; 0x8ae <__stop_program>
+ 8aa:	ff cf       	rjmp	.-2      	; 0x8aa <__stop_program>
