@@ -2,7 +2,10 @@
 //
 // Use Spence Konde's ATtinyCore: http://boardsmanager/All#ATTinyCore
 // Select ATtiny43 (No bootloader)
-// Select Clock Source: 8HMz Internal
+// Select Clock Source: 4MHz Internal
+// Select millis() Enabled
+// Select EEPROM Not Retained
+// Select BOD Disabled
 //
 // Fuse byte settings:
 // Low:  0b11100010 = 0xE2 : no clock divider, no clock out, slowly rising power, 8MHz internal oscillator
