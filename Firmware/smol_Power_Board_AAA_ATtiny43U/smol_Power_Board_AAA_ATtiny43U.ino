@@ -45,7 +45,7 @@
 
   The ATtiny43U's default I2C address is 0x50
 
-  The firmware register addresses are:
+  TO DO: Start the WDT. Implement power-down
 
 */
 
@@ -67,10 +67,11 @@ const byte EN_3V3 = 11; // 3V3 Regulator Enable: pull high to enable 3.3V, pull 
 #define EN_3V3__OFF  LOW  // 3V3 Regulator Enable: pull high to enable 3.3V, pull low to disable
 
 //Global variables
+#define TINY_BUFFER_LENGTH 16
 struct {
   byte receiveEventRegister = SFE_AAA_REGISTER_UNKNOWN; // Most recent receive event register address
-  byte receiveEventBuffer[16]; // byte array to store the data from the receive event
-  bool receiveEventDetected = false; // Flag to indicate if a receive event has taken place
+  byte receiveEventBuffer[TINY_BUFFER_LENGTH]; // byte array to store the data from the receive event
+  byte receiveEventLength = 0; // Indicates how many data bytes were received
 } receiveEventData;
 byte registerResetReason;
 uint16_t registerTemperature;
@@ -98,23 +99,122 @@ void setup()
     registerResetReason |= SFE_AAA_EEPROM_CORRUPT_ON_RESET; // Flag that the eeprom was corrupt and needed to be initialized
   }
 
+  WDTCSR = (WDTCSR & 0xD8) | ((eeprom_settings.wdtPrescaler & 0x08) << 2) | (eeprom_settings.wdtPrescaler & 0x07); // Update the WDT prescaler (bits 5,2,1,0)
+
   //Begin listening on I2C
   startI2C(true); // Skip Wire.end the first time around
 }
 
 void loop()
 {
-  if (LOW_POWER_MODE) // Is low power mode enabled?
+  //Check if a receive event has taken place
+  switch (receiveEventData.receiveEventRegister)
   {
-    // If low power mode is enabled, put the 841 into power-down mode after sleep_after millis of inactivity
-    if (millis() > (last_activity + sleep_after)) // Have we reached the inactivity limit?
-    {
-      goToSleep(); // Put the 841 into power-down mode
-      // ZZZzzz...
-      last_activity = millis(); // After waking, update last_activity so we stay awake for at least sleep_after millis
-    }
+    case SFE_AAA_REGISTER_I2C_ADDRESS: // Does the user want to change the I2C address?
+      if (receiveEventData.receiveEventLength >= 2) // Data should be the new address followed by a CRC
+      {
+        if (receiveEventData.receiveEventBuffer[1] == computeCRC8(receiveEventData.receiveEventBuffer, 1)) // Is the CRC valid?
+        {
+          eeprom_settings.i2cAddress = receiveEventData.receiveEventBuffer[0]; // Update the I2C address in eeprom
+          saveEepromSettings(); // Update the address in eeprom
+          startI2C(false); // Restart I2C comms
+        }
+      }
+      receiveEventData.receiveEventLength = 0; // Clear the event
+      break;
+    case SFE_AAA_REGISTER_RESET_REASON: // Does the user want to read the reset reason?
+      if (receiveEventData.receiveEventLength >= 1) // Read request should be a single byte
+      {
+        // Nothing to do here
+        receiveEventData.receiveEventLength = 0; // Clear the event
+      }
+      break;
+    case SFE_AAA_REGISTER_TEMPERATURE: // Does the user want to read the CPU temperature?
+      if (receiveEventData.receiveEventLength >= 1) // Read request should be a single byte
+      {
+        readTemperature(); // Update registerTemperature
+        receiveEventData.receiveEventLength = 0; // Prevent multiple readTemperature's
+      }
+      break;
+    case SFE_AAA_REGISTER_VBAT: // Does the user want to read the battery voltage?
+      if (receiveEventData.receiveEventLength >= 1) // Read request should be a single byte
+      {
+        readVBAT(); // Update registerVBAT
+        receiveEventData.receiveEventLength = 0; // Prevent multiple readVBAT's
+      }
+      break;
+    case SFE_AAA_REGISTER_VCC_VOLTAGE: // Does the user want to read the VCC voltage?
+      if (receiveEventData.receiveEventLength >= 1) // Read request should be a single byte
+      {
+        readVCCVoltage(); // Update registerVCCVoltage
+        receiveEventData.receiveEventLength = 0; // Prevent multiple readVCCVoltage's
+      }
+      break;
+    case SFE_AAA_REGISTER_ADC_REFERENCE: // Does the user want to set the ADC reference for readVBAT?
+      if (receiveEventData.receiveEventLength >= 2) // Data should be the new reference followed by a CRC
+      {
+        if (receiveEventData.receiveEventBuffer[1] == computeCRC8(receiveEventData.receiveEventBuffer, 1)) // Is the CRC valid?
+        {
+          registerADCReference = receiveEventData.receiveEventBuffer[0]; // Update the ADC reference
+        }
+      }
+      receiveEventData.receiveEventLength = 0; // Clear the event
+      break;
+    case SFE_AAA_REGISTER_WDT_PRESCALER: // Does the user want to change the WDT prescaler?
+      if (receiveEventData.receiveEventLength >= 2) // Data should be the new prescaler followed by a CRC
+      {
+        if (receiveEventData.receiveEventBuffer[1] == computeCRC8(receiveEventData.receiveEventBuffer, 1)) // Is the CRC valid?
+        {
+          eeprom_settings.wdtPrescaler = receiveEventData.receiveEventBuffer[0]; // Update the WDT prescaler in eeprom
+          saveEepromSettings(); // Update the address in eeprom
+          WDTCSR = (WDTCSR & 0xD8) | ((eeprom_settings.wdtPrescaler & 0x08) << 2) | (eeprom_settings.wdtPrescaler & 0x07); // Update the WDT prescaler (bits 5,2,1,0)
+        }
+      }
+      receiveEventData.receiveEventLength = 0; // Clear the event
+      break;
+    case SFE_AAA_REGISTER_POWERDOWN_DURATION: // Does the user want to change the power-down duration?
+      if (receiveEventData.receiveEventLength >= 3) // Data should be the new prescaler (uint16_t little endian) followed by a CRC
+      {
+        if (receiveEventData.receiveEventBuffer[2] == computeCRC8(receiveEventData.receiveEventBuffer, 2)) // Is the CRC valid?
+        {
+          eeprom_settings.powerDownDuration = ((uint16_t)receiveEventData.receiveEventBuffer[1] << 8) | ((uint16_t)receiveEventData.receiveEventBuffer[0]); // Update the WDT prescaler in eeprom. Data is little endian.
+          saveEepromSettings(); // Update the address in eeprom
+        }
+      }
+      receiveEventData.receiveEventLength = 0; // Clear the event
+      break;
+    case SFE_AAA_REGISTER_POWERDOWN_NOW: // Does the user want to power-down now?
+      if (receiveEventData.receiveEventLength >= 7) // Data should be "SLEEP" followed by a CRC
+      {
+        if (receiveEventData.receiveEventBuffer[5] == computeCRC8(receiveEventData.receiveEventBuffer, 5)) // Is the CRC valid?
+        {
+          if ((receiveEventData.receiveEventBuffer[0] == 'S') && (receiveEventData.receiveEventBuffer[1] == 'L')
+              && (receiveEventData.receiveEventBuffer[2] == 'E') && (receiveEventData.receiveEventBuffer[3] == 'E')
+              && (receiveEventData.receiveEventBuffer[4] == 'P'))
+          {
+            // TO DO: Add a call to the power-down function here
+            digitalWrite(EN_3V3, !digitalRead(EN_3V3)); // Test: toggle the 3V3 enable
+          }
+        }
+      }
+      receiveEventData.receiveEventRegister = SFE_AAA_REGISTER_UNKNOWN; // Clear the event
+      receiveEventData.receiveEventLength = 0; // Clear the event
+      break;
+    case SFE_AAA_REGISTER_FIRMWARE_VERSION: // Does the user want to read the firmware version?
+      if (receiveEventData.receiveEventLength >= 1) // Read request should be a single byte
+      {
+        // Nothing to do here
+        receiveEventData.receiveEventLength = 0; // Clear the event
+      }
+      break;
+    case SFE_AAA_REGISTER_UNKNOWN:
+      // Nothing to do here
+      break;
+    default:
+      receiveEventData.receiveEventRegister = SFE_AAA_REGISTER_UNKNOWN; // Clear the event
+      receiveEventData.receiveEventLength = 0; // Clear the event
+      break;
   }
-  noIntDelay(1); // Delay for 1msec to avoid thrashing millis()
 }
 
 //Begin listening on I2C bus as I2C peripheral using the global I2C_ADDRESS
@@ -133,49 +233,41 @@ void startI2C(bool skipWireEnd)
 //Measure the CPU temperature
 void readTemperature()
 {
-  analogReference(INTERNAL); //You must use the internal 1.1v bandgap reference when measuring temperature
+  analogReference(SFE_AAA_ADC_REFERENCE_1V1); //You must use the internal 1.1v bandgap reference when measuring temperature
   uint16_t result = 0;
   for (byte x = 0; x < 8; x++)
   {
-    result += analogRead(ADC_TEMPERATURE); //ADC_TEMPERATURE is #defined to be the channel for reading the temperature
+    result += analogRead(ADC_TEMPERATURE); //ADC_TEMPERATURE is ADC channel 7
     noIntDelay(1);
   }
-  return (result >> 3); // Divide result by 8
+  registerTemperature = result >> 3; // Divide result by 8
 }
 
-//goToSleep adapted from: https://gist.github.com/JChristensen/5616922
-//Hardwired for the ATtiny43U (may not work on other ATtiny's)
-//Brown Out Detection is disabled via the fuse bits:
-//Set BOD Level to BOD Disabled in the board settings.
-void goToSleep(void)
+//Measure VCC by measuring the 1.1V bandgap using VCC as the reference
+void readVCCVoltage()
 {
-    byte adcsra = ADCSRA; //save ADCSRA (ADC control and status register A)
-    ADCSRA &= ~_BV(ADEN); //disable ADC by clearing the ADEN bit
-    
-    byte acsr0a = ACSR0A; //save ACSR0A (Analog Comparator 0 control and status register)
-    ACSR0A &= ~_BV(ACIE0); //disable AC0 interrupt
-    ACSR0A |= _BV(ACD0); //disable ACO by setting the ACD0 bit
-    
-    byte acsr1a = ACSR1A; //save ACSR1A (Analog Comparator 1 control and status register)
-    ACSR1A &= ~_BV(ACIE1); //disable AC1 interrupt
-    ACSR1A |= _BV(ACD1); //disable AC1 by setting the ACD1 bit
-    
-    byte prr = PRR; // Save the power reduction register
-    // Disable the ADC, USART1, SPI, Timer1 and Timer2
-    // (Leave TWI, USART0 and Timer0 enabled)
-    PRR |= _BV(PRADC) | _BV(PRUSART1) | _BV(PRSPI) | _BV(PRTIM1) | _BV(PRTIM2); 
-    
-    byte mcucr = MCUCR; // Save the MCU Control Register
-    // Set Sleep Enable (SE=1), Power-down Sleep Mode (SM1=1, SM0=0), INT0 Falling Edge (ISC01=1, ISC00=0)
-    MCUCR = _BV(SE) | _BV(SM1) | _BV(ISC01);
+  analogReference(SFE_AAA_ADC_REFERENCE_VCC); //You must use VCC as the reference when measuring temperature
+  uint16_t result = 0;
+  for (byte x = 0; x < 8; x++)
+  {
+    result += analogRead(ADC_TEMPERATURE - 2); //The 1.1V reference is channel 5. ADC_TEMPERATURE is ADC channel 7
+    noIntDelay(1);
+  }
+  registerVCCVoltage = result >> 3; // Divide result by 8
+}
 
-    sleep_cpu(); //go to sleep
-    
-    MCUCR = mcucr; // Restore the MCU control register
-    PRR = prr; // Restore the power reduction register
-    ACSR1A = acsr1a; // Restore ACSR1A    
-    ACSR0A = acsr0a; // Restore ACSR0A    
-    ADCSRA = adcsra; //Restore ADCSRA
+//Measure VBAT
+void readVBAT()
+{
+  analogReference(registerADCReference); //Select the desired voltage reference
+  uint16_t result = 0;
+  for (byte x = 0; x < 8; x++)
+  {
+    result += analogRead(ADC_TEMPERATURE - 1); //VBAT is ADC channel 6. ADC_TEMPERATURE is ADC channel 7
+    noIntDelay(1);
+  }
+  analogRead(ADC_TEMPERATURE); //Read the CPU temperature to de-select channel 6 and disconnect the VBAT divide-by-2 circuit
+  registerVBAT = result >> 3; // Divide result by 8
 }
 
 //Software delay. Does not rely on internal timers.
