@@ -24,13 +24,13 @@
 #define SFE_AAA_REGISTER_RESET_REASON       0x01 // byte     Read only
 #define SFE_AAA_REGISTER_TEMPERATURE        0x02 // uint16_t Read only
 #define SFE_AAA_REGISTER_VBAT               0x03 // uint16_t Read only
-#define SFE_AAA_REGISTER_VCC_VOLTAGE        0x04 // uint16_t Read only
+#define SFE_AAA_REGISTER_1V1                0x04 // uint16_t Read only
 #define SFE_AAA_REGISTER_ADC_REFERENCE      0x05 // byte     Read/Write
 #define SFE_AAA_REGISTER_WDT_PRESCALER      0x06 // byte     Read/Write: Stored in eeprom
 #define SFE_AAA_REGISTER_POWERDOWN_DURATION 0x07 // uint16_t Read/Write: Stored in eeprom
 #define SFE_AAA_REGISTER_POWERDOWN_NOW      0x08 //          Write only (Sequence is: "SLEEP" + CRC)
 #define SFE_AAA_REGISTER_FIRMWARE_VERSION   0x09 // byte     Read only
-#define SFE_AAA_REGISTER_UNKNOWN   0xFF
+#define SFE_AAA_REGISTER_UNKNOWN            0xFF
 
 //Reset Reason (MCUSR) Flags
 #define SFE_AAA_RESET_REASON_PORF_BIT       0                                           ///< Bit position of the Power-on Reset Flag

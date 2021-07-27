@@ -6,8 +6,7 @@ void receiveEvent(int numberOfBytesReceived)
 {
   if (numberOfBytesReceived > 0) // Check that we received some data (!) (hopefully redundant!)
   {
-    byte incoming = Wire.read(); // Read the first byte
-    receiveEventData.receiveEventRegister = incoming; // Store this byte so we know what to do during the next requestEvent
+    receiveEventData.receiveEventRegister = Wire.read(); // Store the first byte so we know what to do during the next requestEvent
 
     if (numberOfBytesReceived > 1) // Did we receive more than one byte?
     {
@@ -17,10 +16,10 @@ void receiveEvent(int numberOfBytesReceived)
         receiveEventData.receiveEventBuffer[i - 1] = Wire.read();
       }
       i--;
-      receiveEventData.receiveEventBuffer[i] = 0; // NULL_terminate the data
+      receiveEventData.receiveEventBuffer[i] = 0; // NULL-terminate the data
     }
 
-    receiveEventData.receiveEventLength = numberOfBytesReceived;
+    receiveEventData.receiveEventLength = (volatile byte)numberOfBytesReceived;
   }
 }
 
@@ -51,9 +50,9 @@ void requestEvent()
       Wire.write(buff, 2);
       receiveEventData.receiveEventRegister = SFE_AAA_REGISTER_UNKNOWN; // Clear the event
       break;
-    case SFE_AAA_REGISTER_VCC_VOLTAGE: // Does the user want to read the VCC voltage?
-      buff[0] = registerVCCVoltage & 0xFF; // Little endian
-      buff[1] = registerVCCVoltage >> 8;
+    case SFE_AAA_REGISTER_1V1: // Does the user want to read the 1.1V reference?
+      buff[0] = register1V1 & 0xFF; // Little endian
+      buff[1] = register1V1 >> 8;
       Wire.write(buff, 2);
       receiveEventData.receiveEventRegister = SFE_AAA_REGISTER_UNKNOWN; // Clear the event
       break;
