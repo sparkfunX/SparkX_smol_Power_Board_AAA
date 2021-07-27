@@ -4,9 +4,6 @@
   Date: July 26th 2021
   Version: 1.0
 
-  goToSleep adapted from Jack Christensen's AVR Sleep example for the ATtinyX4:
-  https://gist.github.com/JChristensen/5616922
-
   Uses Spence Konde's ATTinyCore boards:
   https://github.com/SpenceKonde/ATTinyCore
   https://github.com/SpenceKonde/ATTinyCore/blob/master/Installation.md
@@ -20,7 +17,7 @@
   Set Save EEPROM to EEPROM Not Retained
   Set BOD Level to BOD Disabled (this helps reduce power consumption in low power mode)
 
-  Fuse byte settings:
+  Fuse byte settings (default to a 1MHz clock, the code will increase the clock to 4MHz):
   Low:  0b01100010 = 0x62 : divide clock by 8, no clock out, slowly rising power, 8MHz internal oscillator
   High: 0b11011111 = 0xDF : reset not disabled, no debug wire, SPI programming enabled, WDT not always on, EEPROM not preserved, BOD disabled
   Ext:  0xFF : no self programming
@@ -44,20 +41,19 @@
   D15: Physical Pin 18 (PA7 / !RESET)      : !RESET
 
   The ATtiny43U's default I2C address is 0x50
-
-  TO DO: Start the WDT. Implement power-down
-
 */
 
 #include <Wire.h>
 
 #include <avr/sleep.h> //Needed for sleep_mode
 #include <avr/power.h> //Needed for powering down perihperals such as the ADC
+#include <avr/wdt.h>
 
 #include <EEPROM.h>
 
 #include "smol_Power_Board_AAA_ATtiny43U_Constants.h"
 #include "smol_Power_Board_AAA_ATtiny43U_EEPROM.h"
+#include "smol_Power_Board_AAA_ATtiny43U_WDT.h"
 
 //Digital pins
 const byte EN_3V3 = 11; // 3V3 Regulator Enable: pull high to enable 3.3V, pull low to disable
@@ -78,9 +74,8 @@ volatile uint16_t registerTemperature;
 volatile uint16_t registerVBAT;
 volatile uint16_t register1V1;
 volatile byte registerADCReference = SFE_AAA_ADC_REFERENCE_VCC; // Default to using VCC as the ADC reference
-
-//WDT Interrupt Service Routine - controls when the ATtiny43U wakes from sleep
-void wdtISR() {}
+volatile uint16_t powerDownDuration;
+volatile bool sleepNow = false;
 
 void setup()
 {
@@ -91,16 +86,16 @@ void setup()
   pinMode(EN_3V3, OUTPUT); // Enable the 3V3 regulator for the smôl bus
   digitalWrite(EN_3V3, EN_3V3__ON);
 
-  registerResetReason = MCUSR & 0x0F; // Record the reset reason from MCUSR
+  registerResetReason = (MCUSR & 0x0F); // Record the reset reason from MCUSR
   MCUSR = 0; // Clear the MCUSR
+
+  disableWDT(); // Make sure the WDT is disabled
 
   if (!loadEepromSettings()) // Load the settings from eeprom
   {
     initializeEepromSettings(); // Initialize them if required
     registerResetReason |= SFE_AAA_EEPROM_CORRUPT_ON_RESET; // Flag that the eeprom was corrupt and needed to be initialized
   }
-
-  WDTCSR = (WDTCSR & 0xD8) | ((eeprom_settings.wdtPrescaler & 0x08) << 2) | (eeprom_settings.wdtPrescaler & 0x07); // Update the WDT prescaler (bits 5,2,1,0)
 
   //Begin listening on I2C
   startI2C(true); // Skip Wire.end the first time around
@@ -164,7 +159,6 @@ void loop()
           {
             eeprom_settings.wdtPrescaler = receiveEventData.receiveEventBuffer[0]; // Update the WDT prescaler in eeprom
             saveEepromSettings(); // Update the address in eeprom
-            WDTCSR = (WDTCSR & 0xD8) | ((eeprom_settings.wdtPrescaler & 0x08) << 2) | (eeprom_settings.wdtPrescaler & 0x07); // Update the WDT prescaler (bits 5,2,1,0)
           }
         }
         break;
@@ -188,8 +182,7 @@ void loop()
                 && (receiveEventData.receiveEventBuffer[2] == 'E') && (receiveEventData.receiveEventBuffer[3] == 'E')
                 && (receiveEventData.receiveEventBuffer[4] == 'P'))
             {
-              // TO DO: Add a call to the power-down function here
-              digitalWrite(EN_3V3, !digitalRead(EN_3V3)); // Test: toggle the 3V3 enable
+              sleepNow = true; // Go to sleep
             }
           }
           receiveEventData.receiveEventRegister = SFE_AAA_REGISTER_UNKNOWN; // Clear the receive event register - this one is write only
@@ -208,6 +201,22 @@ void loop()
     }
     
     receiveEventData.receiveEventLength = 0; // Clear the event
+  }
+
+  // Sleep
+  if (sleepNow)
+  {
+    set_sleep_mode(SLEEP_MODE_PWR_DOWN); // Go into power-down mode when sleeping (only WDT Int and INT0 can wake the processor)
+    sleep_enable(); // Set the Sleep Enable (SE) bit in the MCUCR register so sleep is possible
+    enableWDT(); // Enable the WDT using the prescaler setting from eeprom
+    powerDownDuration = eeprom_settings.powerDownDuration; // Load powerDownDuration with the value from eeprom
+    digitalWrite(EN_3V3, EN_3V3__OFF); // Turn off the 3.3V regulator
+    while (powerDownDuration > 0)
+      sleep_cpu(); // Go to sleep. WDT ISR will decrement powerDownDuration
+    digitalWrite(EN_3V3, EN_3V3__ON);
+    disableWDT(); // Disable the WDT
+    sleep_disable(); // Clear the Sleep Enable (SE) bit in the MCUCR register
+    sleepNow = false; // Clear sleepNow
   }
 }
 

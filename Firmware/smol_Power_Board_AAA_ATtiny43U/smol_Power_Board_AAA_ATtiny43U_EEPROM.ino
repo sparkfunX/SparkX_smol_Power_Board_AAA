@@ -1,4 +1,4 @@
-// smôl Power Board AAA EEPROM storage and fuctions
+// smôl Power Board AAA EEPROM storage and functions
 
 // Load the settings from eeprom into RAM
 // Return true if settings are loaded correctly and valid, false otherwise

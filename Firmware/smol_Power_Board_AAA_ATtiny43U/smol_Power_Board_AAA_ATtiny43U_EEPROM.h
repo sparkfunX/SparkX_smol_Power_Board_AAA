@@ -1,4 +1,4 @@
-// smôl Power Board AAA EEPROM storage and fuctions
+// smôl Power Board AAA EEPROM storage and functions
 
 struct struct_eeprom_settings {
   byte sizeOfSettings = 0; //sizeOfSettings **must** be the first entry and must be byte
