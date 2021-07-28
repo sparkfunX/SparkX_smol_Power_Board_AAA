@@ -209,9 +209,15 @@ void loop()
     powerDownDuration = eeprom_settings.powerDownDuration; // Load powerDownDuration with the value from eeprom
     if (powerDownDuration > 0) // Sanity check - don't glitch the power if powerDownDuration is zero
     {
+      Wire.end(); // Stop I2C (USI)
+      pinMode(4, INPUT); // Make SDA an input
+      pinMode(6, INPUT); // Make SCL an input
       set_sleep_mode(SLEEP_MODE_PWR_DOWN); // Go into power-down mode when sleeping (only WDT Int and INT0 can wake the processor)
       analogRead(0x80 | 4); //Read the CPU 0V to make sure channel 6 is disconnected (channel 6 has the VBAT divide-by-2 circuit which will draw current)
       ADCSRA &= (~(1 << ADEN)); // Disable the ADC
+      byte ACSRstatus = ACSR; // Record the Analog Comparator Status Register
+      ACSR &= (~(1 << ACBG)); // Ensure the comparator bandgap is deselected
+      ACSR |= (1 << ACD); // Set the comparator disable bit
       PRR |= 0x0F; // Power-down the ADC, USI and both Timer/Counters
       digitalWrite(EN_3V3, EN_3V3__OFF); // Turn off the 3.3V regulator
       enableWDT(); // Enable the WDT using the prescaler setting from eeprom
@@ -222,9 +228,11 @@ void loop()
       disableWDT(); // Disable the WDT
       digitalWrite(EN_3V3, EN_3V3__ON); // Turn on the 3.3V regulator
       PRR &= 0xF8; // Power-up the ADC, USI and Timer/Counter 0
+      ACSR = ACSRstatus; // Re-enable the comparator if required
       noIntDelay(4); // Give the clocks time to start
       ADCSRA |= (1 << ADEN); // Re-enable the ADC
-      startI2C(false); // Re-initialize the USI
+      analogRead(0x80 | 4); // Read the CPU 0V. When the ADC is turned off and on again, the next conversion will be an extended conversion.
+      startI2C(true); // Re-initialize the USI
     }
     sleepNow = false; // Clear sleepNow
   }
