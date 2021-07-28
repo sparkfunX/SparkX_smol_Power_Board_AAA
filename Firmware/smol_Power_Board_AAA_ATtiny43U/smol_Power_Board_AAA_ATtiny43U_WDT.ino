@@ -6,10 +6,7 @@
 ISR(WDT_vect) {
   sleep_disable(); // Clear the Sleep Enable (SE) bit in the MCUCR register
   // To avoid the Watchdog Reset, WDIE must be set after each interrupt.
-  volatile byte wdtBits = ATTINY43_WDTCSR_WDIE | ATTINY43_WDTCSR_WDE | ((eeprom_settings.wdtPrescaler & 0x08) << 2)
-                          | (eeprom_settings.wdtPrescaler & 0x07); // WDT Interrupt Enable OR'd with WDE and the four prescaler bits
-  WDTCSR |= ATTINY43_WDTCSR_WDCE | ATTINY43_WDTCSR_WDE; // We need to set WDCE when changing the prescaler bits
-  WDTCSR = wdtBits; // Enable the WDT interrupt and set the prescaler
+  WDTCSR |= (1 << WDIE); // Re-enable the WDT interrupt. Don't disable the WDT. Don't change the prescaler.
   if (powerDownDuration > 0) // Decrement powerDownDuration
     powerDownDuration--;
   sleep_enable(); // Set the Sleep Enable (SE) bit in the MCUCR register so sleep is possible
@@ -19,8 +16,9 @@ ISR(WDT_vect) {
 void disableWDT()
 {
   cli(); // Disable interrupts
-  WDTCSR |= ATTINY43_WDTCSR_WDCE | ATTINY43_WDTCSR_WDE; // In the same operation, write a logic one to WDCE and WDE
-  WDTCSR = 0x00; // Within the next four clock cycles, write a logic 0 to WDE. This disables the Watchdog. Also disables the interrupt.
+  WDTCSR |= (1 << WDCE) | (1 << WDE); // In the same operation, write a logic one to WDCE and WDE
+  // Within the next four clock cycles, write a logic 0 to WDE.
+  WDTCSR = 0x00; // Disable the Watchdog and the interrupt and clear the prescaler.
   sei(); // Enable interrupts
 }
 
@@ -31,9 +29,11 @@ void disableWDT()
 void enableWDT()
 {
   cli(); // Disable interrupts
-  volatile byte wdtBits = ATTINY43_WDTCSR_WDIE | ATTINY43_WDTCSR_WDE | ((eeprom_settings.wdtPrescaler & 0x08) << 2)
+  // Make wdtBits volatile to avoid the compiled code for the "WDTCSR = wdtBits"
+  //  being too slow and not meeting the "within four clock cycles" requirement.
+  volatile byte wdtBits = (1 << WDIE) | (1 << WDE) | ((eeprom_settings.wdtPrescaler & 0x08) << 2)
                           | (eeprom_settings.wdtPrescaler & 0x07); // WDT Interrupt Enable OR'd with WDE and the four prescaler bits
-  WDTCSR |= ATTINY43_WDTCSR_WDCE | ATTINY43_WDTCSR_WDE; // We need to set WDCE when changing the prescaler bits
-  WDTCSR = wdtBits; // Enable the WDT interrupt and set the prescaler
+  WDTCSR |= (1 << WDCE) | (1 << WDE); // We need to set WDCE when changing the prescaler bits
+  WDTCSR = wdtBits; // Enable the WDT interrupt, WDT and set the prescaler
   sei(); // Enable interrupts
 }

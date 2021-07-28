@@ -53,7 +53,6 @@
 
 #include "smol_Power_Board_AAA_ATtiny43U_Constants.h"
 #include "smol_Power_Board_AAA_ATtiny43U_EEPROM.h"
-#include "smol_Power_Board_AAA_ATtiny43U_WDT.h"
 
 //Digital pins
 const byte EN_3V3 = 11; // 3V3 Regulator Enable: pull high to enable 3.3V, pull low to disable
@@ -203,19 +202,30 @@ void loop()
     receiveEventData.receiveEventLength = 0; // Clear the event
   }
 
-  // Sleep
+  // Sleep - turn off the smôl 3.3V regulator and put the ATtiny43U into as low a power state as possible
+  // The WDT will wake the processor once powerDownDuration WDT ticks have expired
   if (sleepNow)
   {
-    set_sleep_mode(SLEEP_MODE_PWR_DOWN); // Go into power-down mode when sleeping (only WDT Int and INT0 can wake the processor)
-    sleep_enable(); // Set the Sleep Enable (SE) bit in the MCUCR register so sleep is possible
-    enableWDT(); // Enable the WDT using the prescaler setting from eeprom
     powerDownDuration = eeprom_settings.powerDownDuration; // Load powerDownDuration with the value from eeprom
-    digitalWrite(EN_3V3, EN_3V3__OFF); // Turn off the 3.3V regulator
-    while (powerDownDuration > 0)
-      sleep_cpu(); // Go to sleep. WDT ISR will decrement powerDownDuration
-    digitalWrite(EN_3V3, EN_3V3__ON);
-    disableWDT(); // Disable the WDT
-    sleep_disable(); // Clear the Sleep Enable (SE) bit in the MCUCR register
+    if (powerDownDuration > 0) // Sanity check - don't glitch the power if powerDownDuration is zero
+    {
+      set_sleep_mode(SLEEP_MODE_PWR_DOWN); // Go into power-down mode when sleeping (only WDT Int and INT0 can wake the processor)
+      analogRead(0x80 | 4); //Read the CPU 0V to make sure channel 6 is disconnected (channel 6 has the VBAT divide-by-2 circuit which will draw current)
+      ADCSRA &= (~(1 << ADEN)); // Disable the ADC
+      PRR |= 0x0F; // Power-down the ADC, USI and both Timer/Counters
+      digitalWrite(EN_3V3, EN_3V3__OFF); // Turn off the 3.3V regulator
+      enableWDT(); // Enable the WDT using the prescaler setting from eeprom
+      sleep_enable(); // Set the Sleep Enable (SE) bit in the MCUCR register so sleep is possible
+      while (powerDownDuration > 0)
+        sleep_cpu(); // Go to sleep. WDT ISR will decrement powerDownDuration
+      sleep_disable(); // Clear the Sleep Enable (SE) bit in the MCUCR register
+      disableWDT(); // Disable the WDT
+      digitalWrite(EN_3V3, EN_3V3__ON); // Turn on the 3.3V regulator
+      PRR &= 0xF8; // Power-up the ADC, USI and Timer/Counter 0
+      noIntDelay(4); // Give the clocks time to start
+      ADCSRA |= (1 << ADEN); // Re-enable the ADC
+      startI2C(false); // Re-initialize the USI
+    }
     sleepNow = false; // Clear sleepNow
   }
 }
