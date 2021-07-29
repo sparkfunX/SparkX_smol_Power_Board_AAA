@@ -1,4 +1,4 @@
-// smôl Power Board AAA WDT functions
+// smôl Power Board WDT functions
 
 // Based on https://electronics.stackexchange.com/questions/74840/use-avr-watchdog-like-normal-isr
 
@@ -16,7 +16,11 @@ ISR(WDT_vect) {
 void disableWDT()
 {
   cli(); // Disable interrupts
+#ifdef POWER_BOARD_LIPO
+  CCP = 0xD8; // Write signature (0xD8) to the Configuration Change Register
+#else
   WDTCSR |= (1 << WDCE) | (1 << WDE); // In the same operation, write a logic one to WDCE and WDE
+#endif
   // Within the next four clock cycles, write a logic 0 to WDE.
   WDTCSR = 0x00; // Disable the Watchdog and the interrupt and clear the prescaler.
   sei(); // Enable interrupts
@@ -33,7 +37,11 @@ void enableWDT()
   //  being too slow and not meeting the "within four clock cycles" requirement.
   volatile byte wdtBits = (1 << WDIE) | (1 << WDE) | ((eeprom_settings.wdtPrescaler & 0x08) << 2)
                           | (eeprom_settings.wdtPrescaler & 0x07); // WDT Interrupt Enable OR'd with WDE and the four prescaler bits
+#ifdef POWER_BOARD_LIPO
+  CCP = 0xD8; // Write signature (0xD8) to the Configuration Change Register
+#else
   WDTCSR |= (1 << WDCE) | (1 << WDE); // We need to set WDCE when changing the prescaler bits
+#endif
   WDTCSR = wdtBits; // Enable the WDT interrupt, WDT and set the prescaler
   sei(); // Enable interrupts
 }

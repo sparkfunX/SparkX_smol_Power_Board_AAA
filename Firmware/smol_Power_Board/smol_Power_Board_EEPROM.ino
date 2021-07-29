@@ -1,4 +1,4 @@
-// smôl Power Board AAA EEPROM storage and functions
+// smôl Power Board EEPROM storage and functions
 
 // Load the settings from eeprom into RAM
 // Return true if settings are loaded correctly and valid, false otherwise
@@ -13,7 +13,7 @@ bool loadEepromSettings()
 
   byte settingsVersion = 0;
   EEPROM.get(sizeof(byte), settingsVersion); // Read firmwareVersion from eeprom
-  if (settingsVersion != POWER_BOARD_AAA_FIRMWARE_VERSION)
+  if (settingsVersion != SMOL_POWER_BOARD_FIRMWARE_VERSION)
     eepromSettingsValid = false;
 
   EEPROM.get(0, eeprom_settings); // Read the settings from eeprom into RAM
