@@ -66,7 +66,7 @@
   Set BOD Mode (Sleep) to BOD Disabled (this helps reduce power consumption in low power mode)
 
   Fuse byte settings (default to a 1MHz clock, the code will increase the clock to 4MHz):
-  Low:  0b01100010 = 0x62 : divide clock by 8, no clock out, slowly rising power, 8MHz internal oscillator
+  Low:  0b01000010 = 0x42 : divide clock by 8, no clock out, slowly rising power, 8MHz internal oscillator
   High: 0b11011111 = 0xDF : reset not disabled, no debug wire, SPI programming enabled, WDT not always on, EEPROM not preserved, BOD 1.8V
   Ext:  0xFF : ULP Osc 32kHz, BOD (Sleep) disabled, BOD (Active) disabled, no self-programming
 
@@ -269,8 +269,6 @@ void loop()
     if (powerDownDuration > 0) // Sanity check - don't glitch the power if powerDownDuration is zero
     {
       Wire.end(); // Stop I2C (USI)
-      pinMode(SDA_PIN, INPUT); // Make SDA an input
-      pinMode(SCL_PIN, INPUT); // Make SCL an input
       set_sleep_mode(SLEEP_MODE_PWR_DOWN); // Go into power-down mode when sleeping (only WDT Int and INT0 can wake the processor)
 #ifdef POWER_BOARD_LIPO
       analogRead(0x80 | 0x0E); //Read the CPU 0V (channel 14)
@@ -297,9 +295,9 @@ void loop()
       disableWDT(); // Disable the WDT
       digitalWrite(EN_3V3, EN_3V3__ON); // Turn on the 3.3V regulator
 #ifdef POWER_BOARD_LIPO
-      PRR &= 0x83; // Power-up the TWI, Timer/Counter 0 and ADC
+      PRR &= 0x00; // Power-up the TWI, UART1, UART0, SPI, TC2, TC1, TC0, ADC
 #else
-      PRR &= 0xF8; // Power-up the ADC, USI and Timer/Counter 0
+      PRR &= 0xF0; // Power-up the ADC, USI and both Timer/Counters
 #endif
 #ifndef POWER_BOARD_LIPO
       ACSR = ACSRstatus; // Re-enable the comparator if required
