@@ -11104,7 +11104,7 @@ The #defines in the ATTinyCore assume controller mode</description>
 <text x="422.656" y="7.366" size="2.54" layer="94">X02</text>
 <wire x1="88.9" y1="190.5" x2="88.9" y2="279.4" width="0.2032" layer="97" style="longdash"/>
 <wire x1="88.9" y1="190.5" x2="0" y2="190.5" width="0.2032" layer="97" style="longdash"/>
-<text x="6.604" y="268.732" size="5.08" layer="94">EZ Connectors</text>
+<text x="6.604" y="268.732" size="5.08" layer="94">smôl Connectors</text>
 <text x="76.962" y="236.22" size="2.54" layer="97" font="vector" rot="R270">Top</text>
 <text x="9.398" y="228.854" size="2.54" layer="97" font="vector" rot="R90">Bottom</text>
 <wire x1="154.94" y1="190.5" x2="88.9" y2="190.5" width="0.2032" layer="97" style="longdash"/>
