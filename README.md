@@ -1,8 +1,8 @@
 # SparkX smôl Power Board : AAA
 
-[![SparkX smôl Power Board : AAA (SPX-18360)]()](https://www.sparkfun.com/products/18360)
+[![SparkX smôl Power Board : AAA (SPX-18621)](https://cdn.sparkfun.com/assets/parts/1/8/1/2/0/18621-smo__l_Power_Board_AAA-01.jpg)](https://www.sparkfun.com/products/18621)
 
-[*SparkX smôl Power Board : AAA (SPX-18360)*](https://www.sparkfun.com/products/18360)
+[*SparkX smôl Power Board : AAA (SPX-18621)*](https://www.sparkfun.com/products/18621)
 
 A power board for smôl:
 - JST battery connector
@@ -10,8 +10,6 @@ A power board for smôl:
 - Power can be provided by one or two AAA or AA batteries
 - ATtiny43 for intelligent power management
 
-![Top.png](./img/Top.png)
-![Bottom.png](./img/Bottom.png)
 ![Dimensions.png](./img/Dimensions.png)
 
 ## Repository Contents
@@ -22,7 +20,7 @@ A power board for smôl:
 
 ## Product Versions
 
-- [SPX-18360](https://www.sparkfun.com/products/18360) - Original SparkX Release.
+- [SPX-18621](https://www.sparkfun.com/products/18621) - Original SparkX Release.
 
 ## License Information
 
